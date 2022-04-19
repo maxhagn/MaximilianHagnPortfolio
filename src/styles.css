@@ -1,0 +1,64 @@
+@font-face {
+  font-family: Inter-Light;
+  src: url(/assets/fonts/Inter-Light.ttf);
+}
+
+@font-face {
+  font-family: Inter-Regular;
+  src: url(/assets/fonts/Inter-Regular.ttf);
+}
+
+@font-face {
+  font-family: Inter-Black;
+  src: url(/assets/fonts/Inter-Black.ttf);
+}
+
+@font-face {
+  font-family: Inter-Bold;
+  src: url(/assets/fonts/Inter-Bold.ttf);
+}
+
+@font-face {
+  font-family: Inter-Extra-Bold;
+  src: url(/assets/fonts/Inter-ExtraBold.ttf);
+}
+
+/*----------FONT----------*/
+* {
+  font-family: "Inter-Regular", serif;
+}
+
+/*----------GENERALS----------*/
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/*----------SCROLLBAR----------*/
+::-webkit-scrollbar {
+  background: none;
+  width: 9px
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: #f4f4f4
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #babac0;
+  border-radius: 16px;
+  border: 2.5px solid #fff
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a0a0a5;
+  border: 2px solid #f4f4f4
+}
+
+::-webkit-scrollbar-button {
+  display: none
+}

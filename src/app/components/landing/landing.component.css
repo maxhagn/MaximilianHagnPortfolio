@@ -1,0 +1,125 @@
+body {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  position: relative;
+  border-radius: 100%;
+  object-fit: cover;
+  height: 20vw;
+  width: 20vw;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+.list-container {
+  margin-top: 30px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Marlene Container */
+.marlene-container .image-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.marlene_container ul li {
+  text-align: left;
+  font-size: 32px;
+}
+
+.marlene_container .button-container {
+  text-align: right;
+  margin-top: 30px;
+}
+
+.marlene_container h2 {
+  font-size: 8vw;
+  text-align: right;
+}
+
+/* Max Container */
+.max_container .image-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+}
+
+.max_container h2 {
+  font-size: 8vw;
+  text-align: left;
+}
+
+.max_container ul li {
+  text-align: right;
+  font-size: 32px;
+}
+
+.max_container .button-container {
+  text-align: left;
+  margin-top: 30px;
+}
+
+.custom-action-button {
+  width: 75px;
+  height: 75px;
+  font-size: 40px;
+  border: none;
+  background-color: #2A2A28;
+  color: white;
+  border-radius: 100%;
+  padding: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 400ms all;
+}
+
+.custom-action-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.landing_container {
+  display: block;
+  position: relative;
+  height: 100%;
+}
+
+.marlene_container,.max_container,.system_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 10px 80px;
+  min-height: calc(100% - 100px);
+}
+
+.marlene_container {
+  background-color: #F8F8F8;
+}
+
+.max_container {
+  background-color: #2A2A28;
+}
+
+
+.max_container * {
+  color: #F8F8F8;
+}
+.max_container button {
+  background-color: white;
+}
+
+.system_container {
+  background-color: #FFFFFF;
+}
+
+h2 {
+  font-size: 8vw;
+}
