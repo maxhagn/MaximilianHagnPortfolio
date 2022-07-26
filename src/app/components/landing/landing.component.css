@@ -100,15 +100,6 @@ ul {
   min-height: calc(100% - 100px);
 }
 
-.marlene_container {
-  background-color: #F8F8F8;
-}
-
-.max_container {
-  background-color: #2A2A28;
-}
-
-
 .max_container * {
   color: #F8F8F8;
 }

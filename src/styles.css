@@ -14,6 +14,11 @@
 }
 
 @font-face {
+  font-family: Inter-Semi-Bold;
+  src: url(/assets/fonts/Inter-SemiBold.ttf);
+}
+
+@font-face {
   font-family: Inter-Bold;
   src: url(/assets/fonts/Inter-Bold.ttf);
 }
@@ -32,6 +37,7 @@
 html, body {
   height: 100%;
   margin: 0;
+  background-color: #eeefef;
 }
 
 /*----------SCROLLBAR----------*/
