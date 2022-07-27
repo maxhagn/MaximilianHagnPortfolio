@@ -1,0 +1,23 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: none;
+  z-index: 1;
+}
+
+.navbar-brand {
+  margin-left: 10%;
+  margin-right: 10%;
+  pointer-events: none;
+}
+
+.navbar-nav {
+  margin-right: 10%;
+}
+
+/*SCROLL-BOX*/
+.scroll-wrapper {
+  overflow-x: hidden;
+  background-color: transparent !important;
+  z-index: 0;
+}

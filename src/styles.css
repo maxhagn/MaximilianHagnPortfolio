@@ -35,36 +35,15 @@
 
 /*----------GENERALS----------*/
 html, body {
-  height: 100%;
+  scroll-behavior: smooth;
+  font-size: 16px;
   margin: 0;
-  background-color: #eeefef;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
 }
 
-/*----------SCROLLBAR----------*/
-::-webkit-scrollbar {
-  background: none;
-  width: 9px
-}
-
-::-webkit-scrollbar-track {
-  background: none;
-}
-
-::-webkit-scrollbar-track:hover {
-  background-color: #f4f4f4
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #babac0;
-  border-radius: 16px;
-  border: 2.5px solid #fff
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #a0a0a5;
-  border: 2px solid #f4f4f4
-}
-
-::-webkit-scrollbar-button {
-  display: none
+h1 {
+  font-size: 46px;
+  font-family: "Inter-Extra-Bold", serif;
 }

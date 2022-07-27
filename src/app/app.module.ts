@@ -11,32 +11,36 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import {AppComponent} from './app.component';
-import {NavbarComponent} from "./components/navbar/navbar.component";
 import {CvComponent} from "./components/cv/cv.component";
 import {LandingComponent} from "./components/landing/landing.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
 import {PublicationsComponent} from "./components/publications/publications.component";
+import {FooterComponent} from './components/footer/footer.component';
+import {ContactComponent} from './components/contact/contact.component';
+import {NgScrollbarModule} from "ngx-scrollbar";
 
 registerLocaleData(localeDe, localeDeExtra);
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
     CvComponent,
     LandingComponent,
     ProjectsComponent,
-    PublicationsComponent
+    PublicationsComponent,
+    FooterComponent,
+    ContactComponent
   ],
-  imports: [
-    BrowserModule,
-    NgbModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    FontAwesomeModule,
-  ],
+    imports: [
+        BrowserModule,
+        NgbModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule,
+        FontAwesomeModule,
+        NgScrollbarModule,
+    ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     {provide: LOCALE_ID, useValue: "de"}
