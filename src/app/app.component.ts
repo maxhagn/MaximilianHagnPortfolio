@@ -5,6 +5,7 @@ import {DOCUMENT} from "@angular/common";
 import {filter} from "rxjs/operators";
 import {NavigationEnd, Router} from "@angular/router";
 import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,20 @@ export class AppComponent {
   faBars = faBars;
   faXmark = faXmark;
 
-  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
+  title = 'Ang10-NGX-translate';
+
+  languageList = [
+    {code: 'en', label: 'English'},
+    {code: 'de', label: 'German'}
+  ];
+
+  changeLang(lang: string) {
+    this.translate.use(lang);
+  }
+
+  constructor(public translate: TranslateService, @Inject(DOCUMENT) private document: Document, private router: Router) {
+    this.translate.setDefaultLang('en');
+    this.translate.use('en')
     this.currentComponent = "Our System"
     this.isMenuCollapsed = true;
     this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {

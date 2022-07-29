@@ -1,0 +1,73 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "PUBLICATIONS": "Publications",
+    "PROJECTS": "Projects",
+    "CV": "CV",
+    "CONTACT": "Contact"
+  },
+  "PUBLICATIONS": {
+    "HEADING": "Publications",
+    "BACHELOR": "Bachelor Thesis",
+    "MASTER": "Master Thesis",
+    "DIPLOMA": "Diploma Project",
+    "UNIVERSITY": "Technical University of Vienna",
+    "SCHOOL": "Rennweg Higher Technical School",
+    "BOOK": "Book",
+    "WEBSITE": "Website",
+    "BACHELOR_1_TITLE": "Detecting Performance Bottlenecks through AST Transformations",
+    "BACHELOR_1_TEXT_1": "When developing software, many programmers are sooner or later faced with the question of how they can optimize their applications and also keep the runtime as short as possible. Especially in the field of <em>high-performance computing</em> and in the development of time-critical software, shortening the runtime of programs is indispensable. Runtime analysis is therefore a fundamental technique that must be mastered by every developer. For this purpose, the source code is either checked manually or the application is analyzed during runtime using profiling tools. These instruments offer the possibility to obtain data about the performance of single functions for the user. In most tools, <em>Regions of Interest (ROI)</em> can usually be specified manually. Identifying these can be problematic, especially when developing complex programs. Thus, it would be preferable if a method existed with which user-defined <em>Regions of Interest</em> could be analyzed by automatically inserting measurement code.",
+    "BACHELOR_1_TEXT_2": "This thesis presents a performance measurement tool that can be used to automatically measure the runtimes of critical areas in <em>C</em>/<em>C++</em> applications. The developed tool is based on the compiler front-end <em>Clang</em>, which offers various functions for traversing <em>Abstract Syntax Trees (AST)</em>. The tool analyzes the <em>Abstract Syntax Tree</em> of the input code provided by <em>Clang</em> and automatically inserts measurement code at the desired positions. For this purpose, the <em>Abstract Syntax Tree</em> is traversed from the root downwards and in each iteration a hierarchically lower level can be selected by the user. In each iteration, the user receives statistics about the <em>Regions of Interests</em> and can decide which area to analyze next based on the information obtained. To demonstrate the functionality of the program we will show the workflow on different examples. Furthermore, an overflow analysis will be carried out to show that the overflow of the profiling process can be minimized by using an iterative approach.",
+    "DIPLOMA_TITLE": "Creative Puzzle - Web Development E-Learning Platform",
+    "DIPLOMA_TEXT_1": "<em>Creative Puzzle</em> wants to encourage people with little prior knowledge to write web pages and provides assistance through playful exercises, ready-made learning templates and a code library. Learning by doing gives learners the opportunity to quickly familiarize themselves with various programming languages. An E-Learning platform especially for the 1st - 3rd classes of HTLs should be created. Most of the time, lower-level students find it difficult to identify the context of individual components of a documentary, and they find it difficult to manage with the many different commands. <em>Creative Puzzle</em> aims to facilitate the endless browsing of specifications by providing practice-related examples. These can be pre-made templates or playful exercises. In contrast to existing specified information websites, the commands are not explained individually, but web components are explained step by step and therefore presented in a practical way. So the relationship can be understood more easily.",
+    "DIPLOMA_TEXT_2": "<em>Creative Puzzle</em> provides a sleek and simple framework and, above all, well-documented documentation. Several stylesheets with many predesigned templates will be available on the website. It also includes graphic elements to playfully learn web programming. Since the team from their own experience in the first HTL years could muster little motivation for the design of websites, one of the goals is to show the topicality of these techniques with a graphically appealing design. Additional the team has worked extensively with several other areas relevant to web development. On the one hand, concepts for the efficient host- ing of a website were designed, on the other hand Creative Puzzle would like to optimize its website according to the Search Engine Optimization guidelines. Another aim will be to enthuse young people for web programming. The project team is mainly concerned with the layout and design of website elements and with the specification. Furthermore, the team will present insights and issues that had to be learned, as well as tips that are relevant for writing a frame-work and for layouting a website. An additional goal is to promote the project and to draw attention to the result through innovative and complex designs of the advertising materials, such as posters, flyers, folders, business cards and cover pictures."
+  },
+  "PROJECTS": {
+    "HEADING": "Projects",
+    "WEBSITE": "Website"
+  },
+  "CV": {
+    "HEADING": "Curriculum Vitae",
+    "PERSONAL": "Personal Data",
+    "EDUCATION": "Education",
+    "EMPLOYMENT": "Employment History",
+    "RECOGNITIONS": "Awards AND Recognitions",
+    "LANGUAGES": "Languages",
+    "SKILLS_HEADING": "Skills",
+    "TELEPHONE": "Request phone number",
+    "ADDRESS": "Request address",
+    "BIRTHDAY": "Birthday: August 25, 1997",
+    "BIRTHPLACE": "Birthplace: Dresden, Germany",
+    "CITIZENSHIP": "Citizenship: German",
+    "UNIVERSITY": "Technical University of Vienna",
+    "BUSINESS_INFORMATICS": "Field of study Business Informatics",
+    "SOFTWARE_ENGINEERING": "Field of study Software & Information Engineering",
+    "SCHOOL": "Secondary Technical School, 1030 Vienna",
+    "MEDIA_TECHNOLOGY": "Focus on media technology",
+    "MIDDLE_SCHOOL": "Saint Ursula Middle School, 1230 Vienna",
+    "ELEMENTARY_SCHOOL": "Elementary School, Maurer Lange Gasse, 1230 Wien",
+    "PRESENT": "Present",
+    "AQILO_DESC": "Technical Employee, part-time (20 hours per week)",
+    "AVALON_DESC_PT": "Software Developer, Part-Time (11 hours per week)",
+    "AVALON": "Avalon Computer System GmbH",
+    "SGEF_DESC_FP": "Accountant, Summer Internship (38.5 hours per week)",
+    "SGEF_DESC_NJ": "Accountant, Part-Time (10 hours per week)",
+    "STIWA_DESC": "Software Developer, Summer Internship (38.5 hours per week)",
+    "AVALON_DESC_FP": "Software Developer, Summer Internship (38.5 hours per week)",
+    "LEADER_DIPLOMA": "Project Leader of the Diploma Thesis \"Creative Puzzle - Web Development E-Learning Platform\" (Grade: A)",
+    "PROJECT_CERTIFICATION": "Project Management Certification (IMPA, jZpm)",
+    "TEAM_BUILDING": "Communication, and team building seminar (34 hours)",
+    "SIECAMS_LEADER": "Project Leader of an information technology project (product flyer for the service \"Siecams\" of Siemens AG) in the context of the project management course",
+    "HEAD_BOY": "Vice departmental representative and 3rd on the school community committee (3rd vice head boy)",
+    "LEADER_PROJECT": "Project Leader of an information technology project within the scope of project management course",
+    "HIGH_SCHOOL_REP": "High School Class Representative",
+    "GERMAN": "German (Native)",
+    "ENGLISH": "English (First Modern Foreign Language)"
+  },
+  "CONTACT": {
+
+  },
+  "FOOTER": {
+    "AUSTRIA": "Austria"
+  }
+}

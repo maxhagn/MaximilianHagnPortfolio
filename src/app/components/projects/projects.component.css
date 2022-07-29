@@ -1,0 +1,11 @@
+.keyword {
+  display: inline-block;
+  background-color: #dcdada;
+  border-radius: 12px;
+  padding: 2px 4px;
+  margin: 2px 4px;
+}
+
+a {
+  display: block;
+}

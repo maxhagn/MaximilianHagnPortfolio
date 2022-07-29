@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Project} from "../../models/project";
+import projects from '../../../assets/data/projects.json';
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-projects',
@@ -7,10 +10,19 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() {
+  public projects: Project[] = projects;
+  public currentLanguage: string = "en";
+
+  constructor(private translate: TranslateService) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
   }
 
   ngOnInit(): void {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
   }
 
 }

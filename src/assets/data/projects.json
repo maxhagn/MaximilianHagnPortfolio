@@ -1,0 +1,370 @@
+[
+  {
+    "title": "UpToDate",
+    "description_en": "UpToDate is a web application I developed for myself to manage my appointments, notes and lists. The application contains a calendar, a program to create notes, a todo list and many other small functions that help me to structure my thoughts. The idea came from the fact that many apps I used simply had too many functions and could not be used on all operating systems. Furthermore, I now have the possibility to use the developed REST API to integrate my appointments and notes in my smarthome, for example by displaying my calendar on the TVs. I use the application almost every day to enter my appointments, structure my ideas and keep track of my tasks. The application is written with the backend framework Spring Boots based on the Java programming language and in the frontend the Angular framework is utilized.",
+    "description_de": "UpToDate is a web application I developed for myself to manage my appointments, notes and lists. The application contains a calendar, a program to create notes, a todo list and many other small functions that help me to structure my thoughts. The idea came from the fact that many apps I used simply had too many functions and could not be used on all operating systems. Furthermore, I now have the possibility to use the developed REST API to integrate my appointments and notes in my smarthome, for example by displaying my calendar on the TVs. I use the application almost every day to enter my appointments, structure my ideas and keep track of my tasks. The application is written with the backend framework Spring Boots based on the Java programming language and in the frontend the Angular framework is utilized.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "Java Spring Boot API"},
+      {"tag":  "Angular 13"},
+      {"tag":  "Website"}
+    ],
+    "website": "https://uptodate.hagn.network",
+    "github": "https://github.com/maxhagn/UpToDate"
+  },
+  {
+    "title": "Maximilian Hagn Portfolio Website",
+    "description_en": "This repository contains my current portfolio website which was written with the frontend framework Angular.",
+    "description_de": "This repository contains my current portfolio website which was written with the frontend framework Angular.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "Angular 13"},
+      {"tag":  "Website"}
+    ],
+    "website": "https://maximilian.hagn.network",
+    "github": "https://github.com/maxhagn/MaximilianHagnPortfolio"
+  },
+  {
+    "title": "Marlene Stanzl Portfolio Website",
+    "description_en": "This repository contains the website of Marlene Stanzl which was written with the frontend framework Angular.",
+    "description_de": "This repository contains the website of Marlene Stanzl which was written with the frontend framework Angular.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "Angular 13"},
+      {"tag":  "Website"}
+    ],
+    "website": "https://marlene.hagn.network",
+    "github": "https://github.com/maxhagn/MarleneStanzlPortfolio"
+  },
+  {
+    "title": "Compiler Construction with Flex, Yacc, Ox and iBurg",
+    "description_en": "This repository contains my first self-written programming language, which I developed during the course compiler development at the Vienna University of Technology. The lexical analysis is based on the tool Flex. The parser was developed with the help of YACC. The described grammar was attributed with the assistance of OX. Finally, a tree grammar was created with the help of OX and iBurg, which can be used to generate Assembler 64 code.",
+    "description_de": "This repository contains my first self-written programming language, which I developed during the course compiler development at the Vienna University of Technology. The lexical analysis is based on the tool Flex. The parser was developed with the help of YACC. The described grammar was attributed with the assistance of OX. Finally, a tree grammar was created with the help of OX and iBurg, which can be used to generate Assembler 64 code.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "C"},
+      {"tag":  "Flex"},
+      {"tag":  "Yacc/Bison"},
+      {"tag":  "Ox"},
+      {"tag":  "iBurg"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/CompilerConstruction"
+  },
+  {
+    "title": "Visual Computing",
+    "description_en": "This repository contains assignments that should be developed in the course Introduction to Visual Computing at the Vienna University of Technology. Most of the tasks are written in Matlab and cover topics of visual computing. The other part of the tasks are modelings that were created with Blender.",
+    "description_de": "This repository contains assignments that should be developed in the course Introduction to Visual Computing at the Vienna University of Technology. Most of the tasks are written in Matlab and cover topics of visual computing. The other part of the tasks are modelings that were created with Blender.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "Blender"},
+      {"tag":  "Matlab"},
+      {"tag":  "Visualization"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/VisualComputing"
+  },
+  {
+    "title": "Parallel Computing",
+    "description_en": "",
+    "description_de": "",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "OpenMP"},
+      {"tag":  "MPI"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/ParallelComputing"
+  },
+  {
+    "title": "Statistical Computing With R",
+    "description_en": "This repository contains exercises that were required in the course Statistical Computing in R at the Vienna University of Technology. In total, four examples were worked on, all of which were developed using the programming language R.",
+    "description_de": "This repository contains exercises that were required in the course Statistical Computing in R at the Vienna University of Technology. In total, four examples were worked on, all of which were developed using the programming language R.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "R Studio"},
+      {"tag":  "Statistic"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/StatisticalComputingR"
+  },
+  {
+    "title": "Compiler Construction With LLVM",
+    "description_en": "In this repository you can find a self written programming language which I developed with the help of LLVM.",
+    "description_de": "In this repository you can find a self written programming language which I developed with the help of LLVM.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "C++"},
+      {"tag":  "LLVM"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/CompilerConstructionLLVM"
+  },
+  {
+    "title": "Operating System Development",
+    "description_en": "This repository contains my first higher half kernel.",
+    "description_de": "This repository contains my first higher half kernel.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "Limine"},
+      {"tag":  "Stivale"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/OperatingSystemDevelopment"
+  },
+  {
+    "title": "Object Oriented Programming With Java",
+    "description_en": "This repository contains tasks that had to be completed as a team in the Object Oriented Programming course at the Vienna University of Technology.",
+    "description_de": "This repository contains tasks that had to be completed as a team in the Object Oriented Programming course at the Vienna University of Technology.",
+    "date": "2021",
+    "keywords": [
+      {"tag":  "Java"},
+      {"tag":  "OOP"},
+      {"tag":  "Paradigma"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/ObjectOrientedProgrammingJava"
+  },
+  {
+    "title": "Introduction to Security",
+    "description_en": "This repository contains tasks that were completed in the Introduction to Security course at the Vienna University of Technology.",
+    "description_de": "This repository contains tasks that were completed in the Introduction to Security course at the Vienna University of Technology.",
+    "date": "2020",
+    "keywords": [
+      {"tag":  "Security"},
+      {"tag":  "Challenges"},
+      {"tag":  "Hacking"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/IntroductionToSecurity"
+  },
+  {
+    "title": "Web Engineering",
+    "description_en": "This repository contains assignments to be completed in the course of the Web Engineering course at the Vienna University of Technology. The first example deals with web page design using CSS. In the second example plain JavaScript was used. In the third example the backend of a web application was written with Node.js. In the last example the frontend of the web application was developed with Vue.js.",
+    "description_de": "This repository contains assignments to be completed in the course of the Web Engineering course at the Vienna University of Technology. The first example deals with web page design using CSS. In the second example plain JavaScript was used. In the third example the backend of a web application was written with Node.js. In the last example the frontend of the web application was developed with Vue.js.",
+    "date": "2020",
+    "keywords": [
+      {"tag":  "CSS"},
+      {"tag":  "JavaScript"},
+      {"tag":  "Vue.js"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/WebEngineering"
+  },
+  {
+    "title": "Semi-Structured Data",
+    "description_en": "",
+    "description_de": "",
+    "date": "2020",
+    "keywords": [
+      {"tag":  "XML"},
+      {"tag":  "DTD"},
+      {"tag":  "XSD"},
+      {"tag":  "XPD"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/SemiStructuredData"
+  },
+  {
+    "title": "Data Analysis With R",
+    "description_en": "",
+    "description_de": "",
+    "date": "2019",
+    "keywords": [
+      {"tag":  "R Studio"},
+      {"tag":  "Statistics"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/DataAnalysisR"
+  },
+  {
+    "title": "Introduction to Programming With Java",
+    "description_en": "This repository contains some assignments that should be developed for the course Introduction to Programming I and II in the Java programming language.",
+    "description_de": "This repository contains some assignments that should be developed for the course Introduction to Programming I and II in the Java programming language.",
+    "date": "2019",
+    "keywords": [
+      {"tag":  "Java"},
+      {"tag":  "Datastructures"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/JavaIntroductionProgramming"
+  },
+  {
+    "title": "Distributed Systems In Java",
+    "description_en": "This repository contains the exercises that we had to complete as a team to finish the distributed systems course at the Vienna University of Technology. Both exercises are written in Java and retain concepts such as threads, synchronization and parallelization.",
+    "description_de": "This repository contains the exercises that we had to complete as a team to finish the distributed systems course at the Vienna University of Technology. Both exercises are written in Java and retain concepts such as threads, synchronization and parallelization.",
+    "date": "2019",
+    "keywords": [
+      {"tag":  "Java"},
+      {"tag":  "Threads"},
+      {"tag":  "Synchronization"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/DistributedSystems"
+  },
+  {
+    "title": "Smart Driving - Driving Log Application",
+    "description_en": "Smart Driving is the first iOS app I wrote with Swift and Firebase. The goal of the application was to automatically read position data from a car's GPS device and automatically create a driving log for corporate clients. Unfortunately the application could not be used in practice according to Austrian law.",
+    "description_de": "Smart Driving is the first iOS app I wrote with Swift and Firebase. The goal of the application was to automatically read position data from a car's GPS device and automatically create a driving log for corporate clients. Unfortunately the application could not be used in practice according to Austrian law.",
+    "date": "2018",
+    "keywords": [
+      {"tag":  "iOS"},
+      {"tag":  "Apple"},
+      {"tag":  "FireBase"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/SmartDriving"
+  },
+  {
+    "title": "LinkHype - Hyperlink Management",
+    "description_en": "LinkHype is a website we developed as a team at the Rennweg Higher Technical School. The website is written in PHP and Javascript and is the first major website with functionality that my team and I have developed. The goal of the website is to store and manage hyperlinks.",
+    "description_de": "LinkHype is a website we developed as a team at the Rennweg Higher Technical School. The website is written in PHP and Javascript and is the first major website with functionality that my team and I have developed. The goal of the website is to store and manage hyperlinks.",
+    "date": "2013",
+    "keywords": [
+      {"tag":  "PHP"},
+      {"tag":  "JavaScript"},
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "First Website"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/LinkHypeHyperlinkManagement"
+  },
+  {
+    "title": "Functional Programming in Haskell",
+    "description_en": "This repository contains some assignments that had to be developed in the scope of the Functional Programming course at the Vienna University of Technology. The tasks are written in the programming language Haskell.",
+    "description_de": "This repository contains some assignments that had to be developed in the scope of the Functional Programming course at the Vienna University of Technology. The tasks are written in the programming language Haskell.",
+    "date": "2022",
+    "keywords": [
+      {"tag":  "Haskell"},
+      {"tag":  "Side Effects"},
+      {"tag":  "Functions"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/FunctionalProgrammingHaskell"
+  },
+  {
+    "title": "Ticketline - Software Engineering Project",
+    "description_en": "This repository contains a ticket store for events that we had to develop as a team in the scope of the course Software Development and Project Management at the Vienna University of Technology. The backend is written with the framework Spring Boot based on Java. The frontend uses the framework Angular. The goal of the project was to plan and finally implement a complete software project as a team.",
+    "description_de": "This repository contains a ticket store for events that we had to develop as a team in the scope of the course Software Development and Project Management at the Vienna University of Technology. The backend is written with the framework Spring Boot based on Java. The frontend uses the framework Angular. The goal of the project was to plan and finally implement a complete software project as a team.",
+    "date": "2021",
+    "keywords": [
+      {"tag":  "Java Spring Boot"},
+      {"tag":  "Angular"},
+      {"tag":  "Project Management"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/SoftwareEngineeringProjektmanagement"
+  },
+  {
+    "title": "System Near Programming With C",
+    "description_en": "This repository contains exercises that had to be developed in the course Operating Systems at the Vienna University of Technology.",
+    "description_de": "This repository contains exercises that had to be developed in the course Operating Systems at the Vienna University of Technology.",
+    "date": "2021",
+    "keywords": [
+      {"tag":  "C"},
+      {"tag":  "Operating Systems"},
+      {"tag":  "Files"},
+      {"tag":  "University"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/OperatingSystems"
+  },
+  {
+    "title": "Vacayournal - Vacation + Journal",
+    "description_en": "In this repository you can find a clone of Instagram and Facebook that I developed in the summer of 2019. The application was written in PHP and JavaScript without frameworks. The goal of the application was to develop a platform independent of Facebook (Meta) on which pictures and posts can be shared with friends. The goal of the development was to further my education in web development and website design.",
+    "description_de": "In this repository you can find a clone of Instagram and Facebook that I developed in the summer of 2019. The application was written in PHP and JavaScript without frameworks. The goal of the application was to develop a platform independent of Facebook (Meta) on which pictures and posts can be shared with friends. The goal of the development was to further my education in web development and website design.",
+    "date": "2019",
+    "keywords": [
+      {"tag":  "PHP"},
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "JavaScript"},
+      {"tag":  "Website"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/Vacayournal"
+  },
+  {
+    "title": "Voller Freude Website",
+    "description_en": "This repository contains a website I wrote for a friend who started a music label in Vienna.",
+    "description_de": "This repository contains a website I wrote for a friend who started a music label in Vienna.",
+    "date": "2014",
+    "keywords": [
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "Webdesign"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/VollerFreudeWebsite"
+  },
+  {
+    "title": "E-Learning Video Platform",
+    "description_en": "This repository contains an e-learning platform that we wrote as a team for the e-learning course at the Rennweg higher technical school. The user can create an account and answer questions about different historical events.",
+    "description_de": "This repository contains an e-learning platform that we wrote as a team for the e-learning course at the Rennweg higher technical school. The user can create an account and answer questions about different historical events.",
+    "date": "2019",
+    "keywords": [
+      {"tag":  "PHP"},
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "JavaScript"},
+      {"tag":  "School"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/E-LearningVideoPlatform"
+  },
+  {
+    "title": "Hagnnet Website",
+    "description_en": "This repository contains a single page website that we used years ago for our home network.",
+    "description_de": "This repository contains a single page website that we used years ago for our home network.",
+    "date": "2015",
+    "keywords": [
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "Webdesign"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/HagnnetWebsite"
+  },
+  {
+    "title": "Angular And Laravel Projects",
+    "description_en": "This repository contains a variety of websites written with the backend framework Laravel and the frontend framework Angular. The projects are either tasks that had to be developed in the software development course at the Rennweg technical high school or preparations for the final exam in the subject software development.",
+    "description_de": "This repository contains a variety of websites written with the backend framework Laravel and the frontend framework Angular. The projects are either tasks that had to be developed in the software development course at the Rennweg technical high school or preparations for the final exam in the subject software development.",
+    "date": "2017",
+    "keywords": [
+      {"tag":  "Angular"},
+      {"tag":  "Laravel"},
+      {"tag":  "School"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/AngularLaravelProjects"
+  },
+  {
+    "title": "Personal Websites Archive",
+    "description_en": "In this repository are some private portfolio websites that I never finished or used.",
+    "description_de": "In this repository are some private portfolio websites that I never finished or used.",
+    "date": "2015",
+    "keywords": [
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "Angular"},
+      {"tag":  "Laravel"},
+      {"tag":  "JavaSCript"}
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/PersonalWebsitesArchive"
+  }
+]

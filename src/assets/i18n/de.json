@@ -1,0 +1,20 @@
+{
+  "NAVBAR": {
+    "HOME": "Start",
+    "PUBLICATIONS": "Publikationen",
+    "PROJECTS": "Projekte",
+    "CV": "Lebenslauf",
+    "CONTACT": "Kontakt"
+  },
+  "PUBLICATIONS": {
+    "HEADING": "Publikationen",
+    "BACHELOR": "Bachelorarbeit",
+    "MASTER": "Masterarbeit",
+    "DIPLOMA": "Diplomarbeit",
+    "UNIVERSITY": "Technische Universität Wien",
+    "SCHOOL": "Höhere Technische Lehranstalt Rennweg",
+    "BACHELOR_TITLE_1": "Erkennen von Leistungsengpässen mittels AST-Transformationen",
+    "BACHELOR_1_TEXT_1": "Bei der Entwicklung von Software stehen viele Programmiererinnen und Programmierer früher oder später vor der Frage, wie sie ihre Anwendungen optimieren und damit auch die Laufzeit so kurz wie möglich halten können. Gerade im Bereich des Hochleistungsrechnens und bei der Entwicklung zeitkritischer Software ist die Verkürzung der Laufzeit von Programmen unabdingbar. Die Laufzeitanalyse ist daher eine grundlegende Technik, die jede Entwicklerin und jeder Entwickler beherrschen muss. Zu diesem Zweck wird der Quellcode entweder manuell überprüft oder die Anwendung während der Laufzeit mit Profiling-Tools analysiert. Diese Instrumente bieten den Benutzenden die Möglichkeit, Daten über die Leistung einzelner Funktionen zu erhalten. Bei den meisten Tools können die \\emph{interessierenden Bereiche}\\emph{(ROI)} in der Regel manuell festgelegt werden. Die Identifizierung dieser Bereiche kann problematisch sein, insbesondere bei der Entwicklung komplexer Programme. Daher wäre es wünschenswert, wenn es eine Methode gäbe, mit der benutzerdefinierte \\emph{Bereiche von Interesse} durch automatisches Einfügen von Messcode analysiert werden könnten.",
+    "BACHELOR_1_TEXT_2": "In dieser Arbeit wird ein Werkzeug zur Leistungsmessung vorgestellt, das zur automatischen Messung der Laufzeiten kritischer Bereiche in \\C /\\CPP Anwendungen verwendet werden kann. Das entwickelte Werkzeug basiert auf dem von \\CLANG bereitgestellten Framework, das verschiedene Funktionen zum Traversieren von \\emph{abstrakten Syntaxbäumen}\\emph{(AST)} bietet. Das Werkzeug analysiert den von \\CLANG bereitgestellten \\emph{Syntaxbaum} des Eingabecodes und fügt automatisch Messcode an den gewünschten Stellen ein. Dazu wird der \\emph{abstrakte Syntaxbaum} von der Wurzel abwärts durchlaufen, wobei in jeder Iteration eine hierarchisch niedrigere Ebene von der Benutzerin oder dem Benutzer ausgewählt werden kann. In jeder Iteration erhält die oder der Anwendende Statistiken über die \\emph{interessierenden Bereiche} und kann selbst auf Basis der gewonnenen Informationen entscheiden, welcher Bereich als nächster analysiert werden soll. Um die Funktionalität des Programms vorzustellen werden wir den Arbeitsablauf an verschiedenen Beispielen demonstrieren. Des Weiteren wird anhand einer Überlaufanalyse gezeigt, dass der Überlauf des Profiling-Prozesses durch die iterative Vorgehensweise gering gehalten werden~kann."
+  }
+}

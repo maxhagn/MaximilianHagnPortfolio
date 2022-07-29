@@ -6,19 +6,23 @@
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul [(activeId)]="activeMenuEntry" class="navbar-nav ms-auto mb-2 mb-lg-0" ngbNav>
       <li [ngbNavItem]="1" class="nav-item">
-        <a (click)="scrollToElement(landing)" class="nav-link" ngbNavLink>Home</a>
+        <a (click)="scrollToElement(landing)" class="nav-link" ngbNavLink>{{'NAVBAR.HOME' | translate}}</a>
       </li>
       <li [ngbNavItem]="2" class="nav-item">
-        <a (click)="scrollToElement(publications)" class="nav-link" ngbNavLink>Publikationen</a>
+        <a (click)="scrollToElement(publications)" class="nav-link" ngbNavLink>{{'NAVBAR.PUBLICATIONS' | translate}}</a>
       </li>
       <li [ngbNavItem]="3" class="nav-item">
-        <a (click)="scrollToElement(projects)" class="nav-link" ngbNavLink>Projekte</a>
+        <a (click)="scrollToElement(projects)" class="nav-link" ngbNavLink>{{'NAVBAR.PROJECTS' | translate}}</a>
       </li>
       <li [ngbNavItem]="4" class="nav-item">
-        <a (click)="scrollToElement(cv)" class="nav-link" ngbNavLink>Lebenslauf</a>
+        <a (click)="scrollToElement(cv)" class="nav-link" ngbNavLink>{{'NAVBAR.CV' | translate}}</a>
       </li>
       <li [ngbNavItem]="5" class="nav-item">
-        <a (click)="scrollToElement(contact)" class="nav-link" ngbNavLink>Kontakt</a>
+        <a (click)="scrollToElement(contact)" class="nav-link" ngbNavLink>{{'NAVBAR.CONTACT' | translate}}</a>
+      </li>
+      <li [ngbNavItem]="6" class="nav-item">
+        <a *ngIf="translate.currentLang == 'en'" (click)="changeLang('de')" class="nav-link" ngbNavLink>Deutsch</a>
+        <a *ngIf="translate.currentLang == 'de'" (click)="changeLang('en')" class="nav-link" ngbNavLink>English</a>
       </li>
     </ul>
   </div>
@@ -31,6 +35,7 @@
               track="all">
 
   <div class="scroll-wrapper">
+
     <div #landing>
       <app-landing></app-landing>
     </div>

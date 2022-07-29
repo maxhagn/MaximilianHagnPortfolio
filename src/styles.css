@@ -41,9 +41,24 @@ html, body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  background-color: #f0f0f1;
 }
 
 h1 {
   font-size: 46px;
   font-family: "Inter-Extra-Bold", serif;
+}
+
+h2 {
+  font-family: "Inter-Bold", serif;
+  margin-top: 3rem;
+}
+
+h3 {
+  font-family: "Inter-Semi-Bold", serif;
+  margin-top: 1.8rem;
+}
+
+a {
+  display: block;
 }

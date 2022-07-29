@@ -7,7 +7,14 @@ import {Component, OnInit} from '@angular/core';
 })
 export class CvComponent implements OnInit {
 
+  public isDetailedView: boolean;
+
   constructor() {
+    this.isDetailedView = false;
+  }
+
+  public setDetailed(flag: boolean): void {
+    this.isDetailedView = flag;
   }
 
   ngOnInit(): void {
