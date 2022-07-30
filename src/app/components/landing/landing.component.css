@@ -1,10 +1,26 @@
+@import "~animate.css/animate.min.css";
+
 h1 {
-  font-size: 6rem;
-  text-align: center;
+  font-size: 8rem;
+  font-family: "Inter-Extra-Bold", serif;
+  text-align: left;
 }
 
 h2 {
-  text-align: center;
+  font-size: 4.5rem;
+  display: inline-block;
+  text-align: right;
+  font-family: "Inter-Black", serif;
+  color: #cb1237;
+
+}
+
+h3 {
+  margin-top: 4rem;
+  font-size: 2rem;
+  font-family: "Inter-Regular", serif;
+  text-align: left;
+  color: #2c2b2b;
 }
 
 .hero-container {

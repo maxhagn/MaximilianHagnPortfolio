@@ -9,6 +9,8 @@
   margin-left: 10%;
   margin-right: 10%;
   pointer-events: none;
+  color: #cb1237;
+  font-family: "Inter-Bold", Serif;
 }
 
 .navbar-nav {

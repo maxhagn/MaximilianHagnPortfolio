@@ -7,7 +7,8 @@
     "keywords": [
       {"tag":  "Java Spring Boot API"},
       {"tag":  "Angular 13"},
-      {"tag":  "Website"}
+      {"tag":  "Website"},
+      {"tag":  "Top"}
     ],
     "website": "https://uptodate.hagn.network",
     "github": "https://github.com/maxhagn/UpToDate"
@@ -19,7 +20,8 @@
     "date": "2022",
     "keywords": [
       {"tag":  "Angular 13"},
-      {"tag":  "Website"}
+      {"tag":  "Website"},
+      {"tag":  "Top"}
     ],
     "website": "https://maximilian.hagn.network",
     "github": "https://github.com/maxhagn/MaximilianHagnPortfolio"
@@ -31,7 +33,8 @@
     "date": "2022",
     "keywords": [
       {"tag":  "Angular 13"},
-      {"tag":  "Website"}
+      {"tag":  "Website"},
+      {"tag":  "Top"}
     ],
     "website": "https://marlene.hagn.network",
     "github": "https://github.com/maxhagn/MarleneStanzlPortfolio"
@@ -47,15 +50,16 @@
       {"tag":  "Yacc/Bison"},
       {"tag":  "Ox"},
       {"tag":  "iBurg"},
-      {"tag":  "University"}
+      {"tag":  "University"},
+      {"tag":  "Top"}
     ],
     "website": "",
     "github": "https://github.com/maxhagn/CompilerConstruction"
   },
   {
     "title": "Visual Computing",
-    "description_en": "This repository contains assignments that should be developed in the course Introduction to Visual Computing at the Vienna University of Technology. Most of the tasks are written in Matlab and cover topics of visual computing. The other part of the tasks are modelings that were created with Blender.",
-    "description_de": "This repository contains assignments that should be developed in the course Introduction to Visual Computing at the Vienna University of Technology. Most of the tasks are written in Matlab and cover topics of visual computing. The other part of the tasks are modelings that were created with Blender.",
+    "description_en": "This repository contains assignments that should be developed in the course Introduction to Visual Computing at the Vienna University of Technology. Most of the tasks are written in Matlab and cover Topics of visual computing. The other part of the tasks are modelings that were created with Blender.",
+    "description_de": "This repository contains assignments that should be developed in the course Introduction to Visual Computing at the Vienna University of Technology. Most of the tasks are written in Matlab and cover Topics of visual computing. The other part of the tasks are modelings that were created with Blender.",
     "date": "2022",
     "keywords": [
       {"tag":  "Blender"},
@@ -99,7 +103,8 @@
     "date": "2022",
     "keywords": [
       {"tag":  "C++"},
-      {"tag":  "LLVM"}
+      {"tag":  "LLVM"},
+      {"tag":  "Top"}
     ],
     "website": "",
     "github": "https://github.com/maxhagn/CompilerConstructionLLVM"
@@ -264,7 +269,8 @@
       {"tag":  "Java Spring Boot"},
       {"tag":  "Angular"},
       {"tag":  "Project Management"},
-      {"tag":  "University"}
+      {"tag":  "University"},
+      {"tag":  "Top"}
     ],
     "website": "",
     "github": "https://github.com/maxhagn/SoftwareEngineeringProjektmanagement"
@@ -293,7 +299,8 @@
       {"tag":  "HTML"},
       {"tag":  "CSS"},
       {"tag":  "JavaScript"},
-      {"tag":  "Website"}
+      {"tag":  "Website"},
+      {"tag":  "Top"}
     ],
     "website": "",
     "github": "https://github.com/maxhagn/Vacayournal"
@@ -366,5 +373,19 @@
     ],
     "website": "",
     "github": "https://github.com/maxhagn/PersonalWebsitesArchive"
+  },
+  {
+    "title": "Computer Now",
+    "description_en": "",
+    "description_de": "",
+    "date": "2020",
+    "keywords": [
+      {"tag":  "HTML"},
+      {"tag":  "CSS"},
+      {"tag":  "PHP"},
+      {"tag":  "Top"}
+    ],
+    "website": "https://computer-now.hagn.network",
+    "github": ""
   }
 ]

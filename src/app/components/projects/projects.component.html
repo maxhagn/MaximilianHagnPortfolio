@@ -3,32 +3,65 @@
     <div class="col">
       <h2>{{'PROJECTS.HEADING' | translate}}</h2>
 
+      hi check out my projects, the bests are listed below, but you can search all by selecting a tag.
+
+      <select class="form-control" id="projectSelect" name="projectSelect" [(ngModel)]="currentSelect.tag" (change)="changeSelectedProjects()">
+        <option [ngValue]="select.tag" *ngFor="let select of selectableTags">{{select.tag}}</option>
+      </select>
+
       <div class="row justify-content-evenly">
-        <div class="col-6 card" *ngFor="let project of projects;">
-          <div class="card-body">
 
-            <h5 class="card-title">{{project.title}}</h5>
-            <h6 class="card-subtitle mb-2 text-muted">{{project.date}}</h6>
-
-            <p class="card-text">
-              <ng-container *ngIf="currentLanguage=='en'">
-                {{project.description_en}}
-              </ng-container>
-              <ng-container *ngIf="currentLanguage=='de'">
-                {{project.description_de}}
-              </ng-container>
-            </p>
-
-            <div class="keyword" *ngFor="let keyword of project.keywords">
-              {{keyword.tag}}
+        <div class="card" *ngFor="let project of currentSelectedProjects;">
+          <div class="card-content">
+            <div class="card-front">
+              <div class="row">
+                <div class="col-12 text-center">
+                  <h4>{{project.title}}</h4>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 text-center">
+                  {{project.date}}
+                </div>
+              </div>
+              <div class="row mt-5">
+                <div class="col-12 text-center">
+                  <ng-container *ngFor="let keyword of project.keywords">
+                    <div class="keyword" *ngIf="keyword.tag != 'Top'">
+                      {{keyword.tag}}
+                    </div>
+                  </ng-container>
+                </div>
+              </div>
             </div>
-
-            <a class="card-link" *ngIf="project.website" href="{{project.website}}">{{'PROJECTS.WEBSITE' | translate}}</a>
-            <a class="card-link" *ngIf="project.github" href="{{project.github}}">Source Code</a>
+            <div class="card-back">
+              <div class="row mt-5">
+                <div class="col-12 text-center">
+                  <p>
+                    <ng-container *ngIf="currentLanguage=='en'">
+                      {{project.description_en.slice(0, 100)}}
+                    </ng-container>
+                    <ng-container *ngIf="currentLanguage=='de'">
+                      {{project.description_de.slice(0, 100)}}
+                    </ng-container>
+                  </p>
+                </div>
+                <div class="row mt-2">
+                  <div class="col-12 text-center">
+                    <a class="card-link" *ngIf="project.website"
+                       [href]="project.website">
+                      <fa-icon [icon]="faBrowser"></fa-icon>
+                    </a>
+                    <a class="card-link" *ngIf="project.github" [href]="project.github">
+                      <fa-icon [icon]="faGithub"></fa-icon>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-</div>
+

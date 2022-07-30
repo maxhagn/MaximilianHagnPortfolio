@@ -1,11 +1,64 @@
 .keyword {
+  border-radius: 3px 0 0 3px;
   display: inline-block;
-  background-color: #dcdada;
-  border-radius: 12px;
-  padding: 2px 4px;
-  margin: 2px 4px;
+  height: 26px;
+  line-height: 26px;
+  padding: 0 20px 0 15px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  text-decoration: none;
+  -webkit-transition: color 0.2s;
+  background-color: #666666;
+  color: white;
 }
 
-a {
-  display: block;
+.keyword::after {
+  background: #f0f0f1;
+  border-bottom: 13px solid transparent;
+  border-left: 10px solid #666666;
+  border-top: 13px solid transparent;
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.card {
+  width: calc(50% - 2rem);
+  background-color: #f0f0f1;
+  border: none;
+  margin: 1rem 1rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 400ms;
+}
+
+.card:hover .card-front {
+  opacity: 0;
+}
+
+.card:hover .card-back {
+  opacity: 1;
+}
+
+.card-content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-front {
+  padding: 5rem 2rem;
+}
+
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f1f1f1e6;
+  transition: all 400ms;
+  z-index: 1;
+  padding: 10px;
+  top: 0;
+  opacity: 0;
 }
