@@ -1,3 +1,26 @@
+h2 {
+  font-size: 4.5rem;
+  font-family: "Inter-Black", sans-serif;
+  color: #cb1237;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-family: "Inter-Semi-Bold", sans-serif;
+}
+
+.project-date {
+  font-family: "Inter-Bold", sans-serif;
+  color: #343333;
+  font-size: 1rem;
+}
+
+.project-title {
+  min-height: 2em;
+}
+
 .keyword {
   border-radius: 3px 0 0 3px;
   display: inline-block;
@@ -8,14 +31,14 @@
   margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
-  background-color: #666666;
+  background-color: #cb1237;
   color: white;
 }
 
 .keyword::after {
   background: #f0f0f1;
   border-bottom: 13px solid transparent;
-  border-left: 10px solid #666666;
+  border-left: 10px solid #cb1237;
   border-top: 13px solid transparent;
   content: '';
   position: absolute;
@@ -48,7 +71,7 @@
 }
 
 .card-front {
-  padding: 5rem 2rem;
+  padding: 2.5rem 1rem;
 }
 
 .card-back {
@@ -61,4 +84,26 @@
   padding: 10px;
   top: 0;
   opacity: 0;
+}
+
+a {
+  color: #cb1237;
+  font-size: 2rem;
+  text-decoration: none;
+}
+
+a fa-icon:first-child {
+  margin-right: .5rem;
+}
+
+a fa-icon:last-child {
+  margin-left: .5rem;
+}
+
+a fa-icon:hover {
+  color: #343333;
+}
+
+.action-button {
+  font-size: 1.2rem;
 }

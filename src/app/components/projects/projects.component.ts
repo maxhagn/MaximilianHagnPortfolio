@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Project} from "../../models/project";
 import projects from '../../../assets/data/projects.json';
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
-import {faEarthEurope} from "@fortawesome/free-solid-svg-icons";
+import {faEarthEurope, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {Keyword} from "../../models/keyword";
 
 @Component({
@@ -11,10 +11,12 @@ import {Keyword} from "../../models/keyword";
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent {
 
   faGithub = faGithub;
   faBrowser = faEarthEurope;
+  faMagnifyingGlass = faMagnifyingGlass;
+
   public projects: Project[] = projects;
   public currentSelectedProjects: Project[];
   public currentLanguage: string = "en";
@@ -46,20 +48,14 @@ export class ProjectsComponent implements OnInit {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
     });
-    this.currentSelect = this.selectableTags[0];
-  }
-
-  ngOnInit(): void {
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.currentLanguage = event.lang;
-    });
+    this.changeSelectedProjects(this.selectableTags[0]);
     this.selectableTags.sort(function(a, b) {
       return a.tag.localeCompare(b.tag);
     });
-    this.currentSelectedProjects = this.projects.filter(x => x.keywords.some(g => this.currentSelect.tag.includes(g.tag)));
   }
 
-  changeSelectedProjects() {
+  changeSelectedProjects(tag: Keyword) {
+    this.currentSelect = tag;
     this.currentSelectedProjects = this.projects.filter(x => x.keywords.some(g => this.currentSelect.tag.includes(g.tag)));
   }
 }

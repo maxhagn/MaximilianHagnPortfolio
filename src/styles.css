@@ -58,3 +58,20 @@ h3 {
   font-family: "Inter-Semi-Bold", serif;
   margin-top: 1.8rem;
 }
+
+.fit-content {
+  width: fit-content;
+  height: fit-content;
+}
+
+.btn {
+  box-shadow: none !important;
+}
+
+.dropdown-menu {
+  background-color: #f0f0f1;
+}
+
+p {
+  text-align: justify;
+}

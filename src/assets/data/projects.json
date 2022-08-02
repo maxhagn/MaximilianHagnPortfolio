@@ -40,7 +40,7 @@
     "github": "https://github.com/maxhagn/MarleneStanzlPortfolio"
   },
   {
-    "title": "Compiler Construction with Flex, Yacc, Ox and iBurg",
+    "title": "Compiler Construction C",
     "description_en": "This repository contains my first self-written programming language, which I developed during the course compiler development at the Vienna University of Technology. The lexical analysis is based on the tool Flex. The parser was developed with the help of YACC. The described grammar was attributed with the assistance of OX. Finally, a tree grammar was created with the help of OX and iBurg, which can be used to generate Assembler 64 code.",
     "description_de": "This repository contains my first self-written programming language, which I developed during the course compiler development at the Vienna University of Technology. The lexical analysis is based on the tool Flex. The parser was developed with the help of YACC. The described grammar was attributed with the assistance of OX. Finally, a tree grammar was created with the help of OX and iBurg, which can be used to generate Assembler 64 code.",
     "date": "2022",
@@ -97,7 +97,7 @@
     "github": "https://github.com/maxhagn/StatisticalComputingR"
   },
   {
-    "title": "Compiler Construction With LLVM",
+    "title": "Compiler Construction LLVM",
     "description_en": "In this repository you can find a self written programming language which I developed with the help of LLVM.",
     "description_de": "In this repository you can find a self written programming language which I developed with the help of LLVM.",
     "date": "2022",
@@ -261,7 +261,7 @@
     "github": "https://github.com/maxhagn/FunctionalProgrammingHaskell"
   },
   {
-    "title": "Ticketline - Software Engineering Project",
+    "title": "Ticketline",
     "description_en": "This repository contains a ticket store for events that we had to develop as a team in the scope of the course Software Development and Project Management at the Vienna University of Technology. The backend is written with the framework Spring Boot based on Java. The frontend uses the framework Angular. The goal of the project was to plan and finally implement a complete software project as a team.",
     "description_de": "This repository contains a ticket store for events that we had to develop as a team in the scope of the course Software Development and Project Management at the Vienna University of Technology. The backend is written with the framework Spring Boot based on Java. The frontend uses the framework Angular. The goal of the project was to plan and finally implement a complete software project as a team.",
     "date": "2021",
@@ -290,7 +290,7 @@
     "github": "https://github.com/maxhagn/OperatingSystems"
   },
   {
-    "title": "Vacayournal - Vacation + Journal",
+    "title": "Vacayournal",
     "description_en": "In this repository you can find a clone of Instagram and Facebook that I developed in the summer of 2019. The application was written in PHP and JavaScript without frameworks. The goal of the application was to develop a platform independent of Facebook (Meta) on which pictures and posts can be shared with friends. The goal of the development was to further my education in web development and website design.",
     "description_de": "In this repository you can find a clone of Instagram and Facebook that I developed in the summer of 2019. The application was written in PHP and JavaScript without frameworks. The goal of the application was to develop a platform independent of Facebook (Meta) on which pictures and posts can be shared with friends. The goal of the development was to further my education in web development and website design.",
     "date": "2019",

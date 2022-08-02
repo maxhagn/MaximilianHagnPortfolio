@@ -1,13 +1,31 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-6 col-xxl-6">
       <h2>{{'PROJECTS.HEADING' | translate}}</h2>
 
-      hi check out my projects, the bests are listed below, but you can search all by selecting a tag.
+      <p #intro_text>{{'PROJECTS.INTRO_TEXT' | translate}}</p>
 
-      <select class="form-control" id="projectSelect" name="projectSelect" [(ngModel)]="currentSelect.tag" (change)="changeSelectedProjects()">
-        <option [ngValue]="select.tag" *ngFor="let select of selectableTags">{{select.tag}}</option>
-      </select>
+      <div class="w-100 text-end d-flex justify-content-end">
+        <div class="fit-content"
+             ngbTooltip="Search for Tag"
+             placement="top">
+          <div
+            placement="bottom"
+            ngbDropdown>
+            <button class="btn action-button ms-1 me-1" id="show_settings" ngbDropdownToggle>
+              <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+            </button>
+            <div aria-labelledby="show_settings" ngbDropdownMenu>
+              <button
+                (click)="changeSelectedProjects(select)"
+                *ngFor="let select of selectableTags"
+                ngbDropdownItem>
+                {{select.tag}}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div class="row justify-content-evenly">
 
@@ -15,16 +33,18 @@
           <div class="card-content">
             <div class="card-front">
               <div class="row">
-                <div class="col-12 text-center">
+                <div class="col-12 text-center project-title">
                   <h4>{{project.title}}</h4>
                 </div>
               </div>
               <div class="row">
                 <div class="col-12 text-center">
-                  {{project.date}}
+                  <span class="project-date">
+                    {{project.date}}
+                  </span>
                 </div>
               </div>
-              <div class="row mt-5">
+              <div class="row mt-2">
                 <div class="col-12 text-center">
                   <ng-container *ngFor="let keyword of project.keywords">
                     <div class="keyword" *ngIf="keyword.tag != 'Top'">
@@ -35,7 +55,7 @@
               </div>
             </div>
             <div class="card-back">
-              <div class="row mt-5">
+              <div class="row mt-3">
                 <div class="col-12 text-center">
                   <p>
                     <ng-container *ngIf="currentLanguage=='en'">
@@ -46,16 +66,19 @@
                     </ng-container>
                   </p>
                 </div>
-                <div class="row mt-2">
-                  <div class="col-12 text-center">
-                    <a class="card-link" *ngIf="project.website"
-                       [href]="project.website">
-                      <fa-icon [icon]="faBrowser"></fa-icon>
-                    </a>
-                    <a class="card-link" *ngIf="project.github" [href]="project.github">
-                      <fa-icon [icon]="faGithub"></fa-icon>
-                    </a>
-                  </div>
+              </div>
+              <div class="row mt-2 mb-2">
+                <div class="col-12 text-center">
+                  <a *ngIf="project.website"
+                     target="_blank"
+                     [href]="project.website">
+                    <fa-icon [icon]="faBrowser"></fa-icon>
+                  </a>
+                  <a *ngIf="project.github"
+                     target="_blank"
+                     [href]="project.github">
+                    <fa-icon [icon]="faGithub"></fa-icon>
+                  </a>
                 </div>
               </div>
             </div>
@@ -64,4 +87,4 @@
       </div>
     </div>
   </div>
-
+</div>

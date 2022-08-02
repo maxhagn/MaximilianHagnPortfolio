@@ -16,7 +16,9 @@
     "SCHOOL": "Rennweg Higher Technical School",
     "BOOK": "Download the Book",
     "SOURCE": "View the Source Code",
-    "WEBSITE": "Explore the Website",
+    "WEBSITE_INFO": "Information Website",
+    "WEBSITE_FRAMEWORK": "CSS Framework",
+    "WEBSITE_E_LEARNING": "E-Learning Platform",
     "BACHELOR_1_TITLE": "Detecting Performance Bottlenecks through AST Transformations",
     "BACHELOR_1_TEXT_1": "When developing software, many programmers are sooner or later faced with the question of how they can optimize their applications and also keep the runtime as short as possible. Especially in the field of <em>high-performance computing</em> and in the development of time-critical software, shortening the runtime of programs is indispensable. Runtime analysis is therefore a fundamental technique that must be mastered by every developer. For this purpose, the source code is either checked manually or the application is analyzed during runtime using profiling tools. These instruments offer the possibility to obtain data about the performance of single functions for the user. In most tools, <em>Regions of Interest (ROI)</em> can usually be specified manually. Identifying these can be problematic, especially when developing complex programs. Thus, it would be preferable if a method existed with which user-defined <em>Regions of Interest</em> could be analyzed by automatically inserting measurement code.",
     "BACHELOR_1_TEXT_2": "This thesis presents a performance measurement tool that can be used to automatically measure the runtimes of critical areas in <em>C</em>/<em>C++</em> applications. The developed tool is based on the compiler front-end <em>Clang</em>, which offers various functions for traversing <em>Abstract Syntax Trees (AST)</em>. The tool analyzes the <em>Abstract Syntax Tree</em> of the input code provided by <em>Clang</em> and automatically inserts measurement code at the desired positions. For this purpose, the <em>Abstract Syntax Tree</em> is traversed from the root downwards and in each iteration a hierarchically lower level can be selected by the user. In each iteration, the user receives statistics about the <em>Regions of Interests</em> and can decide which area to analyze next based on the information obtained. To demonstrate the functionality of the program we will show the workflow on different examples. Furthermore, an overflow analysis will be carried out to show that the overflow of the profiling process can be minimized by using an iterative approach.",
@@ -26,6 +28,7 @@
   },
   "PROJECTS": {
     "HEADING": "Projects",
+    "INTRO_TEXT": "In this section you can find my previous software development projects. These projects are either tasks I had to do at school and university or private projects. For most of the projects the source code can be accessed, viewed and reused via GitHub. If projects are still actively hosted on my server, the website of the project is also listed. In the following you see a selection of my best projects, however, another tag can be selected via the dropdown menu.",
     "WEBSITE": "Website"
   },
   "CV": {
@@ -33,7 +36,7 @@
     "PERSONAL": "Personal Data",
     "EDUCATION": "Education",
     "EMPLOYMENT": "Employment History",
-    "RECOGNITIONS": "Awards AND Recognitions",
+    "RECOGNITIONS": "Awards And Recognitions",
     "LANGUAGES": "Languages",
     "SKILLS_HEADING": "Skills",
     "TELEPHONE": "Request phone number",

@@ -12,17 +12,19 @@ h4 {
   font-size: 1rem;
 }
 
-p {
-  text-align: justify;
+.red-link-container {
+  width: 85px;
+  height: 62px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 
-a {
+.red-button {
   color: #cb1237;
   font-size: 2rem;
-  margin-right: 2rem;
   text-decoration: none;
 }
-
 
 .link-container {
   width: 100%;
