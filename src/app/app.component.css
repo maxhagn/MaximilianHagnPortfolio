@@ -10,7 +10,7 @@
   margin-right: 10%;
   pointer-events: none;
   color: #cb1237;
-  font-family: "Inter-Bold", Serif;
+  font-family: "Inter-Bold", sans-serif;
 }
 
 .navbar-nav {
@@ -22,4 +22,28 @@
   overflow-x: hidden;
   background-color: transparent !important;
   z-index: 0;
+}
+
+.nav-item:nth-of-type(1) .nav-link{
+  animation-delay: 1200ms;
+}
+
+.nav-item:nth-of-type(2) .nav-link{
+  animation-delay: 1400ms;
+}
+
+.nav-item:nth-of-type(3) .nav-link{
+  animation-delay: 1600ms;
+}
+
+.nav-item:nth-of-type(4) .nav-link{
+  animation-delay: 1800ms;
+}
+
+.nav-item:nth-of-type(5) .nav-link{
+  animation-delay: 2000ms;
+}
+
+.nav-item:nth-of-type(6) .nav-link{
+  animation-delay: 2200ms;
 }

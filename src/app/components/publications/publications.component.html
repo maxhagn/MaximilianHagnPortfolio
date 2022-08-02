@@ -1,31 +1,79 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <h2>{{'PUBLICATIONS.HEADING' | translate}}</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <h2 #heading [className]="headingElementIsVisible ? 'animate__animated animate__fadeInRight' : 'invisible'">{{'PUBLICATIONS.HEADING' | translate}}</h2>
+
+      <p #intro_text [className]="introTextElementIsVisible ? 'animate__animated animate__fadeInLeft' : 'invisible'">{{'PUBLICATIONS.INTRO_TEXT' | translate}}</p>
 
       <h3>{{'PUBLICATIONS.BACHELOR_1_TITLE' | translate}}</h3>
-      <h4>{{'PUBLICATIONS.BACHELOR' | translate}} @ {{'PUBLICATIONS.UNIVERSITY' | translate}}</h4>
-      <h4>2022</h4>
+      <h4>2022, {{'PUBLICATIONS.BACHELOR' | translate}} @ {{'PUBLICATIONS.UNIVERSITY' | translate}}</h4>
       <p [innerHtml]="'PUBLICATIONS.BACHELOR_1_TEXT_1' | translate"></p>
       <p [innerHtml]="'PUBLICATIONS.BACHELOR_1_TEXT_2' | translate"></p>
 
-      <a href="assets/pdf/Detecting%20Performance%20Bottlenecks%20through%20AST%20Transformations%20Hagn.pdf" target="_blank">{{'PUBLICATIONS.BOOK' | translate}}</a>
-      <a href="https://github.com/maxhagn/ROIProfilerCPP" target="_blank">Source Code</a>
+      <div class="link-container">
+        <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
+           placement="bottom"
+           target="_blank"
+           href="assets/pdf/Detecting%20Performance%20Bottlenecks%20through%20AST%20Transformations%20Hagn.pdf">
+          <fa-icon [icon]="faBook"></fa-icon>
+        </a>
+
+        <a [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
+           placement="bottom"
+           target="_blank"
+           href="https://github.com/maxhagn/ROIProfilerCPP">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+      </div>
 
       <h3>{{'PUBLICATIONS.DIPLOMA_TITLE' | translate}}</h3>
-      <h4>{{'PUBLICATIONS.DIPLOMA' | translate}} @ {{'PUBLICATIONS.SCHOOL' | translate}}</h4>
-      <h4>2018</h4>
+      <h4>2018, {{'PUBLICATIONS.DIPLOMA' | translate}} @ {{'PUBLICATIONS.SCHOOL' | translate}}</h4>
       <p [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_1' | translate"></p>
       <p [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_2' | translate"></p>
 
-      <a href="assets/pdf/Detecting%20Performance%20Bottlenecks%20through%20AST%20Transformations%20Hagn.pdf" target="_blank">{{'PUBLICATIONS.BOOK' | translate}}</a>
-      <br>
-      <a href="https://info-diploma-thesis.hagn.network/" target="_blank">Overview {{'PUBLICATIONS.WEBSITE' | translate}}</a>
-      <a href="https://css-framework.hagn.network" target="_blank">{{'PUBLICATIONS.WEBSITE' | translate}} CSS Framework</a>
-      <br>
-      <a href="https://github.com/maxhagn/DiplomaProjectInfoPage" target="_blank">Source Code Overview Website</a>
-      <a href="https://github.com/maxhagn/CSSFramework" target="_blank">Source Code CSS Framework</a>
-      <a href="https://github.com/maxhagn/DiplomaE-LearningPlatform" target="_blank">Source Code E-Learning Platform </a>
+      <div class="link-container">
+        <a [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
+           placement="bottom"
+           target="_blank"
+           href="assets/pdf/Creative%20Puzzle%20Webdevelopment%20Class%20Hagn.pdf">
+          <fa-icon [icon]="faBook"></fa-icon>
+        </a>
+
+        <a [ngbTooltip]="'PUBLICATIONS.WEBSITE' | translate"
+           placement="bottom"
+           target="_blank"
+           href="https://info-diploma-thesis.hagn.network/">
+          <fa-icon [icon]="faEarthEurope"></fa-icon>
+        </a>
+
+        <a [ngbTooltip]="'PUBLICATIONS.WEBSITE' | translate"
+           placement="bottom"
+           target="_blank"
+           href="https://css-framework.hagn.network">
+          <fa-icon [icon]="faEarthEurope"></fa-icon>
+        </a>
+
+        <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
+           placement="bottom"
+           target="_blank"
+           href="https://github.com/maxhagn/DiplomaProjectInfoPage">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+
+        <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
+           placement="bottom"
+           target="_blank"
+           href="https://github.com/maxhagn/CSSFramework">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+
+        <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
+           placement="bottom"
+           target="_blank"
+           href="https://github.com/maxhagn/DiplomaE-LearningPlatform">
+          <fa-icon [icon]="faGithub"></fa-icon>
+        </a>
+      </div>
 
     </div>
   </div>

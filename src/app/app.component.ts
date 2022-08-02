@@ -1,5 +1,4 @@
-import {Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
-import {Subscription} from "rxjs";
+import {Component, ElementRef, Inject, ViewChild} from '@angular/core';
 import {NgScrollbar} from "ngx-scrollbar";
 import {DOCUMENT} from "@angular/common";
 import {filter} from "rxjs/operators";
@@ -15,37 +14,33 @@ import {TranslateService} from "@ngx-translate/core";
 export class AppComponent {
 
   @ViewChild(NgScrollbar, {static: true}) scrollbarRef: NgScrollbar;
+
+  @ViewChild('landing', {read: ElementRef}) landingElement;
+  @ViewChild('publications', {read: ElementRef}) publicationsElement;
+  @ViewChild('projects', {read: ElementRef}) projectsElement;
+  @ViewChild('cv', {read: ElementRef}) cvElement;
   @ViewChild('contact', {read: ElementRef}) contactElement;
-  private _scrollSubscription = Subscription.EMPTY;
-  public transformBox: number;
-  public navbarColor: string;
+  @ViewChild('footer', {read: ElementRef}) footerElement;
+
   public navbarDisplay: string;
   public opacityClass: string;
-  isMenuCollapsed: boolean;
-  activeMenuEntry: number;
-  currentComponent: string;
-  faBars = faBars;
-  faXmark = faXmark;
+  public isMenuCollapsed: boolean;
+  public activeMenuEntry: number;
+  public currentComponent: string;
 
-  title = 'Ang10-NGX-translate';
+  public faBars = faBars;
+  public faXmark = faXmark;
 
-  languageList = [
+  public languageList = [
     {code: 'en', label: 'English'},
     {code: 'de', label: 'German'}
   ];
-
-  changeLang(lang: string) {
-    this.translate.use(lang);
-  }
 
   constructor(public translate: TranslateService, @Inject(DOCUMENT) private document: Document, private router: Router) {
     this.translate.setDefaultLang('en');
     this.translate.use('en')
     this.currentComponent = "Our System"
     this.isMenuCollapsed = true;
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
-      this.getRoute();
-    });
   }
 
   ngOnInit(): void {
@@ -53,33 +48,13 @@ export class AppComponent {
     this.opacityClass = 'navbar navbar-expand-lg navbar-light align-items-end';
     this.currentComponent = "Our System"
     this.isMenuCollapsed = true;
-    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe((event: any) => {
+    this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
       this.getRoute();
     });
   }
 
-  ngAfterViewInit(): void {
-    this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
-      this.setScrollAnimations(e)
-    });
-  }
-
-  @HostListener('window:scroll', ['$event'])
-  async setScrollAnimations(event) {
-    console.log(event.target.scrollTop)
-    console.log(window.innerHeight)
-    if (event.target.scrollTop > 100 && event.target.scrollTop < window.innerHeight) {
-      this.opacityClass = 'navbar navbar-expand-lg navbar-light align-items-end opacity-none';
-      this.navbarColor = 'rgb(68,70,82)';
-    } else if (event.target.scrollTop >= window.innerHeight && event.target.scrollTop < this.contactElement.nativeElement.offsetTop - 60) {
-      this.navbarColor = 'rgb(68,70,82)';
-      this.opacityClass = 'navbar navbar-expand-lg navbar-light align-items-end';
-    } else {
-      this.navbarColor = 'rgb(255,255,255)';
-      this.opacityClass = 'navbar navbar-expand-lg navbar-light align-items-end';
-    }
-    this.transformBox = - event.target.scrollTop / (window.innerHeight/2) * 50;
-
+  public changeLang(lang: string): void {
+    this.translate.use(lang);
   }
 
   scrollToElement($element): void {

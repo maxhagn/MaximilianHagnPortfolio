@@ -1,0 +1,31 @@
+h2 {
+  font-size: 4.5rem;
+  font-family: "Inter-Black", serif;
+  color: #cb1237;
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+h4 {
+  font-family: "Inter-Black", serif;
+  color: #343333;
+  font-size: 1rem;
+}
+
+p {
+  text-align: justify;
+}
+
+a {
+  color: #cb1237;
+  font-size: 2rem;
+  margin-right: 2rem;
+  text-decoration: none;
+}
+
+
+.link-container {
+  width: 100%;
+  text-align: right;
+  margin-bottom: 3rem;
+}
