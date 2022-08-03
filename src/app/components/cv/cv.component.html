@@ -4,11 +4,23 @@
       <h2>{{'CV.HEADING' | translate}}</h2>
       <h3>Maximilian Alfred Hagn</h3>
       <!--<img alt="Bild von Maximilian Hagn" src="assets/images/Max_CV.jpg">-->
-      <ul>
-        <li><a href="mailto:maximilian@hagn.network">maximilian@hagn.network</a></li>
-        <li><a href="mailto:maximilian@hagn.network">{{'CV.TELEPHONE' | translate}}</a></li>
-        <li><a href="mailto:maximilian@hagn.network">{{'CV.ADDRESS' | translate}}</a></li>
-      </ul>
+      <div class="link-container">
+        <a ngbTooltip="Write an E-Mail"
+           placement="bottom"
+           href="mailto:maximilian@hagn.network">
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+        </a>
+        <a ngbTooltip="Request Phone Number"
+           placement="bottom"
+           href="mailto:maximilian@hagn.network">
+          <fa-icon [icon]="faPhone"></fa-icon>
+        </a>
+        <a ngbTooltip="Request Address"
+           placement="bottom"
+           href="mailto:maximilian@hagn.network">
+          <fa-icon [icon]="faHouse"></fa-icon>
+        </a>
+      </div>
       <h4>{{'CV.PERSONAL' | translate}}</h4>
       <ul>
         <li>{{'CV.BIRTHDAY' | translate}}</li>
@@ -136,13 +148,28 @@
         </li>
       </ul>
       <h4>{{'CV.SKILLS_HEADING' | translate}}</h4>
+      <p>At the age of 14 I started to get involved with computer science and software development by moving to a
+        technical high school. After graduating from this five year institution I already had a profound knowledge in
+        this area and thus changed to a technical university to study first Business Informatics and later additionally
+        Software and Information Engineering. Besides some internships in this field I worked for a computer company for
+        three years and worked there in technical support and also developed a small website. Afterwards I changed to
+        another company for which I am currently developing a productivity software. In the following graphic my skills
+        are roughly recorded, but the button can also be used to view the details.</p>
 
-      <button (click)="setDetailed(true)" *ngIf="!isDetailedView" class="btn btn-primary">
-        Details
-      </button>
-      <button (click)="setDetailed(false)" *ngIf="isDetailedView" class="btn btn-primary">
-        Overview
-      </button>
+      <div class="link-container">
+        <button ngbTooltip="Show Detailed View"
+                placement="bottom"
+                (click)="setDetailed(true)"
+                *ngIf="!isDetailedView">
+          <fa-icon [icon]="faInfo"></fa-icon>
+        </button>
+        <button ngbTooltip="Show Overview"
+                placement="bottom"
+                (click)="setDetailed(false)"
+                *ngIf="isDetailedView">
+          <fa-icon [icon]="faUsersViewfinder"></fa-icon>
+        </button>
+      </div>
 
       <div [hidden]="isDetailedView">
         <div id="myCanvasContainer">

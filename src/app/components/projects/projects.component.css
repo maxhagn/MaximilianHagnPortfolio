@@ -31,14 +31,14 @@ h4 {
   margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
-  background-color: #cb1237;
+  background-color: #363434;
   color: white;
 }
 
 .keyword::after {
   background: #f0f0f1;
   border-bottom: 13px solid transparent;
-  border-left: 10px solid #cb1237;
+  border-left: 10px solid #363434;
   border-top: 13px solid transparent;
   content: '';
   position: absolute;

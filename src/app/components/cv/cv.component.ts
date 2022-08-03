@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {faPhone, faEnvelope, faHouse, faUsersViewfinder, faInfo} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-cv',
@@ -6,6 +7,12 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./cv.component.css']
 })
 export class CvComponent implements OnInit {
+
+  public faPhone = faPhone;
+  public faEnvelope = faEnvelope;
+  public faHouse = faHouse;
+  public faUsersViewfinder = faUsersViewfinder
+  public faInfo = faInfo;
 
   public isDetailedView: boolean;
 

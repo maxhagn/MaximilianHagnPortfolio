@@ -13,11 +13,7 @@ import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
-
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, './assets/data/', '.json');
 }
 
 import {AppComponent} from './app.component';
@@ -28,6 +24,7 @@ import {PublicationsComponent} from "./components/publications/publications.comp
 import {FooterComponent} from './components/footer/footer.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {NgScrollbarModule} from "ngx-scrollbar";
+import {AboutComponent} from './components/about/about.component';
 
 registerLocaleData(localeDe, localeDeExtra);
 
@@ -39,7 +36,8 @@ registerLocaleData(localeDe, localeDeExtra);
     ProjectsComponent,
     PublicationsComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    AboutComponent
   ],
     imports: [
         BrowserModule,

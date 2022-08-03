@@ -48,3 +48,7 @@
 .nav-item:nth-of-type(6) .nav-link{
   animation-delay: 1450ms;
 }
+
+.nav-item:nth-of-type(7) .nav-link{
+  animation-delay: 1600ms;
+}

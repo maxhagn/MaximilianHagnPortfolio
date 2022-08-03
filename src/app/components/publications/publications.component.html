@@ -28,12 +28,10 @@
          [innerHtml]="'PUBLICATIONS.BACHELOR_1_TEXT_2' | translate"></p>
 
       <div #bachelor_1_link_container
-           [className]="isVisible[6] ? 'animate__animated animate__fadeInLeft' : 'invisible'"
-           class="link-container">
+           [className]="isVisible[6] ? 'link-container animate__animated animate__fadeInLeft' : 'invisible'">
         <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
            placement="bottom"
            target="_blank"
-           class="red-button"
            href="assets/pdf/Detecting%20Performance%20Bottlenecks%20through%20AST%20Transformations%20Hagn.pdf">
           <fa-icon [icon]="faBook"></fa-icon>
         </a>
@@ -41,7 +39,6 @@
         <a [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
            placement="bottom"
            target="_blank"
-           class="red-button"
            href="https://github.com/maxhagn/ROIProfilerCPP">
           <fa-icon [icon]="faGithub"></fa-icon>
         </a>
@@ -53,14 +50,13 @@
       <p #diploma_text_2 [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_2' | translate"></p>
 
       <div #diploma_link_container class="link-container">
-        <div class="fit-content red-link-container">
-          <a [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
-             class="red-button"
-             placement="bottom"
-             target="_blank"
-             href="assets/pdf/Creative%20Puzzle%20Webdevelopment%20Class%20Hagn.pdf">
+        <div class="fit-content d-inline-block">
+          <button [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
+             class="action-button btn"
+             placement="top"
+             (click)="openDiplomaBook()">
             <fa-icon [icon]="faBook"></fa-icon>
-          </a>
+          </button>
         </div>
 
         <div class="fit-content d-inline-block"
@@ -68,7 +64,7 @@
              placement="top">
           <div placement="bottom"
                ngbDropdown>
-            <button class="action-button btn red-button" id="show_websites" ngbDropdownToggle>
+            <button class="action-button btn" id="show_websites" ngbDropdownToggle>
               <fa-icon [icon]="faEarthEurope"></fa-icon>
             </button>
             <div aria-labelledby="show_settings" ngbDropdownMenu>
@@ -91,7 +87,7 @@
              placement="top">
           <div placement="bottom"
                ngbDropdown>
-            <button class="action-button btn red-button" id="show_github" ngbDropdownToggle>
+            <button class="action-button btn" id="show_github" ngbDropdownToggle>
               <fa-icon [icon]="faGithub"></fa-icon>
             </button>
             <div aria-labelledby="show_settings" ngbDropdownMenu>

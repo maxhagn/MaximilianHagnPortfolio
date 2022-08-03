@@ -75,3 +75,7 @@ h3 {
 p {
   text-align: justify;
 }
+
+.dropdown-toggle::after {
+  display:none;
+}

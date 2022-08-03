@@ -83,4 +83,8 @@ export class PublicationsComponent implements OnInit, AfterViewInit {
       }
     })
   }
+
+  public openDiplomaBook(): void {
+    window.open('assets/pdf/Creative%20Puzzle%20Webdevelopment%20Class%20Hagn.pdf');
+  }
 }

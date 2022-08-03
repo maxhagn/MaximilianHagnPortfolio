@@ -9,18 +9,21 @@
         <a (click)="scrollToElement(landing)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.HOME' | translate}}</a>
       </li>
       <li [ngbNavItem]="2" class="nav-item">
-        <a (click)="scrollToElement(publications)" class="nav-link  animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.PUBLICATIONS' | translate}}</a>
+        <a (click)="scrollToElement(about)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.ABOUT' | translate}}</a>
       </li>
       <li [ngbNavItem]="3" class="nav-item">
-        <a (click)="scrollToElement(projects)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.PROJECTS' | translate}}</a>
+        <a (click)="scrollToElement(publications)" class="nav-link  animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.PUBLICATIONS' | translate}}</a>
       </li>
       <li [ngbNavItem]="4" class="nav-item">
-        <a (click)="scrollToElement(cv)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.CV' | translate}}</a>
+        <a (click)="scrollToElement(projects)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.PROJECTS' | translate}}</a>
       </li>
       <li [ngbNavItem]="5" class="nav-item">
-        <a (click)="scrollToElement(contact)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.CONTACT' | translate}}</a>
+        <a (click)="scrollToElement(cv)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.CV' | translate}}</a>
       </li>
       <li [ngbNavItem]="6" class="nav-item">
+        <a (click)="scrollToElement(contact)" class="nav-link animate__animated animate__bounceIn" ngbNavLink>{{'NAVBAR.CONTACT' | translate}}</a>
+      </li>
+      <li [ngbNavItem]="7" class="nav-item">
         <a *ngIf="translate.currentLang == 'en'" (click)="changeLang('de')" class="nav-link animate__animated animate__bounceIn" ngbNavLink>Deutsch</a>
         <a *ngIf="translate.currentLang == 'de'" (click)="changeLang('en')" class="nav-link animate__animated animate__bounceIn" ngbNavLink>English</a>
       </li>
@@ -38,6 +41,9 @@
 
     <div #landing>
       <app-landing></app-landing>
+    </div>
+    <div #about>
+      <app-about></app-about>
     </div>
     <div #publications>
       <app-publications [scrollbarRef]="scrollbarRef"></app-publications>

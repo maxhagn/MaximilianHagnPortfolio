@@ -12,22 +12,23 @@ h4 {
   font-size: 1rem;
 }
 
-.red-link-container {
-  width: 85px;
-  height: 62px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.red-button {
-  color: #cb1237;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
 .link-container {
   width: 100%;
   text-align: right;
   margin-bottom: 3rem;
+}
+
+a {
+  color: #cb1237;
+  font-size: 2rem;
+  text-decoration: none;
+  margin-right: 2rem;
+  border-radius: 100%;
+}
+
+
+button {
+  color: #cb1237;
+  font-size: 2rem;
+  text-decoration: none;
 }
