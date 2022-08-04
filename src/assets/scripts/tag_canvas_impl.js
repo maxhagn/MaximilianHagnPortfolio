@@ -1,10 +1,10 @@
-var myScript = document.createElement("script");
-myScript.setAttribute("src", '/assets/scripts/tag_canvas.js');
-myScript.setAttribute("id", 'tagcanvas');
-document.body.appendChild(myScript);
-
-window.onload = function () {
+function initCanvas() {
   try {
+    var myScript = document.createElement("script");
+    myScript.setAttribute("src", '/assets/scripts/tag_canvas.js');
+    myScript.setAttribute("id", 'tagcanvas');
+    document.body.appendChild(myScript);
+
     TagCanvas.Start('tagcanvas', 'tags', {
       textColour: '#000000',
       outlineThickness: 0.5,
@@ -25,5 +25,7 @@ window.onload = function () {
   } catch (e) {
     document.getElementById('myCanvasContainer').style.display = 'none';
   }
-};
+}
+
+
 

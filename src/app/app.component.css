@@ -9,7 +9,7 @@
   margin-left: 10%;
   margin-right: 10%;
   pointer-events: none;
-  color: #cb1237;
+  color: var(--main-red-color);
   font-family: "Inter-Bold", sans-serif;
   animation-delay: 1700ms;
 }
@@ -25,30 +25,44 @@
   z-index: 0;
 }
 
-.nav-item:nth-of-type(1) .nav-link{
+.nav-item:nth-of-type(1) .nav-link {
   animation-delay: 700ms;
 }
 
-.nav-item:nth-of-type(2) .nav-link{
+.nav-item:nth-of-type(2) .nav-link {
   animation-delay: 850ms;
 }
 
-.nav-item:nth-of-type(3) .nav-link{
+.nav-item:nth-of-type(3) .nav-link {
   animation-delay: 1000ms;
 }
 
-.nav-item:nth-of-type(4) .nav-link{
+.nav-item:nth-of-type(4) .nav-link {
   animation-delay: 1150ms;
 }
 
-.nav-item:nth-of-type(5) .nav-link{
+.nav-item:nth-of-type(5) .nav-link {
   animation-delay: 1300ms;
 }
 
-.nav-item:nth-of-type(6) .nav-link{
+.nav-item:nth-of-type(6) .nav-link {
   animation-delay: 1450ms;
 }
 
-.nav-item:nth-of-type(7) .nav-link{
+.nav-item:nth-of-type(7) .nav-link {
   animation-delay: 1600ms;
+}
+
+.spinner-container {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-background-color);
+  color: white;
+  z-index: 999;
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {NgScrollbar} from "ngx-scrollbar";
 
 @Component({
   selector: 'app-about',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  @Input() scrollbarRef: NgScrollbar;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

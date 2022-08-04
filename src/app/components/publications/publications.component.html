@@ -2,59 +2,72 @@
   <div class="row justify-content-center">
     <div class="col-12 col-md-8 col-lg-6">
       <h2 #heading
-          [className]="isVisible[0] ? 'animate__animated animate__fadeInRight' : 'invisible'">
+          [className]="isVisible[0] ? 'animate__animated animate__fadeIn' : 'invisible'">
         {{'PUBLICATIONS.HEADING' | translate}}
       </h2>
 
       <p #intro_text
-         [className]="isVisible[1] ? 'animate__animated animate__fadeInLeft' : 'invisible'">
+         [className]="isVisible[1] ? 'animate__animated animate__fadeIn' : 'invisible'">
         {{'PUBLICATIONS.INTRO_TEXT' | translate}}
       </p>
 
       <h3 #bachelor_1_heading
-          [className]="isVisible[2] ? 'animate__animated animate__fadeInLeft' : 'invisible'">
+          [className]="isVisible[2] ? 'animate__animated animate__fadeIn' : 'invisible'">
         {{'PUBLICATIONS.BACHELOR_1_TITLE' | translate}}
       </h3>
       <h4 #bachelor_1_info
-          [className]="isVisible[3] ? 'animate__animated animate__fadeInLeft' : 'invisible'">
+          [className]="isVisible[3] ? 'animate__animated animate__fadeIn' : 'invisible'">
         2022, {{'PUBLICATIONS.BACHELOR' | translate}}
         @ {{'PUBLICATIONS.UNIVERSITY' | translate}}
       </h4>
       <p #bachelor_1_text_1
-         [className]="isVisible[4] ? 'animate__animated animate__fadeInLeft' : 'invisible'"
+         [className]="isVisible[4] ? 'animate__animated animate__fadeIn' : 'invisible'"
          [innerHtml]="'PUBLICATIONS.BACHELOR_1_TEXT_1' | translate"></p>
       <p #bachelor_1_text_2
-         [className]="isVisible[5] ? 'animate__animated animate__fadeInLeft' : 'invisible'"
+         [className]="isVisible[5] ? 'animate__animated animate__fadeIn' : 'invisible'"
          [innerHtml]="'PUBLICATIONS.BACHELOR_1_TEXT_2' | translate"></p>
 
       <div #bachelor_1_link_container
-           [className]="isVisible[6] ? 'link-container animate__animated animate__fadeInLeft' : 'invisible'">
-        <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
+           [className]="isVisible[6] ? 'link-container animate__animated animate__fadeIn' : 'invisible'">
+        <a [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
+           class="red-link"
+           href="assets/pdf/Detecting%20Performance%20Bottlenecks%20through%20AST%20Transformations%20Hagn.pdf"
            placement="bottom"
-           target="_blank"
-           href="assets/pdf/Detecting%20Performance%20Bottlenecks%20through%20AST%20Transformations%20Hagn.pdf">
+           target="_blank">
           <fa-icon [icon]="faBook"></fa-icon>
         </a>
 
-        <a [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
+        <a [ngbTooltip]="'PUBLICATIONS.SOURCE' | translate"
+           class="red-link"
+           href="https://github.com/maxhagn/ROIProfilerCPP"
            placement="bottom"
-           target="_blank"
-           href="https://github.com/maxhagn/ROIProfilerCPP">
+           target="_blank">
           <fa-icon [icon]="faGithub"></fa-icon>
         </a>
       </div>
 
-      <h3 #diploma_heading>{{'PUBLICATIONS.DIPLOMA_TITLE' | translate}}</h3>
-      <h4 #diploma_info>2018, {{'PUBLICATIONS.DIPLOMA' | translate}} @ {{'PUBLICATIONS.SCHOOL' | translate}}</h4>
-      <p #diploma_text_1 [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_1' | translate"></p>
-      <p #diploma_text_2 [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_2' | translate"></p>
+      <h3 #diploma_heading
+          [className]="isVisible[7] ? 'animate__animated animate__fadeIn' : 'invisible'">
+        {{'PUBLICATIONS.DIPLOMA_TITLE' | translate}}
+      </h3>
+      <h4 #diploma_info
+          [className]="isVisible[8] ? 'animate__animated animate__fadeIn' : 'invisible'">
+        2018, {{'PUBLICATIONS.DIPLOMA' | translate}} @ {{'PUBLICATIONS.SCHOOL' | translate}}
+      </h4>
+      <p #diploma_text_1
+         [className]="isVisible[9] ? 'animate__animated animate__fadeIn' : 'invisible'"
+         [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_1' | translate"></p>
+      <p #diploma_text_2
+         [className]="isVisible[10] ? 'animate__animated animate__fadeIn' : 'invisible'"
+         [innerHtml]="'PUBLICATIONS.DIPLOMA_TEXT_2' | translate"></p>
 
-      <div #diploma_link_container class="link-container">
+      <div #diploma_link_container
+           [className]="isVisible[11] ? 'link-container animate__animated animate__fadeIn' : 'invisible'">
         <div class="fit-content d-inline-block">
-          <button [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
-             class="action-button btn"
-             placement="top"
-             (click)="openDiplomaBook()">
+          <button (click)="openDiplomaBook()"
+                  [ngbTooltip]="'PUBLICATIONS.BOOK' | translate"
+                  class="action-button btn"
+                  placement="top">
             <fa-icon [icon]="faBook"></fa-icon>
           </button>
         </div>
@@ -62,20 +75,20 @@
         <div class="fit-content d-inline-block"
              ngbTooltip="Explore the Websites"
              placement="top">
-          <div placement="bottom"
-               ngbDropdown>
+          <div ngbDropdown
+               placement="bottom">
             <button class="action-button btn" id="show_websites" ngbDropdownToggle>
               <fa-icon [icon]="faEarthEurope"></fa-icon>
             </button>
             <div aria-labelledby="show_settings" ngbDropdownMenu>
-              <a target="_blank"
-                 href="https://info-diploma-thesis.hagn.network/"
-                 ngbDropdownItem>
+              <a href="https://info-diploma-thesis.hagn.network/"
+                 ngbDropdownItem
+                 target="_blank">
                 {{'PUBLICATIONS.WEBSITE_INFO' | translate}}
               </a>
-              <a target="_blank"
-                 href="https://css-framework.hagn.network"
-                 ngbDropdownItem>
+              <a href="https://css-framework.hagn.network"
+                 ngbDropdownItem
+                 target="_blank">
                 {{'PUBLICATIONS.WEBSITE_FRAMEWORK' | translate}}
               </a>
             </div>
@@ -85,25 +98,25 @@
         <div class="fit-content d-inline-block"
              ngbTooltip="Explore the Websites"
              placement="top">
-          <div placement="bottom"
-               ngbDropdown>
+          <div ngbDropdown
+               placement="bottom">
             <button class="action-button btn" id="show_github" ngbDropdownToggle>
               <fa-icon [icon]="faGithub"></fa-icon>
             </button>
             <div aria-labelledby="show_settings" ngbDropdownMenu>
-              <a target="_blank"
-                 href="https://github.com/maxhagn/DiplomaProjectInfoPage"
-                 ngbDropdownItem>
+              <a href="https://github.com/maxhagn/DiplomaProjectInfoPage"
+                 ngbDropdownItem
+                 target="_blank">
                 {{'PUBLICATIONS.WEBSITE_INFO' | translate}}
               </a>
-              <a target="_blank"
-                 href="https://github.com/maxhagn/CSSFramework"
-                 ngbDropdownItem>
+              <a href="https://github.com/maxhagn/CSSFramework"
+                 ngbDropdownItem
+                 target="_blank">
                 {{'PUBLICATIONS.WEBSITE_FRAMEWORK' | translate}}
               </a>
-              <a target="_blank"
-                 href="https://github.com/maxhagn/DiplomaE-LearningPlatform"
-                 ngbDropdownItem>
+              <a href="https://github.com/maxhagn/DiplomaE-LearningPlatform"
+                 ngbDropdownItem
+                 target="_blank">
                 {{'PUBLICATIONS.WEBSITE_E_LEARNING' | translate}}
               </a>
             </div>

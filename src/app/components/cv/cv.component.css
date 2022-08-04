@@ -1,7 +1,7 @@
 h2 {
   font-size: 4.5rem;
   font-family: "Inter-Black", sans-serif;
-  color: #cb1237;
+  color: var(--main-red-color);
   text-align: left;
 }
 
@@ -9,7 +9,7 @@ h3 {
   margin-top: 0;
   font-size: 3rem;
   font-family: "Inter-Semi-Bold", sans-serif;
-  color: #494848;
+  color: var(--main-black-color);
   text-align: right;
 }
 
@@ -55,7 +55,7 @@ td:nth-child(2) {
   width: 14px;
   height: 14px;
   border-radius: 100%;
-  background-color: black;
+  background-color: var(--main-black-color);
 }
 
 .point_gray {
@@ -72,17 +72,16 @@ td:nth-child(2) {
 }
 
 a {
-  color: #797979;
+  color: var(--main-black-color);
   font-size: 2rem;
   text-decoration: none;
   margin-right: 2rem;
 }
 
 button {
-  color: #cb1237;
-  font-size: 2rem;
+  color: var(--main-red-color);
+  font-size: 1.3rem;
   text-decoration: none;
-  margin-right: 2rem;
   background: none;
   border: none;
 }

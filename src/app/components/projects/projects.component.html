@@ -1,18 +1,27 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-6 col-xxl-6">
-      <h2>{{'PROJECTS.HEADING' | translate}}</h2>
+      <h2 #heading
+          [className]="isVisible[0] ? 'animate__animated animate__fadeIn' : 'invisible'">
+        {{'PROJECTS.HEADING' | translate}}
+      </h2>
 
-      <p #intro_text>{{'PROJECTS.INTRO_TEXT' | translate}}</p>
+      <p #intro_text
+         [className]="isVisible[1] ? 'animate__animated animate__fadeIn' : 'invisible'">
+        {{'PROJECTS.INTRO_TEXT' | translate}}
+      </p>
 
-      <div class="w-100 text-end d-flex justify-content-end">
+      <div #search_button
+           class="w-100 text-end d-flex justify-content-end">
         <div class="fit-content"
              ngbTooltip="Search for Tag"
              placement="top">
           <div
-            placement="bottom"
-            ngbDropdown>
-            <button class="btn action-button ms-1 me-1" id="show_settings" ngbDropdownToggle>
+            ngbDropdown
+            placement="bottom">
+            <button [className]="isVisible[2] ? 'btn action-button ms-1 me-1 animate__animated animate__fadeIn' : 'invisible'"
+                    id="show_settings"
+                    ngbDropdownToggle>
               <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
             </button>
             <div aria-labelledby="show_settings" ngbDropdownMenu>
@@ -27,9 +36,9 @@
         </div>
       </div>
 
-      <div class="row justify-content-evenly">
-
-        <div class="card" *ngFor="let project of currentSelectedProjects;">
+      <div #project_container class="row justify-content-evenly">
+        <div *ngFor="let project of currentSelectedProjects;"
+             [className]="isVisible[3] ? 'card animate__animated animate__fadeIn' : 'card invisible'">
           <div class="card-content">
             <div class="card-front">
               <div class="row">
@@ -47,7 +56,7 @@
               <div class="row mt-2">
                 <div class="col-12 text-center">
                   <ng-container *ngFor="let keyword of project.keywords">
-                    <div class="keyword" *ngIf="keyword.tag != 'Top'">
+                    <div *ngIf="keyword.tag != 'Top'" class="keyword">
                       {{keyword.tag}}
                     </div>
                   </ng-container>
@@ -70,13 +79,13 @@
               <div class="row mt-2 mb-2">
                 <div class="col-12 text-center">
                   <a *ngIf="project.website"
-                     target="_blank"
-                     [href]="project.website">
+                     [href]="project.website"
+                     target="_blank">
                     <fa-icon [icon]="faBrowser"></fa-icon>
                   </a>
                   <a *ngIf="project.github"
-                     target="_blank"
-                     [href]="project.github">
+                     [href]="project.github"
+                     target="_blank">
                     <fa-icon [icon]="faGithub"></fa-icon>
                   </a>
                 </div>

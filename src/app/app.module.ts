@@ -11,11 +11,6 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-
-export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/data/', '.json');
-}
-
 import {AppComponent} from './app.component';
 import {CvComponent} from "./components/cv/cv.component";
 import {LandingComponent} from "./components/landing/landing.component";
@@ -25,6 +20,10 @@ import {FooterComponent} from './components/footer/footer.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {NgScrollbarModule} from "ngx-scrollbar";
 import {AboutComponent} from './components/about/about.component';
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/data/', '.json');
+}
 
 registerLocaleData(localeDe, localeDeExtra);
 
@@ -39,24 +38,24 @@ registerLocaleData(localeDe, localeDeExtra);
     ContactComponent,
     AboutComponent
   ],
-    imports: [
-        BrowserModule,
-        NgbModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        FormsModule,
-        FontAwesomeModule,
-        NgScrollbarModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient]
-          },
-          defaultLanguage: 'en',
-        })
-    ],
+  imports: [
+    BrowserModule,
+    NgbModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    FontAwesomeModule,
+    NgScrollbarModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'en',
+    })
+  ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     {provide: LOCALE_ID, useValue: "de"}

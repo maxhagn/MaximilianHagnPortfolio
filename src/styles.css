@@ -28,6 +28,13 @@
   src: url(/assets/fonts/Inter-ExtraBold.ttf);
 }
 
+/*----------COLORS----------*/
+:root {
+  --main-background-color: #f0f0f1;
+  --main-red-color: #cb1237;
+  --main-black-color: #22262a;
+}
+
 /*----------FONT----------*/
 * {
   font-family: "Inter-Regular", serif;
@@ -41,7 +48,7 @@ html, body {
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  background-color: #f0f0f1;
+  background-color: var(--main-background-color);
 }
 
 h1 {
@@ -51,12 +58,12 @@ h1 {
 
 h2 {
   font-family: "Inter-Bold", serif;
-  margin-top: 3rem;
+  margin-top: 6rem;
 }
 
 h3 {
   font-family: "Inter-Semi-Bold", serif;
-  margin-top: 1.8rem;
+  margin-top: 4rem;
 }
 
 .fit-content {
@@ -77,5 +84,5 @@ p {
 }
 
 .dropdown-toggle::after {
-  display:none;
+  display: none;
 }

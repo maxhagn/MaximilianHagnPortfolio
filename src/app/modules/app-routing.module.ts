@@ -4,7 +4,6 @@ import {CvComponent} from "../components/cv/cv.component";
 import {ProjectsComponent} from "../components/projects/projects.component";
 import {PublicationsComponent} from "../components/publications/publications.component";
 import {LandingComponent} from "../components/landing/landing.component";
-import {AppComponent} from "../app.component";
 
 const routes: Routes = [
 

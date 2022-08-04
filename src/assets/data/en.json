@@ -45,6 +45,7 @@
     "BIRTHDAY": "Birthday: August 25, 1997",
     "BIRTHPLACE": "Birthplace: Dresden, Germany",
     "CITIZENSHIP": "Citizenship: German",
+    "RESIDENCE": "Place of Residence: Vienna, Austria",
     "UNIVERSITY": "Technical University of Vienna",
     "BUSINESS_INFORMATICS": "Field of study Business Informatics",
     "SOFTWARE_ENGINEERING": "Field of study Software & Information Engineering",
@@ -64,6 +65,7 @@
     "PROJECT_CERTIFICATION": "Project Management Certification (IMPA, jZpm)",
     "TEAM_BUILDING": "Communication, and team building seminar (34 hours)",
     "SIECAMS_LEADER": "Project Leader of an information technology project (product flyer for the service \"Siecams\" of Siemens AG) in the context of the project management course",
+    "BSC_1": "Award of the academic degree BSc (Detecting Performance Bottlenecks through AST Transformations)",
     "HEAD_BOY": "Vice departmental representative and 3rd on the school community committee (3rd vice head boy)",
     "LEADER_PROJECT": "Project Leader of an information technology project within the scope of project management course",
     "HIGH_SCHOOL_REP": "High School Class Representative",
@@ -71,7 +73,6 @@
     "ENGLISH": "English (First Modern Foreign Language)"
   },
   "CONTACT": {
-
   },
   "FOOTER": {
     "AUSTRIA": "Austria"
