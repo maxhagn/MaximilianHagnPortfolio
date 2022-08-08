@@ -1,6 +1,9 @@
 footer {
   margin-top: 8rem;
-  padding: 4rem 0;
-  background-color: var(--main-black-color);
-  color: white;
+  padding: 4rem 0 1rem 0;
+  color: #23272b;
+}
+
+footer .col {
+  text-align: center;
 }

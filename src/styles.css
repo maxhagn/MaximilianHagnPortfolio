@@ -33,12 +33,82 @@
   --main-background-color: #f0f0f1;
   --main-red-color: #cb1237;
   --main-black-color: #22262a;
+  --scrollbar-background: #FFFFFFFF;
+  --scrollbar-thumb-color: #b3b3b3;
+  --scrollbar-thumb-hover-color: #9a9999;
 }
 
 /*----------FONT----------*/
 * {
   font-family: "Inter-Regular", serif;
 }
+
+/*----------GENERALS----------*/
+/*----------SCROLLBAR----------*/
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 9px;
+  transition: 1s all ease;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  transition: 1s all ease;
+}
+
+::-webkit-scrollbar-track:hover {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 32px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover-color);
+  border: none;
+}
+
+::-webkit-scrollbar-button {
+  display: none
+}
+
+.scroll-event {
+  z-index: 2 !important;
+}
+
+.scrollbar-container {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 10px;
+}
+
+.ng-scrollbar-thumb {
+  position: absolute !important;
+  will-change: opacity;
+  transform-origin: top center;
+  width: 8px !important;
+  opacity: 1;
+  background-color: #777474 !important;
+  border-radius: 32px;
+  transition: 1ms all ease;
+}
+
+.ng-scrollbar-wrapper[verticalDragging=true] > scrollbar-y.scrollbar-control .ng-scrollbar-thumb {
+  background-color: #6e6969 !important;
+  transition: 100ms background-color ease-in !important;
+}
+
+.ng-scrollbar-thumb:hover {
+  background-color: #6e6969 !important;
+  transition: 100ms background-color ease-in !important;
+}
+
+
 
 /*----------GENERALS----------*/
 html, body {
@@ -57,9 +127,25 @@ h1 {
 }
 
 h2 {
-  font-family: "Inter-Bold", serif;
   margin-top: 6rem;
+  font-size: 4.5rem;
+  font-family: "Inter-Black", serif;
+  color: var(--main-red-color);
+  margin-bottom: 2rem;
 }
+
+@media screen and (max-width: 600px) {
+  h2 {
+    text-align: left !important;
+    margin-bottom: 1rem;
+    font-size: 12vw;
+  }
+
+  h2 span {
+    font-size: 12vw !important;
+  }
+}
+
 
 h3 {
   font-family: "Inter-Semi-Bold", serif;

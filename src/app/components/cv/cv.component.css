@@ -1,7 +1,4 @@
 h2 {
-  font-size: 4.5rem;
-  font-family: "Inter-Black", sans-serif;
-  color: var(--main-red-color);
   text-align: left;
 }
 
@@ -11,6 +8,16 @@ h3 {
   font-family: "Inter-Semi-Bold", sans-serif;
   color: var(--main-black-color);
   text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+  h3 {
+    font-size: 8vw;
+    text-align: left;
+  }
+  .link-container {
+    text-align: center;
+  }
 }
 
 img {
@@ -69,6 +76,7 @@ td:nth-child(2) {
   width: 100%;
   text-align: right;
   margin-bottom: 3rem;
+  margin-top: 2rem;
 }
 
 a {

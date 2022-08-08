@@ -1,9 +1,5 @@
 h2 {
-  font-size: 4.5rem;
-  font-family: "Inter-Black", serif;
-  color: var(--main-red-color);
   text-align: right;
-  margin-bottom: 2rem;
 }
 
 h4 {

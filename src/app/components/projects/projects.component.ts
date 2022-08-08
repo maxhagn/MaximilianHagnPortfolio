@@ -35,24 +35,24 @@ export class ProjectsComponent implements AfterViewInit {
   public selectableTags: Keyword[] =
     [
       {tag: "Top"},
-      {tag: "Java Spring Boot"},
       {tag: "Angular"},
-      {tag: "Website"},
-      {tag: "C"},
-      {tag: "Flex"},
-      {tag: "Yacc/Bison"},
-      {tag: "University"},
       {tag: "Blender"},
-      {tag: "Matlab"},
-      {tag: "R Studio"},
-      {tag: "OpenMP"},
-      {tag: "MPI"},
+      {tag: "C"},
       {tag: "C++"},
-      {tag: "LLVM"},
-      {tag: "Java"},
-      {tag: "Security"},
       {tag: "CSS"},
-      {tag: "JavaScript"}
+      {tag: "Flex"},
+      {tag: "Java"},
+      {tag: "Java Spring Boot"},
+      {tag: "JavaScript"},
+      {tag: "LLVM"},
+      {tag: "Matlab"},
+      {tag: "MPI"},
+      {tag: "OpenMP"},
+      {tag: "R Studio"},
+      {tag: "Security"},
+      {tag: "University"},
+      {tag: "Websites"},
+      {tag: "Yacc/Bison"}
     ];
   private _scrollSubscription = Subscription.EMPTY;
 
@@ -61,9 +61,6 @@ export class ProjectsComponent implements AfterViewInit {
       this.currentLanguage = event.lang;
     });
     this.changeSelectedProjects(this.selectableTags[0]);
-    this.selectableTags.sort(function (a, b) {
-      return a.tag.localeCompare(b.tag);
-    });
   }
 
   public ngAfterViewInit(): void {
@@ -76,7 +73,7 @@ export class ProjectsComponent implements AfterViewInit {
   }
 
   @HostListener('window:resize', ['$event'])
-  onScroll() {
+  onWindowResize() {
     this.calculateScrollTops();
   }
 
