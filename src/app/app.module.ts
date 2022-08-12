@@ -16,7 +16,6 @@ import {CvComponent} from "./components/cv/cv.component";
 import {LandingComponent} from "./components/landing/landing.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
 import {PublicationsComponent} from "./components/publications/publications.component";
-import {FooterComponent} from './components/footer/footer.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {NgScrollbarModule} from "ngx-scrollbar";
 
@@ -33,7 +32,6 @@ registerLocaleData(localeDe, localeDeExtra);
     LandingComponent,
     ProjectsComponent,
     PublicationsComponent,
-    FooterComponent,
     ContactComponent
   ],
   imports: [

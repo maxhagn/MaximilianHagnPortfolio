@@ -7,12 +7,6 @@ h4 {
   font-family: "Inter-Semi-Bold", sans-serif;
 }
 
-.project-date {
-  font-family: "Inter-Semi", sans-serif;
-  color: var(--main-black-color);
-  font-size: 2rem;
-}
-
 .keyword {
   border-radius: 3px 0 0 3px;
   display: inline-block;
@@ -63,6 +57,18 @@ h4 {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .project-title-container h4 {
+    font-size: 1.6rem !important;
+  }
+  .project-date {
+    font-size: 1.2rem !important;
+  }
+  .keyword {
+    font-size: .8rem;
+  }
+}
+
 .project-title-container {
   height: 20vh;
   display: flex;
@@ -77,8 +83,14 @@ h4 {
   font-size: 3rem;
 }
 
+.project-date {
+  font-family: "Inter-Semi", sans-serif;
+  color: var(--main-black-color);
+  font-size: 2rem;
+}
+
 .link-container {
-  height: 5vh;
+  min-height: 5vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,10 +105,12 @@ h4 {
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .keyword-container {
-  height: 10vh;
+  min-height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;

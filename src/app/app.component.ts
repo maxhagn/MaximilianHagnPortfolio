@@ -21,7 +21,6 @@ export class AppComponent implements AfterViewInit {
   @ViewChild('projects', {read: ElementRef}) projectsElement;
   @ViewChild('cv', {read: ElementRef}) cvElement;
   @ViewChild('contact', {read: ElementRef}) contactElement;
-  @ViewChild('footer', {read: ElementRef}) footerElement;
   public activeMenuEntry: number;
   public isLanguageChanged: boolean = false;
   public isLoaded: boolean;
