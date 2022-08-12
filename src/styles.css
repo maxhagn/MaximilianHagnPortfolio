@@ -4,7 +4,6 @@
 }
 
 
-
 @font-face {
   font-family: Inter-Regular;
   src: url(/assets/fonts/Inter-Regular.ttf);
@@ -111,7 +110,6 @@
 }
 
 
-
 /*----------GENERALS----------*/
 html, body {
   scroll-behavior: smooth;
@@ -146,6 +144,7 @@ h2 {
   h2 span {
     font-size: 12vw !important;
   }
+
   .container {
     width: 92vw;
     margin: 0 auto;
@@ -191,7 +190,7 @@ p {
   }
 
   .navbar-collapse {
-    background: #f3f3f5 ;
+    background: #f3f3f5;
     transition: 50ms all !important;
   }
 

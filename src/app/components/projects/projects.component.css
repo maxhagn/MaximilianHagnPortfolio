@@ -61,9 +61,11 @@ h4 {
   .project-title-container h4 {
     font-size: 1.6rem !important;
   }
+
   .project-date {
     font-size: 1.2rem !important;
   }
+
   .keyword {
     font-size: .8rem;
   }
@@ -158,6 +160,7 @@ a fa-icon:hover {
   animation-delay: 150ms;
   background-color: #f4f4f6;
 }
+
 .card:nth-of-type(1) .keyword:after {
   background-color: #f4f4f6;
 }
@@ -167,14 +170,17 @@ a fa-icon:hover {
   background-color: #000002;
   color: #fdfdfe;
 }
+
 .card:nth-of-type(2) .keyword {
   background-color: #f4f4f6;
   color: #23272b;
 }
+
 .card:nth-of-type(2) .keyword:after {
   border-left-color: #f4f4f6;
   background-color: #000002;
 }
+
 .card:nth-of-type(2) span {
   color: #a0a0a5;
 }
@@ -183,6 +189,7 @@ a fa-icon:hover {
   animation-delay: 450ms;
   background-color: #f0f0f0;
 }
+
 .card:nth-of-type(3) .keyword:after {
   background-color: #f0f0f0;
 }
@@ -191,6 +198,7 @@ a fa-icon:hover {
   animation-delay: 600ms;
   background-color: #fafafc;
 }
+
 .card:nth-of-type(4) .keyword:after {
   background-color: #fafafc;
 }
@@ -200,9 +208,11 @@ a fa-icon:hover {
   background-color: #000001;
   color: #fdfdfe;
 }
+
 .card:nth-of-type(5) .keyword:after {
   background-color: #000001;
 }
+
 .card:nth-of-type(5) span {
   color: #a0a0a5;
 }
@@ -211,6 +221,7 @@ a fa-icon:hover {
   animation-delay: 900ms;
   background-color: #f4f4f6;
 }
+
 .card:nth-of-type(6) .keyword:after {
   background-color: #f4f4f6;
 }
@@ -219,6 +230,7 @@ a fa-icon:hover {
   animation-delay: 1050ms;
   background-color: #f9f9f9;
 }
+
 .card:nth-of-type(7) .keyword:after {
   background-color: #f9f9f9;
 }
@@ -227,6 +239,7 @@ a fa-icon:hover {
   animation-delay: 1200ms;
   background-color: #efefef;
 }
+
 .card:nth-of-type(8) .keyword:after {
   background-color: #efefef;
 }
@@ -235,6 +248,7 @@ a fa-icon:hover {
   animation-delay: 1350ms;
   background-color: #f4f4f6;
 }
+
 .card:nth-of-type(9) .keyword:after {
   background-color: #f4f4f6;
 }
@@ -244,9 +258,11 @@ a fa-icon:hover {
   background-color: #000002;
   color: #fdfdfe;
 }
+
 .card:nth-of-type(10) .keyword:after {
   background-color: #000002;
 }
+
 .card:nth-of-type(10) span {
   color: #a0a0a5;
 }
@@ -255,6 +271,7 @@ a fa-icon:hover {
   animation-delay: 1650ms;
   background-color: #f0f0f0;
 }
+
 .card:nth-of-type(11) .keyword:after {
   background-color: #f0f0f0;
 }
@@ -263,6 +280,7 @@ a fa-icon:hover {
   animation-delay: 1800ms;
   background-color: #fafafc;
 }
+
 .card:nth-of-type(12) .keyword:after {
   background-color: #fafafc;
 }
@@ -272,9 +290,11 @@ a fa-icon:hover {
   background-color: #000001;
   color: #fdfdfe;
 }
+
 .card:nth-of-type(13) .keyword:after {
   background-color: #000001;
 }
+
 .card:nth-of-type(13) span {
   color: #a0a0a5;
 }
@@ -283,6 +303,7 @@ a fa-icon:hover {
   animation-delay: 2100ms;
   background-color: #f4f4f6;
 }
+
 .card:nth-of-type(14) .keyword:after {
   background-color: #f4f4f6;
 }
@@ -291,6 +312,7 @@ a fa-icon:hover {
   animation-delay: 2250ms;
   background-color: #f9f9f9;
 }
+
 .card:nth-of-type(15) .keyword:after {
   background-color: #f9f9f9;
 }
@@ -299,6 +321,7 @@ a fa-icon:hover {
   animation-delay: 2400ms;
   background-color: #efefef;
 }
+
 .card:nth-of-type(16) .keyword:after {
   background-color: #efefef;
 }

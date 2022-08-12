@@ -3,6 +3,7 @@
 img {
   max-height: 50vh;
 }
+
 h1 {
   font-size: 3rem;
   text-align: right;
@@ -15,17 +16,21 @@ h1 {
   .colored-text-container {
     background-color: #f3f3f5 !important;
   }
+
   h2 {
     color: #6eaff3 !important;
   }
+
   .semicolon-white {
     color: #6eaff3 !important;
   }
 }
+
 @media screen and (max-width: 600px) {
   .width-container-text {
     padding-top: 20vh;
   }
+
   h2 {
     margin-bottom: 1rem !important;
   }

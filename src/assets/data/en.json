@@ -1,7 +1,6 @@
 {
   "NAVBAR": {
     "HOME": "Home",
-    "ABOUT": "About",
     "PUBLICATIONS": "Publications",
     "PROJECTS": "Projects",
     "CV": "CV",
@@ -98,7 +97,7 @@
     "NETWORK_ENGINEERING": "Network Engineering",
     "NATIVE_APPS": "Native Applications (Cordova, Electron)",
     "COMPILERS": "Compiler Construction (Lex / Flex, YACC / Bison, Ox, Burg / iBurg, LLVM, Clang)",
-    "PROJECT_MANAGEMENT": "Project Management (Lineare Modelle, Agile Methoden, IPMA)",
+    "PROJECT_MANAGEMENT": "Project Management (Linear Models, Agile Methods, IPMA)",
     "ORGANIZATIONAL": "Organizational Talent",
     "RESPONSIBILITY": "Responsibility",
     "TEAM_SPIRIT": "Team Spirit",
@@ -111,8 +110,5 @@
     "INTRO_TEXT": "Feel free to send me an email if you have any questions about me or my projects. However, I am also always interested in freelance opportunities.",
     "TOOLTIP_MAIL": "Contact Me Via E-Mail",
     "TOOLTIP_PHONE": "Request Phone Number"
-  },
-  "FOOTER": {
-    "AUSTRIA": "Austria"
   }
 }

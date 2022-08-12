@@ -13,18 +13,18 @@
 
       <div #link_container
            [className]="isVisible[2] ? 'link-container animate__animated animate__fadeIn' : 'invisible'">
-        <a href="mailto:maximilian@hagn.network"
-           [ngbTooltip]="'CV.TOOLTIP_MAIL' | translate"
+        <a [ngbTooltip]="'CV.TOOLTIP_MAIL' | translate"
+           href="mailto:maximilian@hagn.network"
            placement="bottom">
           <fa-icon [icon]="faEnvelope"></fa-icon>
         </a>
-        <a href="mailto:maximilian@hagn.network"
-           [ngbTooltip]="'CV.TOOLTIP_PHONE' | translate"
+        <a [ngbTooltip]="'CV.TOOLTIP_PHONE' | translate"
+           href="mailto:maximilian@hagn.network"
            placement="bottom">
           <fa-icon [icon]="faPhone"></fa-icon>
         </a>
-        <a href="mailto:maximilian@hagn.network"
-           [ngbTooltip]="'CV.TOOLTIP_ADDRESS' | translate"
+        <a [ngbTooltip]="'CV.TOOLTIP_ADDRESS' | translate"
+           href="mailto:maximilian@hagn.network"
            placement="bottom">
           <fa-icon [icon]="faHouse"></fa-icon>
         </a>

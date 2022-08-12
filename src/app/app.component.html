@@ -1,4 +1,5 @@
-<nav [class]="isMenuCollapsed ? 'navbar navbar-light navbar-expand-lg pt-3 mb-3' : 'nav-collapsed navbar navbar-light navbar-expand-lg pt-3 mb-3'">
+<nav
+  [class]="isMenuCollapsed ? 'navbar navbar-light navbar-expand-lg pt-3 mb-3' : 'nav-collapsed navbar navbar-light navbar-expand-lg pt-3 mb-3'">
   <a (click)="scrollToElement(landing)" class="navbar-brand animate__animated animate__bounceIn">Maximilian Hagn</a>
   <button (click)="toggleNav()" class="navbar-toggler" type="button">
     <fa-icon [icon]="isMenuCollapsed ? faBars : faXmark"></fa-icon>

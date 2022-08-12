@@ -12,12 +12,12 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
             <div #link_container
                  [className]="isVisible[2] ? 'link-container animate__animated animate__fadeIn' : 'invisible'">
-              <a href="mailto:maximilian@hagn.network"
-                 [ngbTooltip]="'CONTACT.TOOLTIP_MAIL' | translate">
+              <a [ngbTooltip]="'CONTACT.TOOLTIP_MAIL' | translate"
+                 href="mailto:maximilian@hagn.network">
                 <fa-icon [icon]="faEnvelope"></fa-icon>
               </a>
-              <a href="mailto:maximilian@hagn.network"
-                 [ngbTooltip]="'CONTACT.TOOLTIP_PHONE' | translate">
+              <a [ngbTooltip]="'CONTACT.TOOLTIP_PHONE' | translate"
+                 href="mailto:maximilian@hagn.network">
                 <fa-icon [icon]="faPhone"></fa-icon>
               </a>
             </div>
