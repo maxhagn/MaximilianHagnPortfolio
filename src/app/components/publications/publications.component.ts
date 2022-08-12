@@ -47,6 +47,9 @@ export class PublicationsComponent implements AfterViewInit {
   }
 
   public animate(event): void {
+    if (event.target.scrollTop + this.document.body.clientHeight < this.scrollTops[0]) {
+      this.calculateScrollTops();
+    }
     this.scrollTops.forEach((scrollTop, index) => {
       if (event.target.scrollTop + this.document.body.clientHeight > scrollTop) {
         this.isVisible[index] = true;
@@ -60,7 +63,6 @@ export class PublicationsComponent implements AfterViewInit {
   }
 
   public calculateScrollTops(): void {
-    console.log("hello");
     this.scrollTops[0] = this.headingElement.nativeElement.offsetTop + (this.headingElement.nativeElement.scrollHeight / 2);
     this.scrollTops[1] = this.introTextElement.nativeElement.offsetTop + (this.introTextElement.nativeElement.scrollHeight / 2);
     this.scrollTops[2] = this.bachelor1HeadingElement.nativeElement.offsetTop + (this.bachelor1HeadingElement.nativeElement.scrollHeight / 2);

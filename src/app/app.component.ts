@@ -17,7 +17,6 @@ export class AppComponent implements AfterViewInit {
   /*Scroll Animations*/
   @ViewChild(NgScrollbar, {static: true}) scrollbarRef: NgScrollbar;
   @ViewChild('landing', {read: ElementRef}) landingElement;
-  @ViewChild('about', {read: ElementRef}) aboutElement;
   @ViewChild('publications', {read: ElementRef}) publicationsElement;
   @ViewChild('projects', {read: ElementRef}) projectsElement;
   @ViewChild('cv', {read: ElementRef}) cvElement;
@@ -57,22 +56,19 @@ export class AppComponent implements AfterViewInit {
 
   @HostListener('window:scroll', ['$event'])
   public getActiveSection(event): void {
-    if (event.target.scrollTop + this.document.body.clientHeight < (this.aboutElement.nativeElement.offsetTop + 100)) {
+    if (event.target.scrollTop + this.document.body.clientHeight < (this.projectsElement.nativeElement.offsetTop + 100)) {
       this.activeMenuEntry = 1;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= (this.aboutElement.nativeElement.offsetTop + 100) &&
+    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.projectsElement.nativeElement.offsetTop &&
       event.target.scrollTop + this.document.body.clientHeight < this.publicationsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 2;
     } else if (event.target.scrollTop + this.document.body.clientHeight >= this.publicationsElement.nativeElement.offsetTop &&
-      event.target.scrollTop + this.document.body.clientHeight < this.projectsElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 3;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.projectsElement.nativeElement.offsetTop &&
       event.target.scrollTop + this.document.body.clientHeight < this.cvElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 4;
+      this.activeMenuEntry = 3;
     } else if (event.target.scrollTop + this.document.body.clientHeight >= this.cvElement.nativeElement.offsetTop &&
       event.target.scrollTop + this.document.body.clientHeight < this.contactElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 5;
+      this.activeMenuEntry = 4;
     } else if (event.target.scrollTop + this.document.body.clientHeight >= this.contactElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 6;
+      this.activeMenuEntry = 5;
     }
   }
 

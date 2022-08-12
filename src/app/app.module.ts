@@ -19,7 +19,6 @@ import {PublicationsComponent} from "./components/publications/publications.comp
 import {FooterComponent} from './components/footer/footer.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {NgScrollbarModule} from "ngx-scrollbar";
-import {AboutComponent} from './components/about/about.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/data/', '.json');
@@ -35,8 +34,7 @@ registerLocaleData(localeDe, localeDeExtra);
     ProjectsComponent,
     PublicationsComponent,
     FooterComponent,
-    ContactComponent,
-    AboutComponent
+    ContactComponent
   ],
   imports: [
     BrowserModule,

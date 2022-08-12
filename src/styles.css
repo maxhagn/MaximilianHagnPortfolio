@@ -30,8 +30,8 @@
 
 /*----------COLORS----------*/
 :root {
-  --main-background-color: #f0f0f1;
-  --main-red-color: #cb1237;
+  --main-background-color: #fdfdfe;
+  --main-red-color: #67adf4;
   --main-black-color: #22262a;
   --scrollbar-background: #FFFFFFFF;
   --scrollbar-thumb-color: #b3b3b3;
@@ -144,6 +144,13 @@ h2 {
   h2 span {
     font-size: 12vw !important;
   }
+  .container {
+    width: 98vw;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 
@@ -162,7 +169,7 @@ h3 {
 }
 
 .dropdown-menu {
-  background-color: #f0f0f1;
+  background-color: #fbfcfd;
 }
 
 p {
@@ -171,4 +178,25 @@ p {
 
 .dropdown-toggle::after {
   display: none;
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-toggler {
+    border: none;
+    color: #67acf3 !important;
+    margin-right: 1rem;
+  }
+
+  .navbar-toggler:hover, .navbar-toggler:active, .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-collapse {
+    background-color: #f3f3f5;
+  }
+
+  .navbar-collapse a {
+    margin-left: 12%;
+    animation: none;
+  }
 }

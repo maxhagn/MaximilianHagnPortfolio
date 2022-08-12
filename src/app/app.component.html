@@ -1,4 +1,4 @@
-<nav class="navbar navbar-light navbar-expand-lg mt-3 mb-3">
+<nav [class]="isMenuCollapsed ? 'navbar navbar-light navbar-expand-lg pt-3 mb-3' : 'nav-collapsed navbar navbar-light navbar-expand-lg pt-3 mb-3'">
   <a (click)="scrollToElement(landing)" class="navbar-brand animate__animated animate__bounceIn">Maximilian Hagn</a>
   <button (click)="toggleNav()" class="navbar-toggler" type="button">
     <fa-icon [icon]="isMenuCollapsed ? faBars : faXmark"></fa-icon>
@@ -6,40 +6,36 @@
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul [(activeId)]="activeMenuEntry" class="navbar-nav ms-auto mb-2 mb-lg-0" ngbNav>
       <li [ngbNavItem]="1" class="nav-item">
-        <a (click)="scrollToElement(landing)" class="nav-link animate__animated animate__bounceIn animate__delay-1s"
+        <a (click)="scrollToElement(landing)" class="nav-link animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.HOME' | translate}}</a>
       </li>
       <li [ngbNavItem]="2" class="nav-item">
-        <a (click)="scrollToElement(about)" class="nav-link animate__animated animate__bounceIn animate__delay-1s"
-           ngbNavLink>{{'NAVBAR.ABOUT' | translate}}</a>
+        <a (click)="scrollToElement(projects)" class="nav-link animate__animated animate__bounceIn"
+           ngbNavLink>{{'NAVBAR.PROJECTS' | translate}}</a>
       </li>
       <li [ngbNavItem]="3" class="nav-item">
         <a (click)="scrollToElement(publications)"
-           class="nav-link  animate__animated animate__bounceIn animate__delay-1s"
+           class="nav-link animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.PUBLICATIONS' | translate}}</a>
       </li>
       <li [ngbNavItem]="4" class="nav-item">
-        <a (click)="scrollToElement(projects)" class="nav-link animate__animated animate__bounceIn animate__delay-1s"
-           ngbNavLink>{{'NAVBAR.PROJECTS' | translate}}</a>
-      </li>
-      <li [ngbNavItem]="5" class="nav-item">
-        <a (click)="scrollToElement(cv)" class="nav-link animate__animated animate__bounceIn animate__delay-1s"
+        <a (click)="scrollToElement(cv)" class="nav-link animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.CV' | translate}}</a>
       </li>
-      <li [ngbNavItem]="6" class="nav-item">
-        <a (click)="scrollToElement(contact)" class="nav-link animate__animated animate__bounceIn animate__delay-1s"
+      <li [ngbNavItem]="5" class="nav-item">
+        <a (click)="scrollToElement(contact)" class="nav-link animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.CONTACT' | translate}}</a>
       </li>
-      <li [ngbNavItem]="7" class="nav-item">
+      <li [ngbNavItem]="6" class="nav-item">
         <a (click)="changeLang('de')"
            *ngIf="translate.currentLang == 'en'"
-           [className]="isLanguageChanged ? 'nav-link' : 'nav-link animate__animated animate__bounceIn animate__delay-1s'"
+           [className]="isLanguageChanged ? 'nav-link' : 'nav-link animate__animated animate__bounceIn'"
            ngbNavLink>
           Deutsch
         </a>
         <a (click)="changeLang('en')"
            *ngIf="translate.currentLang == 'de'"
-           [className]="isLanguageChanged ? 'nav-link' : 'nav-link animate__animated animate__bounceIn animate__delay-1s'"
+           [className]="isLanguageChanged ? 'nav-link' : 'nav-link animate__animated animate__bounceIn'"
            ngbNavLink>
           English
         </a>
@@ -58,14 +54,11 @@
     <div #landing>
       <app-landing [scrollbarRef]="scrollbarRef"></app-landing>
     </div>
-    <div #about>
-      <app-about [scrollbarRef]="scrollbarRef"></app-about>
+    <div #projects>
+      <app-projects [scrollbarRef]="scrollbarRef"></app-projects>
     </div>
     <div #publications>
       <app-publications [scrollbarRef]="scrollbarRef"></app-publications>
-    </div>
-    <div #projects>
-      <app-projects [scrollbarRef]="scrollbarRef"></app-projects>
     </div>
     <div #cv>
       <app-cv [scrollbarRef]="scrollbarRef"></app-cv>
@@ -78,7 +71,3 @@
     </div>
   </div>
 </ng-scrollbar>
-
-<section [className]="isLoaded ? 'invisible spinner-container' : 'spinner-container'">
-  waiting for max to think
-</section>

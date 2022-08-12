@@ -7,6 +7,19 @@
     "CV": "CV",
     "CONTACT": "Contact"
   },
+  "ABOUT": {
+    "PICTURE_ALT": "Picture of the Creator, Maximilian Hagn",
+    "HELLO": "Hello World",
+    "MAX": "I'm Max",
+    "SHORT_DESC": "I am studying and working in the area of computer science and business administration.",
+    "LONG_DESC": "At the age of 14 I started to get involved with computer science and software development by moving to a technical high school. After graduating from this five year institution I already had a profound knowledge in this area and thus changed to a technical university to study first Business Informatics and later additionally Software and Information Engineering. Besides some internships in this field I worked for a computer company for three years and worked there in technical support and also developed a small website. Afterwards I changed to another company for which I am currently developing a productivity software."
+  },
+  "PROJECTS": {
+    "HEADING": "Projects",
+    "INTRO_TEXT": "In this section you can find my previous software development projects. These projects are either tasks I had to do at school and university or private projects. For most of the projects the source code can be accessed, viewed and reused via GitHub. If projects are still actively hosted on my server, the website of the project is also listed. In the following you see a selection of my best projects, however, another tag can be selected via the dropdown menu.",
+    "WEBSITE": "Website",
+    "TOOLTIP_SEARCH": "Search for Tag"
+  },
   "PUBLICATIONS": {
     "HEADING": "Publications",
     "INTRO_TEXT": "In my school and academic career I was already allowed to write some pre-scientific and scientific work, with which I could deepen my knowledge in the field of computer science. I wrote my most recent thesis in winter 2021 and as part of my bachelor thesis I developed an application that uses the abstract syntax tree provided by Clang and LLVM to analyze C++ programs and automatically insert performance counters at the critical regions of interest. My first pre-scientific work I developed in the course of my diploma thesis, a work that is required to obtain the title of Engineer in Austria. In this work we developed in a team of 5 people an E-Learning Platform based on a self-developed didactic concept. This platform should help young developers to dive faster into the world of web development. Furthermore, we have also developed many other concepts such as the creation of our own CSS framework, which is similar to the established frameworks \"Bootstrap\" or \"Tailwind\". Additional goals of the project included efficient project management and planning, as well as the creation of a marketing concept and our own brand. The abstracts of the papers and links to the websites such as the source code are provided below.",
@@ -27,13 +40,11 @@
     "DIPLOMA_TEXT_1": "<em>Creative Puzzle</em> wants to encourage people with little prior knowledge to write web pages and provides assistance through playful exercises, ready-made learning templates and a code library. Learning by doing gives learners the opportunity to quickly familiarize themselves with various programming languages. An E-Learning platform especially for the 1st - 3rd classes of HTLs should be created. Most of the time, lower-level students find it difficult to identify the context of individual components of a documentary, and they find it difficult to manage with the many different commands. <em>Creative Puzzle</em> aims to facilitate the endless browsing of specifications by providing practice-related examples. These can be pre-made templates or playful exercises. In contrast to existing specified information websites, the commands are not explained individually, but web components are explained step by step and therefore presented in a practical way. So the relationship can be understood more easily.",
     "DIPLOMA_TEXT_2": "<em>Creative Puzzle</em> provides a sleek and simple framework and, above all, well-documented documentation. Several stylesheets with many predesigned templates will be available on the website. It also includes graphic elements to playfully learn web programming. Since the team from their own experience in the first HTL years could muster little motivation for the design of websites, one of the goals is to show the topicality of these techniques with a graphically appealing design. Additional the team has worked extensively with several other areas relevant to web development. On the one hand, concepts for the efficient host- ing of a website were designed, on the other hand Creative Puzzle would like to optimize its website according to the Search Engine Optimization guidelines. Another aim will be to enthuse young people for web programming. The project team is mainly concerned with the layout and design of website elements and with the specification. Furthermore, the team will present insights and issues that had to be learned, as well as tips that are relevant for writing a frame-work and for layouting a website. An additional goal is to promote the project and to draw attention to the result through innovative and complex designs of the advertising materials, such as posters, flyers, folders, business cards and cover pictures."
   },
-  "PROJECTS": {
-    "HEADING": "Projects",
-    "INTRO_TEXT": "In this section you can find my previous software development projects. These projects are either tasks I had to do at school and university or private projects. For most of the projects the source code can be accessed, viewed and reused via GitHub. If projects are still actively hosted on my server, the website of the project is also listed. In the following you see a selection of my best projects, however, another tag can be selected via the dropdown menu.",
-    "WEBSITE": "Website"
-  },
   "CV": {
     "HEADING": "Curriculum Vitae",
+    "TOOLTIP_MAIL": "Contact Me Via E-Mail",
+    "TOOLTIP_PHONE": "Request Phone Number",
+    "TOOLTIP_ADDRESS": "Request Address",
     "PERSONAL": "Personal Data",
     "EDUCATION": "Education",
     "EMPLOYMENT": "Employment History",
@@ -62,7 +73,7 @@
     "STIWA_DESC": "Software Developer, Summer Internship (38.5 hours per week)",
     "AVALON_DESC_FP": "Software Developer, Summer Internship (38.5 hours per week)",
     "LEADER_DIPLOMA": "Project Leader of the Diploma Thesis \"Creative Puzzle - Web Development E-Learning Platform\" (Grade: A)",
-    "PROJECT_CERTIFICATION": "Project Management Certification (IMPA, jZpm)",
+    "PROJECT_CERTIFICATION": "Project Management Certification (IPMA, jZpm)",
     "TEAM_BUILDING": "Communication, and team building seminar (34 hours)",
     "SIECAMS_LEADER": "Project Leader of an information technology project (product flyer for the service \"Siecams\" of Siemens AG) in the context of the project management course",
     "BSC_1": "Award of the academic degree BSc (Detecting Performance Bottlenecks through AST Transformations)",
@@ -72,7 +83,32 @@
     "GERMAN": "German (Native)",
     "ENGLISH": "English (First Modern Foreign Language)"
   },
+  "SKILLS": {
+    "WORD_PROCESSORS": "Word Processor Programs (Microsoft Word, Pages, Google Docs, LibreOffice Writer)",
+    "SPREADSHEET": "Spreadsheet Programs (Microsoft Excel, Numbers, Google Tabellen, LibreOffice Calc)",
+    "PRESENTATION": "Presentation Programs (Microsoft PowerPoint, Keynote)",
+    "E_MAIL_PROGRAMS": "E-Mail Programs (Microsoft Outlook, Thunderbird)",
+    "OPERATING_SYSTEMS": "Operating Systems (Linux, macOS, Windows)",
+    "FRONT_END_DEVELOPMENT": "Front-End Development (HTML, CSS)",
+    "BACK_END_DEVELOPMENT": "Back-End Development (PHP / Laravel, JAVA / Spring Boot, C# / Blazor, Typescript / Angular, JavaScript)",
+    "GENERAL_PURPOSE": "General Purpose Languages (C, C++, Perl, Java)",
+    "APPLE_APPS": "Apple Applications (Xcode 9.0, Swift)",
+    "NETWORK_ENGINEERING": "Network Engineering",
+    "NATIVE_APPS": "Native Applications (Cordova, Electron)",
+    "COMPILERS": "Compiler Construction (Lex / Flex, YACC / Bison, Ox, Burg / iBurg, LLVM, Clang)",
+    "PROJECT_MANAGEMENT": "Project Management (Lineare Modelle, Agile Methoden, IPMA)",
+    "ORGANIZATIONAL": "Organizational Talent",
+    "RESPONSIBILITY": "Responsibility",
+    "TEAM_SPIRIT": "Team Spirit",
+    "COMMUNICATION": "Communication Skills",
+    "DETERMINATION": "Determination",
+    "LICENSES": "B and AM driving license, motorboat driving license"
+  },
   "CONTACT": {
+    "HEADING": "Contact",
+    "INTRO_TEXT": "Feel free to send me an email if you have any questions about me or my projects. However, I am also always interested in freelance opportunities.",
+    "TOOLTIP_MAIL": "Contact Me Via E-Mail",
+    "TOOLTIP_PHONE": "Request Phone Number"
   },
   "FOOTER": {
     "AUSTRIA": "Austria"

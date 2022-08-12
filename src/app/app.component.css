@@ -2,7 +2,7 @@
   position: fixed;
   width: 100%;
   background: none;
-  z-index: 1;
+  z-index: 99;
 }
 
 .navbar-brand {
@@ -12,6 +12,10 @@
   color: var(--main-red-color);
   font-family: "Inter-Bold", sans-serif;
   animation-delay: 1700ms;
+}
+
+.nav-collapsed {
+  background-color: #f2f2f4;
 }
 
 .navbar-nav {

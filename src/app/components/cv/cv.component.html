@@ -1,3 +1,4 @@
+<script src="cv.component.ts"></script>
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-6 col-xxl-6">
@@ -9,28 +10,58 @@
           [className]="isVisible[1] ? 'animate__animated animate__fadeIn' : 'invisible'">
         Maximilian Alfred Hagn
       </h3>
-      <!--<img alt="Bild von Maximilian Hagn" src="assets/images/Max_CV.jpg">-->
+
       <div #link_container
            [className]="isVisible[2] ? 'link-container animate__animated animate__fadeIn' : 'invisible'">
         <a href="mailto:maximilian@hagn.network"
-           ngbTooltip="Write an E-Mail"
+           [ngbTooltip]="'CV.TOOLTIP_MAIL' | translate"
            placement="bottom">
           <fa-icon [icon]="faEnvelope"></fa-icon>
         </a>
         <a href="mailto:maximilian@hagn.network"
-           ngbTooltip="Request Phone Number"
+           [ngbTooltip]="'CV.TOOLTIP_PHONE' | translate"
            placement="bottom">
           <fa-icon [icon]="faPhone"></fa-icon>
         </a>
         <a href="mailto:maximilian@hagn.network"
-           ngbTooltip="Request Address"
+           [ngbTooltip]="'CV.TOOLTIP_ADDRESS' | translate"
            placement="bottom">
           <fa-icon [icon]="faHouse"></fa-icon>
         </a>
       </div>
 
+      <div id="myCanvasContainer">
+        <canvas height="400" id="tagcanvas" style="max-width: 100%; width: 100%" width="560">
+          <ul id="tags">
+            <li><a>HTML</a></li>
+            <li><a>CSS</a></li>
+            <li><a>C#</a></li>
+            <li><a>Blazor</a></li>
+            <li><a>Electron</a></li>
+            <li><a>C</a></li>
+            <li><a>C++</a></li>
+            <li><a>Java</a></li>
+            <li><a>PHP</a></li>
+            <li><a>Perl</a></li>
+            <li><a>Spring Boot</a></li>
+            <li><a>SQL</a></li>
+            <li><a>Compiler Construction</a></li>
+            <li><a>Typescript</a></li>
+            <li><a>Angular</a></li>
+            <li><a>Project Management</a></li>
+            <li><a>Algorithms</a></li>
+            <li><a>Laravel</a></li>
+            <li><a>Linux</a></li>
+            <li><a>Windows</a></li>
+            <li><a>macOS</a></li>
+            <li><a>Clang</a></li>
+            <li><a>LLVM</a></li>
+          </ul>
+        </canvas>
+      </div>
+
       <section #personal_data
-               [className]="isVisible[3] ? 'animate__animated animate__fadeIn' : 'invisible'">
+               [className]="isVisible[3] ? 'animate__animated animate__fadeIn mt-4' : 'invisible mt-4'">
         <h4>{{'CV.PERSONAL' | translate}}</h4>
         <ul>
           <li>{{'CV.BIRTHDAY' | translate}}</li>
@@ -181,69 +212,12 @@
       </section>
       <section #skills
                [className]="isVisible[8] ? 'animate__animated animate__fadeIn' : 'invisible'">
-        <h4>{{'CV.SKILLS_HEADING' | translate}} (
-          <button (click)="setDetailed(true)"
-                  *ngIf="!isDetailedView"
-                  ngbTooltip="Show Detailed View"
-                  placement="bottom">
-            <fa-icon [icon]="faInfo"></fa-icon>
-          </button>
-          <button (click)="setDetailed(false)"
-                  *ngIf="isDetailedView"
-                  ngbTooltip="Show Overview"
-                  placement="bottom">
-            <fa-icon [icon]="faUsersViewfinder"></fa-icon>
-          </button>
-          )
-        </h4>
-        <p>At the age of 14 I started to get involved with computer science and software development by moving to a
-          technical high school. After graduating from this five year institution I already had a profound knowledge in
-          this area and thus changed to a technical university to study first Business Informatics and later
-          additionally
-          Software and Information Engineering. Besides some internships in this field I worked for a computer company
-          for
-          three years and worked there in technical support and also developed a small website. Afterwards I changed to
-          another company for which I am currently developing a productivity software. In the following graphic my
-          skills
-          are roughly recorded, but the button can also be used to view the details.</p>
-
-        <div [hidden]="isDetailedView">
-          <div id="myCanvasContainer">
-            <canvas height="400" id="tagcanvas" style="max-width: 560px; width: 100%" width="560">
-              <ul id="tags">
-                <li><a>HTML</a></li>
-                <li><a>CSS</a></li>
-                <li><a>C#</a></li>
-                <li><a>Blazor</a></li>
-                <li><a>Electron</a></li>
-                <li><a>C</a></li>
-                <li><a>C++</a></li>
-                <li><a>Java</a></li>
-                <li><a>PHP</a></li>
-                <li><a>Perl</a></li>
-                <li><a>Spring Boot</a></li>
-                <li><a>SQL</a></li>
-                <li><a>Compiler Construction</a></li>
-                <li><a>Typescript</a></li>
-                <li><a>Angular</a></li>
-                <li><a>Project Management</a></li>
-                <li><a>Algorithms</a></li>
-                <li><a>Laravel</a></li>
-                <li><a>Linux</a></li>
-                <li><a>Windows</a></li>
-                <li><a>macOS</a></li>
-                <li><a>Clang</a></li>
-                <li><a>LLVM</a></li>
-              </ul>
-            </canvas>
-          </div>
-        </div>
-
-        <div [hidden]="!isDetailedView">
+        <h4>{{'CV.SKILLS_HEADING' | translate}}</h4>
+        <div>
           <table>
             <tr>
-              <td>Textverarbeitungsprogramme (Microsoft Word, Pages, Google Docs, LibreOffice Writer)</td>
-              <td>
+              <td>{{'SKILLS.WORD_PROCESSORS' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -264,8 +238,8 @@
               </td>
             </tr>
             <tr>
-              <td>Tabellenkalkulationsprogramme (Microsoft Excel, Numbers, Google Tabellen, LibreOffice Calc)</td>
-              <td>
+              <td>{{'SKILLS.SPREADSHEET' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -286,8 +260,8 @@
               </td>
             </tr>
             <tr>
-              <td>Präsentationsprogramme (Microsoft PowerPoint, Keynote)</td>
-              <td>
+              <td>{{'SKILLS.PRESENTATION' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -308,8 +282,8 @@
               </td>
             </tr>
             <tr>
-              <td>E-Mail-Programme (Microsoft Outlook, Thunderbird)</td>
-              <td>
+              <td>{{'SKILLS.E_MAIL_PROGRAMS' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -330,8 +304,8 @@
               </td>
             </tr>
             <tr>
-              <td>Betriebssysteme (Linux, macOS, Windows)</td>
-              <td>
+              <td>{{'SKILLS.OPERATING_SYSTEMS' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -352,8 +326,8 @@
               </td>
             </tr>
             <tr>
-              <td>Webseiten-Design (HTML und CSS)</td>
-              <td>
+              <td>{{'SKILLS.FRONT_END_DEVELOPMENT' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -374,10 +348,8 @@
               </td>
             </tr>
             <tr>
-              <td>Webseiten-Funktionen (PHP / Laravel, JAVA / Spring Boot, C# / Blazor, Typescript / Angular,
-                JavaScript)
-              </td>
-              <td>
+              <td>{{'SKILLS.BACK_END_DEVELOPMENT' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -398,8 +370,8 @@
               </td>
             </tr>
             <tr>
-              <td>General Purpose Languages (C, C++, Perl, Java)</td>
-              <td>
+              <td>{{'SKILLS.GENERAL_PURPOSE' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -420,12 +392,9 @@
               </td>
             </tr>
             <tr>
-              <td>Apple Applikationen (Xcode 9.0, Swift)</td>
-              <td>
+              <td>{{'SKILLS.APPLE_APPS' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
                   <div class="col">
                     <div class="point_black"></div>
                   </div>
@@ -438,12 +407,15 @@
                   <div class="col">
                     <div class="point_gray"></div>
                   </div>
+                  <div class="col">
+                    <div class="point_gray"></div>
+                  </div>
                 </div>
               </td>
             </tr>
             <tr>
-              <td>Netzwerktechnik</td>
-              <td>
+              <td>{{'SKILLS.NETWORK_ENGINEERING' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -464,30 +436,8 @@
               </td>
             </tr>
             <tr>
-              <td>Native Applikationen (Cordova)</td>
-              <td>
-                <div class="row">
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_gray"></div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Projektmanagement (Lineare Modelle, Agile Methoden):</td>
-              <td>
+              <td>{{'SKILLS.NATIVE_APPS' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -508,8 +458,8 @@
               </td>
             </tr>
             <tr>
-              <td>Organisationstalent</td>
-              <td>
+              <td>{{'SKILLS.COMPILERS' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -530,8 +480,8 @@
               </td>
             </tr>
             <tr>
-              <td>Verantwortungsbewusst</td>
-              <td>
+              <td>{{'SKILLS.PROJECT_MANAGEMENT' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -552,52 +502,8 @@
               </td>
             </tr>
             <tr>
-              <td>Teamfähigkeit</td>
-              <td>
-                <div class="row">
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Kommunikationsfähigkeit</td>
-              <td>
-                <div class="row">
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                  <div class="col">
-                    <div class="point_black"></div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Zielstrebigkeit</td>
-              <td>
+              <td>{{'SKILLS.ORGANIZATIONAL' | translate}}</td>
+              <td class="point-container">
                 <div class="row">
                   <div class="col">
                     <div class="point_black"></div>
@@ -618,7 +524,95 @@
               </td>
             </tr>
             <tr>
-              <td>B und AM Führerschein, Motorboot Führerschein</td>
+              <td>{{'SKILLS.RESPONSIBILITY' | translate}}</td>
+              <td class="point-container">
+                <div class="row">
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_gray"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{'SKILLS.TEAM_SPIRIT' | translate}}</td>
+              <td class="point-container">
+                <div class="row">
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{'SKILLS.COMMUNICATION' | translate}}</td>
+              <td class="point-container">
+                <div class="row">
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{'SKILLS.DETERMINATION' | translate}}</td>
+              <td class="point-container">
+                <div class="row">
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_black"></div>
+                  </div>
+                  <div class="col">
+                    <div class="point_gray"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>{{'SKILLS.LICENSES' | translate}}</td>
             </tr>
           </table>
         </div>

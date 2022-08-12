@@ -1,43 +1,90 @@
 @import "~animate.css/animate.min.css";
 
+img {
+  max-height: 50vh;
+}
 h1 {
-  font-size: 8rem;
+  font-size: 3rem;
+  text-align: right;
+  animation-delay: 100ms;
   font-family: "Inter-Extra-Bold", serif;
-  text-align: center;
   color: var(--main-black-color);
 }
 
+@media screen and (max-width: 1199px) {
+  .colored-text-container {
+    background-color: #f3f3f5 !important;
+  }
+  h2 {
+    color: #6eaff3 !important;
+  }
+  .semicolon-white {
+    color: #6eaff3 !important;
+  }
+}
 @media screen and (max-width: 600px) {
-  h1 {
-    font-size: 20vw;
+  .width-container-text {
+    padding-top: 20vh;
+  }
+  h2 {
+    margin-bottom: 1rem !important;
   }
 }
 
+.colored-text-container {
+  height: 100vh;
+  background-color: #acd5f3;
+  max-width: 100vw;
+}
+
+.width-container-text {
+  max-width: 700px;
+}
+
+.semicolon-white {
+  color: #fdfdfe;
+  font-size: 3rem !important;
+  font-family: "Inter-Black", serif;
+}
+
+.semicolon-black {
+  color: #22262a;
+  font-size: 3rem !important;
+  font-family: "Inter-Black", serif;
+}
 
 h2 {
-  font-size: 4.5rem;
+  font-size: 3rem;
+  text-align: right !important;
   display: inline-block;
-  text-align: center !important;;
-  font-family: "Inter-Black", serif;
-  margin-top: 1.8rem;
+  font-family: "Inter-Extra-Bold", serif;
+  margin-top: .2rem;
   width: 100%;
-  color: var(--main-red-color);
+  color: white;
+  animation-delay: 200ms;
+  margin-bottom: 4rem;
 }
 
 h2 span {
-  font-size: 4.5rem;
+  font-size: 2rem;
   font-family: "Inter-Black", serif;
 }
 
 h3 {
-  margin-top: 4rem;
-  font-size: 2rem;
-  padding: 0 2rem;
-  font-family: "Inter-Regular", serif;
-  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+  font-family: "Inter-Black", serif;
   color: var(--main-black-color);
+  margin-bottom: 2rem;
+  animation-delay: 300ms;
 }
 
 .hero-container {
-  height: calc(100vh);
+  height: 100vh;
+  background-color: #f4f4f6;
+}
+
+p {
+  text-align: left;
+  animation-delay: 400ms;
 }

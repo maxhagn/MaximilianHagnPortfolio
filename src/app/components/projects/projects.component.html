@@ -13,15 +13,16 @@
 
       <div #search_button
            class="w-100 text-end d-flex justify-content-end">
-        <div class="fit-content"
-             ngbTooltip="Search for Tag"
+        <div class="fit-content mb-5"
+             [ngbTooltip]="'PROJECTS.TOOLTIP_SEARCH' | translate"
              placement="top">
           <div
             ngbDropdown
             placement="start-top">
-            <button [className]="isVisible[2] ? 'btn action-button ms-1 me-1 animate__animated animate__fadeIn' : 'invisible'"
-                    id="show_settings"
-                    ngbDropdownToggle>
+            <button
+              [className]="isVisible[2] ? 'btn action-button ms-1 me-1 animate__animated animate__fadeIn' : 'invisible'"
+              id="show_settings"
+              ngbDropdownToggle>
               <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
             </button>
             <div aria-labelledby="show_settings" ngbDropdownMenu>
@@ -35,12 +36,17 @@
           </div>
         </div>
       </div>
-
-      <div #project_container class="row justify-content-evenly">
-        <div *ngFor="let project of currentSelectedProjects;"
-             [className]="isVisible[3] ? 'card animate__animated animate__fadeIn' : 'card invisible'">
-          <div class="card-content">
-            <div class="card-front">
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div #project_container class="row justify-content-evenly">
+    <div *ngFor="let project of currentSelectedProjects;"
+         [className]="isVisible[3] ? 'card animate__animated animate__fadeIn' : 'card invisible'">
+      <div class="card-content">
+        <div class="card-front">
+          <div class="row justify-content-center align-items-center content-center">
+            <div class="col">
               <div class="row">
                 <div class="col-12 text-center project-title">
                   <h4>{{project.title}}</h4>
@@ -53,27 +59,14 @@
                   </span>
                 </div>
               </div>
-              <div class="row mt-2">
+              <div class="row">
                 <div class="col-12 text-center">
-                  <ng-container *ngFor="let keyword of project.keywords">
-                    <div *ngIf="keyword.tag != 'Top'" class="keyword">
-                      {{keyword.tag}}
-                    </div>
+                  <ng-container *ngIf="currentLanguage=='en'">
+                    {{project.description_en}}
                   </ng-container>
-                </div>
-              </div>
-            </div>
-            <div class="card-back">
-              <div class="row mt-3">
-                <div class="col-12 text-center">
-                  <p>
-                    <ng-container *ngIf="currentLanguage=='en'">
-                      {{project.description_en.slice(0, 100)}}
-                    </ng-container>
-                    <ng-container *ngIf="currentLanguage=='de'">
-                      {{project.description_de.slice(0, 100)}}
-                    </ng-container>
-                  </p>
+                  <ng-container *ngIf="currentLanguage=='de'">
+                    {{project.description_de}}
+                  </ng-container>
                 </div>
               </div>
               <div class="row mt-2 mb-2">
@@ -88,6 +81,15 @@
                      target="_blank">
                     <fa-icon [icon]="faGithub"></fa-icon>
                   </a>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center">
+                  <ng-container *ngFor="let keyword of project.keywords">
+                    <div *ngIf="keyword.tag != 'Top'" class="keyword">
+                      {{keyword.tag}}
+                    </div>
+                  </ng-container>
                 </div>
               </div>
             </div>

@@ -65,6 +65,10 @@ td:nth-child(2) {
   background-color: var(--main-black-color);
 }
 
+.point-container {
+  min-width: 160px;
+}
+
 .point_gray {
   width: 14px;
   height: 14px;
