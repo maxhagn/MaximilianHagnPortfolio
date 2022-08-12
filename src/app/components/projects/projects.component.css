@@ -8,13 +8,9 @@ h4 {
 }
 
 .project-date {
-  font-family: "Inter-Bold", sans-serif;
+  font-family: "Inter-Semi", sans-serif;
   color: var(--main-black-color);
-  font-size: 1rem;
-}
-
-.project-title {
-  min-height: 2em;
+  font-size: 2rem;
 }
 
 .keyword {
@@ -27,9 +23,10 @@ h4 {
   margin: 0 10px 10px 0;
   text-decoration: none;
   -webkit-transition: color 0.2s;
+  font-family: "Inter-Semi-Bold", sans-serif;
   background-color: var(--main-black-color);
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .keyword::after {
@@ -50,7 +47,7 @@ h4 {
   border: none;
   margin: .7rem 0 0 0;
   transition: all 400ms;
-  min-height: 50vh;
+  min-height: 60vh;
 }
 
 .content-center {
@@ -64,17 +61,40 @@ h4 {
   }
 }
 
-.card-content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
+.project-title-container {
+  height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 550px;
+  margin: 0 auto;
 }
 
-.card-front {
-  position: relative;
-  height: 100%;
-  padding: 2.5rem 1rem;
+.project-title-container h4 {
+  font-size: 3rem;
+}
+
+.link-container {
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-container {
+  height: 25vh;
+  display: flex;
+  max-width: 800px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyword-container {
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
@@ -84,11 +104,11 @@ a {
 }
 
 a fa-icon:first-child {
-  margin-right: .5rem;
+  margin-right: 1rem;
 }
 
 a fa-icon:last-child {
-  margin-left: .5rem;
+  margin-left: 1rem;
 }
 
 a fa-icon:hover {
@@ -127,7 +147,12 @@ a fa-icon:hover {
   background-color: #000002;
   color: #fdfdfe;
 }
+.card:nth-of-type(2) .keyword {
+  background-color: #f4f4f6;
+  color: #23272b;
+}
 .card:nth-of-type(2) .keyword:after {
+  border-left-color: #f4f4f6;
   background-color: #000002;
 }
 .card:nth-of-type(2) span {

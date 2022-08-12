@@ -17,7 +17,8 @@
   "PROJECTS": {
     "HEADING": "Projects",
     "INTRO_TEXT": "In this section you can find my previous software development projects. These projects are either tasks I had to do at school and university or private projects. For most of the projects the source code can be accessed, viewed and reused via GitHub. If projects are still actively hosted on my server, the website of the project is also listed. In the following you see a selection of my best projects, however, another tag can be selected via the dropdown menu.",
-    "WEBSITE": "Website",
+    "WEBSITE": "Explore the Website",
+    "SOURCE": "View the Source Code",
     "TOOLTIP_SEARCH": "Search for Tag"
   },
   "PUBLICATIONS": {

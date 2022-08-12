@@ -3,6 +3,8 @@
   src: url(/assets/fonts/Inter-Light.ttf);
 }
 
+
+
 @font-face {
   font-family: Inter-Regular;
   src: url(/assets/fonts/Inter-Regular.ttf);
@@ -145,11 +147,8 @@ h2 {
     font-size: 12vw !important;
   }
   .container {
-    width: 98vw;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    margin-right: 0;
-    margin-left: 0;
+    width: 92vw;
+    margin: 0 auto;
   }
 }
 
@@ -192,11 +191,13 @@ p {
   }
 
   .navbar-collapse {
-    background-color: #f3f3f5;
+    background: #f3f3f5 ;
+    transition: 50ms all !important;
   }
 
   .navbar-collapse a {
     margin-left: 12%;
     animation: none;
   }
+
 }
