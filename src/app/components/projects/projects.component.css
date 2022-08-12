@@ -48,6 +48,8 @@ h4 {
   margin: .7rem 0 0 0;
   transition: all 400ms;
   min-height: 60vh;
+  height: fit-content;
+  position: relative;
 }
 
 .content-center {
@@ -68,6 +70,7 @@ h4 {
   align-items: center;
   max-width: 550px;
   margin: 0 auto;
+  position: relative;
 }
 
 .project-title-container h4 {
@@ -79,15 +82,17 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .description-container {
-  height: 25vh;
+  min-height: 25vh;
   display: flex;
   max-width: 800px;
   margin: 0 auto;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .keyword-container {
@@ -95,6 +100,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 a {
