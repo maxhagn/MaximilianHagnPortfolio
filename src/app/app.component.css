@@ -9,7 +9,7 @@
   margin-left: 10%;
   margin-right: 10%;
   pointer-events: none;
-  color: var(--main-red-color);
+  color: var(--main-color);
   font-family: "Inter-Bold", sans-serif;
   animation-delay: 1700ms;
 }

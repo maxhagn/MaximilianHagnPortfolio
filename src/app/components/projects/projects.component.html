@@ -72,10 +72,10 @@
           <div class="row description-container">
             <div class="col-12 text-center">
               <ng-container *ngIf="currentLanguage=='en'">
-                {{project.description_en}}
+                <p [innerHTML]="project.description_en"></p>
               </ng-container>
               <ng-container *ngIf="currentLanguage=='de'">
-                {{project.description_de}}
+                <p [innerHTML]="project.description_de"></p>
               </ng-container>
             </div>
           </div>

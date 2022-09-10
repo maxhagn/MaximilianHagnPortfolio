@@ -42,7 +42,6 @@ h4 {
   margin: .7rem 0 0 0;
   transition: all 400ms;
   min-height: 60vh;
-  height: fit-content;
   position: relative;
 }
 
@@ -103,7 +102,7 @@ h4 {
   min-height: 25vh;
   display: flex;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto 7.5rem auto;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -112,15 +111,17 @@ h4 {
 }
 
 .keyword-container {
-  min-height: 10vh;
+  height: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 a {
-  color: var(--main-red-color);
+  color: var(--main-color);
   font-size: 2rem;
   text-decoration: none;
 }

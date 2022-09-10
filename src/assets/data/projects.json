@@ -1,8 +1,8 @@
 [
   {
     "title": "UpToDate",
-    "description_en": "UpToDate is a web application I developed for myself to manage my appointments, notes and lists. The application contains a calendar, a program to create notes, a todo list and many other small functions that help me to structure my thoughts. The idea came from the fact that many apps I used simply had too many functions and could not be used on all operating systems. Furthermore, I now have the possibility to use the developed REST API to integrate my appointments and notes in my smarthome, for example by displaying my calendar on the TVs. I use the application almost every day to enter my appointments, structure my ideas and keep track of my tasks. The application is written with the backend framework Spring Boots based on the Java programming language and in the frontend the Angular framework is utilized.",
-    "description_de": "UpToDate is a web application I developed for myself to manage my appointments, notes and lists. The application contains a calendar, a program to create notes, a todo list and many other small functions that help me to structure my thoughts. The idea came from the fact that many apps I used simply had too many functions and could not be used on all operating systems. Furthermore, I now have the possibility to use the developed REST API to integrate my appointments and notes in my smarthome, for example by displaying my calendar on the TVs. I use the application almost every day to enter my appointments, structure my ideas and keep track of my tasks. The application is written with the backend framework Spring Boots based on the Java programming language and in the frontend the Angular framework is utilized.",
+    "description_en": "<em>UpToDate</em> is a web application I developed for myself to manage my appointments, notes and lists. The application includes a calendar, a program to create notes, a function to manage contacts, a tool to create lists and a tracker to record habits or routines. All these functions help me to organize my thoughts and keep them in one place. I had the idea to develop this application because many applications simply had too many functions and could not be used on all operating systems. Furthermore, by developing my own REST API, I now have the possibility to use it in other applications and most importantly, all the functions can also be integrated into my smarthome, for example, I can display my appointments on the TVs. I use the application almost every day to enter my appointments, organize my ideas and to keep track of my tasks. Furthermore, I am constantly developing this application to fix bugs, add more features or to adapt the usability to my habits. The REST API of the application is written with the backend framework Spring Boot based on the Java programming language, whereas the frontend utilizes the functions of the framework Angular developed by Google.",
+    "description_de": "<em>UpToDate</em> ist eine Webanwendung, die ich für mich selbst entwickelt habe, um meine Termine, Notizen und Listen zu verwalten. Die Anwendung umfasst einen Kalender, ein Programm zum Erstellen von Notizen, eine Funktion zur Verwaltung von Kontakten, ein Werkzeug zum Erstellen von Listen und einen Tracker zum Aufzeichnen von Gewohnheiten oder Routinen. All diese Funktionen helfen mir, meine Gedanken zu ordnen und sie an einem Ort zu halten. Ich hatte die Idee, diese Anwendung zu entwickeln, weil viele Anwendungen einfach zu viele Funktionen hatten und nicht auf allen Betriebssystemen genutzt werden konnten. Außerdem habe ich durch die Entwicklung einer eigenen REST-API nun die Möglichkeit, sie in anderen Anwendungen zu nutzen und vor allem können alle Funktionen auch in mein Smarthome integriert werden, so dass ich zum Beispiel meine Termine auf den Fernsehern anzeigen lassen kann. Ich nutze die Anwendung fast täglich, um meine Termine einzutragen, meine Ideen zu organisieren und um den Überblick über meine Aufgaben zu behalten. Außerdem entwickle ich diese Anwendung ständig weiter, um Fehler zu beheben, weitere Funktionen hinzuzufügen oder die Benutzerfreundlichkeit an meine Gewohnheiten anzupassen. Die REST-API der Anwendung ist mit dem auf der Programmiersprache Java basierenden Backend-Framework Spring Boot geschrieben, während das Frontend die Funktionen des von Google entwickelten Frameworks Angular nutzt. ",
     "date": "2022",
     "keywords": [
       {
@@ -23,8 +23,8 @@
   },
   {
     "title": "Maximilian Hagn Portfolio Website",
-    "description_en": "This repository contains my current portfolio website which was written with the frontend framework Angular.",
-    "description_de": "This repository contains my current portfolio website which was written with the frontend framework Angular.",
+    "description_en": "This project contains my current portfolio website, the page you are currently viewing. The goal of the project is to represent myself on the internet. Furthermore I am practicing design and content creation on this website. The website is built as a simple single-page website that presents the most important facts about me, my resume and my skills. The website was developed with the framework Angular from Google.",
+    "description_de": "Dieses Projekt enthält meine aktuelle Portfolio-Website, die Seite, die Sie gerade sehen. Das Ziel des Projekts ist es, mich im Internet zu präsentieren. Außerdem übe ich mich auf dieser Website in Design und Content-Erstellung. Die Website ist als einfache Single-Page-Website aufgebaut, die die wichtigsten Fakten über mich, meinen Lebenslauf und meine Fähigkeiten präsentiert. Die Website wurde mit dem Framework Angular von Google entwickelt.",
     "date": "2022",
     "keywords": [
       {
@@ -51,9 +51,6 @@
       },
       {
         "tag": "Website"
-      },
-      {
-        "tag": "Top"
       }
     ],
     "website": "https://marlene.hagn.network",
@@ -61,8 +58,8 @@
   },
   {
     "title": "Compiler Construction C",
-    "description_en": "This repository contains my first self-written programming language, which I developed during the course compiler development at the Vienna University of Technology. The lexical analysis is based on the tool Flex. The parser was developed with the help of YACC. The described grammar was attributed with the assistance of OX. Finally, a tree grammar was created with the help of OX and iBurg, which can be used to generate Assembler 64 code.",
-    "description_de": "This repository contains my first self-written programming language, which I developed during the course compiler development at the Vienna University of Technology. The lexical analysis is based on the tool Flex. The parser was developed with the help of YACC. The described grammar was attributed with the assistance of OX. Finally, a tree grammar was created with the help of OX and iBurg, which can be used to generate Assembler 64 code.",
+    "description_en": "This project contains my first self-written programming language. This was a task I had to accomplish in the course of the compiler development course at the Vienna University of Technology. The main goal was to develop a compiler from a given grammar and to implement all necessary stages of a compiler. The lexical analysis was written with the tool Flex. Based on this, YACC was used to parse the input. Furthermore, the tool OX was used so that an attributed grammar can be created. The optimization and code generation was done with the help of iBurg, which finally allowed AMD Assembler 64 code to be generated from the input. The end result is a program - a compiler - that can read programs and translate them into assembly code.",
+    "description_de": "Dieses Projekt enthält meine erste selbstgeschriebene Programmiersprache. Dies war eine Aufgabe, die ich im Rahmen des Übersetzerbau Kurses an der Technischen Universität Wien zu lösen hatte. Das Hauptziel war es, einen Compiler aus einer vorgegebenen Grammatik zu entwickeln und alle notwendigen Phasen eines Compilers zu implementieren. Die lexikalische Analyse wurde mit dem Tool Flex geschrieben. Darauf aufbauend wurde YACC zum Parsen der Eingabe verwendet. Außerdem wurde das Werkzeug OX verwendet, um eine attributierte Grammatik zu erstellen. Die Optimierung und Codegenerierung erfolgte mit Hilfe von iBurg, wodurch schließlich AMD Assembler 64 Code aus der Eingabe generiert werden konnte. Das Endergebnis ist ein Programm - ein Compiler - der Programme lesen und in Assembler-Code übersetzen kann.",
     "date": "2022",
     "keywords": [
       {
@@ -149,25 +146,6 @@
     ],
     "website": "",
     "github": "https://github.com/maxhagn/StatisticalComputingR"
-  },
-  {
-    "title": "Compiler Construction LLVM",
-    "description_en": "In this repository you can find a self written programming language which I developed with the help of LLVM.",
-    "description_de": "In this repository you can find a self written programming language which I developed with the help of LLVM.",
-    "date": "2022",
-    "keywords": [
-      {
-        "tag": "C++"
-      },
-      {
-        "tag": "LLVM"
-      },
-      {
-        "tag": "Top"
-      }
-    ],
-    "website": "",
-    "github": "https://github.com/maxhagn/CompilerConstructionLLVM"
   },
   {
     "title": "Operating System Development",
@@ -404,8 +382,8 @@
   },
   {
     "title": "Ticketline",
-    "description_en": "This repository contains a ticket store for events that we had to develop as a team in the scope of the course Software Development and Project Management at the Vienna University of Technology. The backend is written with the framework Spring Boot based on Java. The frontend uses the framework Angular. The goal of the project was to plan and finally implement a complete software project as a team.",
-    "description_de": "This repository contains a ticket store for events that we had to develop as a team in the scope of the course Software Development and Project Management at the Vienna University of Technology. The backend is written with the framework Spring Boot based on Java. The frontend uses the framework Angular. The goal of the project was to plan and finally implement a complete software project as a team.",
+    "description_en": "This project was carried out in the course of the software development and project management course at the Vienna University of Technology. The main goal was to plan and execute a small software project in a team of six people. The software to be developed was a web-based ticket store. The user should be able to buy, cancel and manage tickets. The frontend of the application was developed with the framework Angular from Google. The backend is written in Java and is based on the framework Spring Boot.",
+    "description_de": "Dieses Projekt wurde im Rahmen des Kurses für Softwareentwicklung und Projektmanagement an der Technischen Universität Wien durchgeführt. Das Hauptziel war die Planung und Durchführung eines kleinen Softwareprojekts in einem Team von sechs Personen. Die zu entwickelnde Software war ein webbasierter Ticketshop. Der Benutzer sollte die Möglichkeit haben, Tickets zu kaufen, zu stornieren und zu verwalten. Das Frontend der Anwendung wurde mit dem Framework Angular von Google entwickelt. Das Backend ist in Java geschrieben und basiert auf dem Framework Spring Boot.",
     "date": "2021",
     "keywords": [
       {
@@ -426,6 +404,25 @@
     ],
     "website": "",
     "github": "https://github.com/maxhagn/SoftwareEngineeringProjektmanagement"
+  },
+  {
+    "title": "Compiler Construction LLVM",
+    "description_en": "This project contains my implementation of the Kaleidoscope exercise programming language from an LLVM tutorial. The goal of the project was to experience other approaches to developing a compiler besides the tools Flex, YACC, OX and iBurg. Basically the developed compiler sticks very much to the code presented in the tutorials, but here and there I used other approaches and adapted the language according to my ideas. Furthermore I extended the tutorial by a test system, with which I can validate many test inputs automatically. The used programming language is C++ and most of the used functions are from the LLVM project.",
+    "description_de": "Dieses Projekt enthält meine Implementierung der Übungsprogrammiersprache Kaleidoscope aus einem LLVM-Tutorial. Ziel des Projekts war es, neben den Tools Flex, YACC, OX und iBurg weitere Ansätze zur Entwicklung eines Compilers auszuprobieren. Grundsätzlich hält sich der entwickelte Compiler sehr stark an den in den Tutorials vorgestellten Code, aber hier und da habe ich andere Ansätze verwendet und die Sprache nach meinen Vorstellungen angepasst. Außerdem habe ich das Tutorial um ein Testsystem erweitert, mit dem ich viele Testeingaben automatisch validieren kann. Die verwendete Programmiersprache ist C++ und die meisten der verwendeten Funktionen stammen aus dem LLVM-Projekt.",
+    "date": "2022",
+    "keywords": [
+      {
+        "tag": "C++"
+      },
+      {
+        "tag": "LLVM"
+      },
+      {
+        "tag": "Top"
+      }
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/CompilerConstructionLLVM"
   },
   {
     "title": "System Near Programming With C",
@@ -451,8 +448,8 @@
   },
   {
     "title": "Vacayournal",
-    "description_en": "In this repository you can find a clone of Instagram and Facebook that I developed in the summer of 2019. The application was written in PHP and JavaScript without frameworks. The goal of the application was to develop a platform independent of Facebook (Meta) on which pictures and posts can be shared with friends. The goal of the development was to further my education in web development and website design.",
-    "description_de": "In this repository you can find a clone of Instagram and Facebook that I developed in the summer of 2019. The application was written in PHP and JavaScript without frameworks. The goal of the application was to develop a platform independent of Facebook (Meta) on which pictures and posts can be shared with friends. The goal of the development was to further my education in web development and website design.",
+    "description_en": "In the course of this private project I developed a clone of Instagram and Facebook. The goal of the project was to develop a platform independent of Facebook, where pictures and posts can be shared with friends. The user can create an account, manage it and write textual posts as usual on Facebook, as well as share pictures and galleries as usual for Instagram. The name of the application is composed of the words Vacaytion and Journal and should thus give the possibility to document travels. For the development only the programming languages PHP and JavaScript were used, so I wanted to deepen my education in web development and website design. Furthermore, I could see how many advantages a powerful frontend framework offers to keep the code structured and to use predefined functions.",
+    "description_de": "Im Rahmen dieses privaten Projekts habe ich einen Klon von Instagram und Facebook entwickelt. Ziel des Projekts war es, eine von Facebook unabhängige Plattform zu entwickeln, auf der Bilder und Posts mit Freunden geteilt werden können. Der Nutzer kann ein Konto anlegen, verwalten und wie bei Facebook üblich Textbeiträge schreiben, sowie wie bei Instagram üblich Bilder und Galerien teilen. Der Name der Anwendung setzt sich aus den Wörtern Vacaytion und Journal zusammen und soll somit die Möglichkeit geben, Reisen zu dokumentieren. Für die Entwicklung kamen ausschließlich die Programmiersprachen PHP und JavaScript zum Einsatz, wodurch ich meine Ausbildung in der Webentwicklung und im Website-Design vertiefen wollte. Außerdem konnte ich sehen, wie viele Vorteile ein mächtiges Frontend-Framework bietet, um den Code strukturiert zu halten und vordefinierte Funktionen zu nutzen.",
     "date": "2019",
     "keywords": [
       {
@@ -542,8 +539,8 @@
   },
   {
     "title": "Angular And Laravel Projects",
-    "description_en": "This repository contains a variety of websites written with the backend framework Laravel and the frontend framework Angular. The projects are either tasks that had to be developed in the software development course at the Rennweg technical high school or preparations for the final exam in the subject software development.",
-    "description_de": "This repository contains a variety of websites written with the backend framework Laravel and the frontend framework Angular. The projects are either tasks that had to be developed in the software development course at the Rennweg technical high school or preparations for the final exam in the subject software development.",
+    "description_en": "In this project I have summarized all the tasks and exercises I had to do during the software development course at the higher technical institute Rennweg. Furthermore there are also extracurricular exercises for the final exam. The websites are all written with the frontend framework Angular from Google, whereas the backend is written with the PHP framework Laravel. In most exercises there is a database from which data must be read, stored, edited and deleted. This data is prepared by a REST API and can be requested through HTTP requests from the frontend.",
+    "description_de": "In diesem Projekt habe ich alle Aufgaben und Übungen, die ich während des Softwareentwicklungskurses an der Höheren Technischen Lehranstalt Rennweg bearbeiten durfte, zusammengefasst. Außerdem gibt es auch außerschulische Übungen für die Abschlussprüfung. Die Webseiten sind alle mit dem Frontend-Framework Angular von Google geschrieben, während das Backend mit dem PHP-Framework Laravel geschrieben ist. In den meisten Übungen gibt es eine Datenbank, aus der Daten gelesen, gespeichert, bearbeitet und gelöscht werden müssen. Diese Daten werden über eine REST-API aufbereitet und können über HTTP-Anfragen vom Frontend aus angefordert werden.\n\nÜbersetzt mit www.DeepL.com/Translator (kostenlose Version)",
     "date": "2017",
     "keywords": [
       {
@@ -561,8 +558,8 @@
   },
   {
     "title": "Personal Websites Archive",
-    "description_en": "In this repository are some private portfolio websites that I never finished or used.",
-    "description_de": "In this repository are some private portfolio websites that I never finished or used.",
+    "description_en": "In this project are former portfolio websites of mine, which are no longer in use or never were in use. With these websites I wanted to improve my skills in web development and website design. Basically these websites are written with HTML and CSS only, but some of them also use the frontend framework Angular from Google.",
+    "description_de": "Bei diesem Projekt handelt es sich um frühere Portfolio-Websites von mir, die nicht mehr in Gebrauch sind oder nie in Gebrauch waren. Mit diesen Websites wollte ich meine Fähigkeiten in der Webentwicklung und im Website-Design verbessern. Grundsätzlich sind diese Websites nur mit HTML und CSS geschrieben, aber einige von ihnen verwenden auch das Frontend-Framework Angular von Google.",
     "date": "2015",
     "keywords": [
       {
@@ -585,9 +582,31 @@
     "github": "https://github.com/maxhagn/PersonalWebsitesArchive"
   },
   {
+    "title": "Regions Of Interest Profiler C++",
+    "description_en": "This project contains the final product of my bachelor thesis <em>\"Detecting Performance Bottlenecks Through AST Transformations\"</em>. The developed tool transforms <em>C++</em> and inserts performance counters dynamically into the source code. This gives the user the possibility to examine a given program step by step for performance bottlenecks. In each profiling step, each level is examined and the user is provided with statistics about the performance of the program. From the information gained, the next step can be started by selecting a critical region. The program is written in <em>C++</em> and is based on the possibility to create tools with the help of the compiler frontend <em>Clang</em>. More information about my bachelor thesis can be found in the section <em>\"Publications\"</em>.",
+    "description_de": "Dieses Projekt enthält das Endprodukt meiner Bachelorarbeit <em>\"Erkennen von Leistungsengpässen mittels AST-Transformationen\"</em>. Das entwickelte Tool transformiert <em>C++</em> und fügt Leistungszähler dynamisch in den Quellcode ein. Dies gibt dem Benutzer die Möglichkeit, ein gegebenes Programm Schritt für Schritt auf Leistungsengpässe zu untersuchen. In jedem Profiling-Schritt wird jede Ebene untersucht und der Benutzer erhält Statistiken über die Leistung des Programms. Anhand der gewonnenen Informationen kann der nächste Schritt durch Auswahl einer kritischen Region eingeleitet werden. Das Programm ist in <em>C++</em> geschrieben und basiert auf der Möglichkeit, Tools mit Hilfe des Compiler-Frontends Clang zu erstellen. Weitere Informationen zu meiner Bachelorarbeit finden Sie unter der Rubrik <em>\"Publikationen\"</em>.",
+    "date": "2022",
+    "keywords": [
+      {
+        "tag": "Clang"
+      },
+      {
+        "tag": "LLVM"
+      },
+      {
+        "tag": "HPC"
+      },
+      {
+        "tag": "Top"
+      }
+    ],
+    "website": "",
+    "github": "https://github.com/maxhagn/ROIProfilerCPP"
+  },
+  {
     "title": "Computer Now",
-    "description_en": "",
-    "description_de": "",
+    "description_en": "In this project you can find the website of my former one-man business, which I ran for some time besides the university to accept orders in the field of computer support and hardware sales. The website presents the company on the web by showing offered services. Furthermore, the site has a simple configurator that calculates an approximate price for a computer according to the user's needs. The functions of the website are written in PHP. ",
+    "description_de": "In diesem Projekt finden Sie die Website meines ehemaligen Einzelunternehmens, das ich einige Zeit neben der Universität betrieben habe, um Aufträge im Bereich Computersupport und Hardwareverkauf anzunehmen. Die Website stellt das Unternehmen im Web vor, indem die angebotenen Dienstleistungen aufgezeigt werden. Außerdem verfügt die Seite über einen einfachen Produktkonfigurator, der einen ungefähren Preis für einen Computer nach den Bedürfnissen des Benutzers berechnet. Die Funktionen der Website sind in PHP geschrieben. ",
     "date": "2020",
     "keywords": [
       {

@@ -4,6 +4,7 @@ import {faGithub} from "@fortawesome/free-brands-svg-icons";
 import {Subscription} from "rxjs";
 import {NgScrollbar} from "ngx-scrollbar";
 import {DOCUMENT} from "@angular/common";
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-publications',
@@ -33,8 +34,12 @@ export class PublicationsComponent implements AfterViewInit {
   faGithub = faGithub;
   faBook = faBook;
   private _scrollSubscription = Subscription.EMPTY;
+  public currentLanguage: string = "en";
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
   }
 
   public ngAfterViewInit(): void {

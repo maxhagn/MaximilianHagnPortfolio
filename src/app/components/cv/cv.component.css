@@ -102,7 +102,7 @@ a {
 }
 
 button {
-  color: var(--main-red-color);
+  color: var(--main-color);
   font-size: 1.3rem;
   text-decoration: none;
   background: none;

@@ -30,9 +30,12 @@
 }
 
 /*----------COLORS----------*/
+
+/*HELLBLAU: #67adf4, #acd5f3*/
 :root {
   --main-background-color: #fdfdfe;
-  --main-red-color: #67adf4;
+  --main-color: #67adf4;
+  --light-main-color: #acd5f3;
   --main-black-color: #22262a;
   --scrollbar-background: #FFFFFFFF;
   --scrollbar-thumb-color: #b3b3b3;
@@ -130,7 +133,7 @@ h2 {
   margin-top: 6rem;
   font-size: 4.5rem;
   font-family: "Inter-Black", serif;
-  color: var(--main-red-color);
+  color: var(--main-color);
   margin-bottom: 2rem;
 }
 
