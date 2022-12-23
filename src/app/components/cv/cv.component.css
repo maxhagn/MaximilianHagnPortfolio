@@ -10,6 +10,7 @@ h3 {
   text-align: right;
 }
 
+
 @media screen and (max-width: 600px) {
   h3 {
     font-size: 8vw;
@@ -107,4 +108,12 @@ button {
   text-decoration: none;
   background: none;
   border: none;
+}
+
+a.red-link {
+  color: var(--main-black-color);
+  text-decoration: none;
+  margin-right: 2rem;
+  font-size: 1rem;
+  border-radius: 100%;
 }

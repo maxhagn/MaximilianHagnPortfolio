@@ -3,6 +3,7 @@ import {faEnvelope, faHouse, faInfo, faPhone, faUsersViewfinder} from "@fortawes
 import {NgScrollbar} from "ngx-scrollbar";
 import {Subscription} from "rxjs";
 import {DOCUMENT} from "@angular/common";
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-cv',
@@ -34,8 +35,13 @@ export class CvComponent implements AfterViewInit {
   public isDetailedView: boolean;
   private _scrollSubscription = Subscription.EMPTY;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  public currentLanguage: string = "en";
+
+  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document) {
     this.isDetailedView = false;
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
   }
 
   public ngAfterViewInit(): void {
@@ -56,12 +62,16 @@ export class CvComponent implements AfterViewInit {
     this.scrollTops[0] = this.headingElement.nativeElement.offsetTop + (this.headingElement.nativeElement.scrollHeight / 2);
     this.scrollTops[1] = this.nameElement.nativeElement.offsetTop + (this.nameElement.nativeElement.scrollHeight / 2);
     this.scrollTops[2] = this.linkContainerElement.nativeElement.offsetTop + (this.linkContainerElement.nativeElement.scrollHeight / 2);
+    /*
+
     this.scrollTops[3] = this.personalDataElement.nativeElement.offsetTop + (this.personalDataElement.nativeElement.scrollHeight / 2);
     this.scrollTops[4] = this.educationElement.nativeElement.offsetTop + (this.educationElement.nativeElement.scrollHeight / 2);
     this.scrollTops[5] = this.employmentElement.nativeElement.offsetTop + (this.employmentElement.nativeElement.scrollHeight / 2);
     this.scrollTops[6] = this.recognitionsElement.nativeElement.offsetTop + (this.recognitionsElement.nativeElement.scrollHeight / 2);
     this.scrollTops[7] = this.languagesElement.nativeElement.offsetTop + (this.languagesElement.nativeElement.scrollHeight / 2);
     this.scrollTops[8] = this.skillsElement.nativeElement.offsetTop + (this.skillsElement.nativeElement.scrollHeight / 2);
+    */
+
   }
 
   public animate(event): void {

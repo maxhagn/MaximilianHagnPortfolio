@@ -60,6 +60,22 @@
         </canvas>
       </div>
 
+      <br><br>
+      <h4>{{'CV.ACADEMIC' | translate}}</h4>
+      <iframe src=
+                "https://maximilian.hagn.network/documents/Hagn_CV_Academic.pdf"
+              width="99%"
+              height="700">
+      </iframe>
+
+      <h4>{{'CV.DETAILED' | translate}}</h4>
+      <iframe src=
+                "https://maximilian.hagn.network/documents/Hagn_CV_Detailed.pdf"
+              width="99%"
+              height="700">
+      </iframe>
+
+      <!--
       <section #personal_data
                [className]="isVisible[3] ? 'animate__animated animate__fadeIn mt-4' : 'invisible mt-4'">
         <h4>{{'CV.PERSONAL' | translate}}</h4>
@@ -97,7 +113,14 @@
         <h4>{{'CV.EMPLOYMENT' | translate}}</h4>
         <ul>
           <li>
-            <b>09/2021 - {{'CV.PRESENT' | translate}}:</b>
+            <b>11/2022 - 01/2023:</b>
+            <ul>
+              <li>{{'CV.UNIVERSITY_DESC' | translate}}</li>
+              <li>{{'CV.UNIVERSITY' | translate}}</li>
+            </ul>
+          </li>
+          <li>
+            <b>09/2021 - 02/2023:</b>
             <ul>
               <li>{{'CV.AQILO_DESC' | translate}}</li>
               <li>Aqilo Business Consulting GmbH</li>
@@ -142,59 +165,25 @@
       </section>
       <section #recognitions
                [className]="isVisible[6] ? 'animate__animated animate__fadeIn' : 'invisible'">
-        <h4>{{'CV.RECOGNITIONS' | translate}}</h4>
+        <h4>{{'CV.ACHIEVEMENTS' | translate}}</h4>
+        <h5>{{'CV.CERTIFICATIONS' | translate}}</h5>
+        <ul>
+          <li>{{'CV.PROJECT_CERTIFICATION' | translate}}</li>
+          <li>{{'CV.TEAM_BUILDING' | translate}}</li>
+        </ul>
+        <h5>{{'CV.RECOGNITIONS' | translate}}</h5>
         <ul>
           <li>
-            <b>2022:</b>
-            <ul>
-              <li>
-                {{'CV.BSC_1' | translate}}
-              </li>
-            </ul>
+            {{'CV.BSC_1' | translate}}
           </li>
           <li>
-            <b>2017 - 2018:</b>
-            <ul>
-              <li>
-                {{'CV.LEADER_DIPLOMA' | translate}}
-              </li>
-            </ul>
+            {{'CV.LEADER_DIPLOMA' | translate}}
           </li>
           <li>
-            <b>2017:</b>
-            <ul>
-              <li>{{'CV.PROJECT_CERTIFICATION' | translate}}</li>
-            </ul>
+            {{'CV.LEADER_PROJECT' | translate}}
           </li>
           <li>
-            <b>2016 - 2017:</b>
-            <ul>
-              <li>{{'CV.TEAM_BUILDING' | translate}}</li>
-            </ul>
-          </li>
-          <li>
-            <b>2016 - 2017:</b>
-            <ul>
-              <li>{{'CV.SIECAMS_LEADER' | translate}}</li>
-            </ul>
-          </li>
-          <li>
-            <b>2016 – 2017:</b>
-            <ul>
-              <li>{{'CV.LEADER_PROJECT' | translate}}</li>
-            </ul>
-          </li>
-          <li>
-            <b>2015 – 2016:</b>
-            <ul>
-              <li>{{'CV.HEAD_BOY' | translate}}</li>
-            </ul>
-          </li>
-          <li>
-            <b>2014 – 2018:</b>
-            <ul>
-              <li>{{'CV.HIGH_SCHOOL_REP' | translate}}</li>
-            </ul>
+            {{'CV.HIGH_SCHOOL_REP' | translate}}
           </li>
         </ul>
       </section>
@@ -617,6 +606,7 @@
           </table>
         </div>
       </section>
+      -->
     </div>
   </div>
 </div>

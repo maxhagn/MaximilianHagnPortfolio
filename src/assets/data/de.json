@@ -11,7 +11,7 @@
     "HELLO": "Hallo Welt",
     "MAX": "Ich heiße Max",
     "SHORT_DESC": "Ich studieren und arbeite im Bereich der Computerwissenschaften und der Betriebswirtschaftslehre.",
-    "LONG_DESC": "Im Alter von 14 Jahren begann ich, mich mit Informatik und Softwareentwicklung zu beschäftigen, indem ich auf ein technisches Gymnasium wechselte. Nach dem Abschluss dieser fünfjährigen Einrichtung verfügte ich bereits über ein fundiertes Wissen in diesem Bereich und wechselte daher an eine technische Universität, um zunächst Wirtschaftsinformatik und später zusätzlich Software- und Informationstechnik zu studieren. Neben einigen Praktika in diesem Bereich arbeitete ich drei Jahre lang bei einer Computerfirma und war dort im technischen Support tätig und entwickelte außerdem eine kleine Website. Danach wechselte ich zu einer Unternehmensberatung, für die ich derzeit eine Produktivitätssoftware entwickle."
+    "LONG_DESC": "Im Jahr 2014 begann ich, mich mit Informatik zu beschäftigen, indem ich auf ein technisches Gymnasium wechselte. Nach dem Abschluss dieser fünfjährigen Einrichtung verfügte ich bereits über ein fundiertes Wissen in diesem Bereich und wechselte daher an eine technische Universität, um zunächst Wirtschaftsinformatik und später zusätzlich Software- und Informationstechnik zu studieren. Neben mehreren Praktika in diesem Bereich habe ich drei Jahre lang für ein Computerunternehmen gearbeitet, in dem ich für den technischen Support und die Webentwicklung zuständig war. Danach arbeitete ich bei einer Unternehmensberatung, für die ich an der Entwicklung einer Forderungsmanagement-Software beteiligt war. Außerdem war ich als studentischer wissenschaftlicher Mitarbeiter an der Technischen Universität für meine Bachelorarbeit angestellt, für die ich eine Terminal-Benutzeroberfläche schrieb, die Verstöße gegen MPI-Richtlinien erkennt."
   },
   "PROJECTS": {
     "HEADING": "Projekte",
@@ -46,6 +46,8 @@
     "TOOLTIP_MAIL": "E-Mail verfassen",
     "TOOLTIP_PHONE": "Telefonnummer anfragen",
     "TOOLTIP_ADDRESS": "Adresse anfragen",
+    "ACADEMIC": "Akademischer Lebenslauf Englisch",
+    "DETAILED": "Detaillierter Lebenslauf Deutsch",
     "PERSONAL": "Personelle Daten",
     "EDUCATION": "Ausbildung",
     "EMPLOYMENT": "Berufserfahrung",
