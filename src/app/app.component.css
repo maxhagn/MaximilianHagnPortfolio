@@ -1,28 +1,7 @@
-.navbar {
-  position: fixed;
-  width: 100%;
-  background: none;
-  z-index: 99;
-}
-
-.navbar-brand {
-  margin-left: 10%;
-  margin-right: 10%;
-  pointer-events: none;
-  color: var(--main-color);
+.name {
   font-family: "Inter-Bold", sans-serif;
-  animation-delay: 1700ms;
 }
 
-.nav-collapsed {
-  background-color: #f2f2f4;
-}
-
-.navbar-nav {
-  margin-right: 10%;
-}
-
-/*SCROLL-BOX*/
 .scroll-wrapper {
   overflow-x: hidden;
   background-color: transparent !important;
@@ -30,31 +9,27 @@
 }
 
 .nav-item:nth-of-type(1) .nav-link {
-  animation-delay: 700ms;
+  animation-delay: 200ms;
 }
 
 .nav-item:nth-of-type(2) .nav-link {
-  animation-delay: 850ms;
+  animation-delay: 250ms;
 }
 
 .nav-item:nth-of-type(3) .nav-link {
-  animation-delay: 1000ms;
+  animation-delay: 300ms;
 }
 
 .nav-item:nth-of-type(4) .nav-link {
-  animation-delay: 1150ms;
+  animation-delay: 350ms;
 }
 
 .nav-item:nth-of-type(5) .nav-link {
-  animation-delay: 1300ms;
+  animation-delay: 400ms;
 }
 
 .nav-item:nth-of-type(6) .nav-link {
-  animation-delay: 1450ms;
-}
-
-.nav-item:nth-of-type(7) .nav-link {
-  animation-delay: 1600ms;
+  animation-delay: 450ms;
 }
 
 .spinner-container {

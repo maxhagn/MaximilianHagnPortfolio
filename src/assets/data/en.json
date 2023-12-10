@@ -1,20 +1,19 @@
 {
   "NAVBAR": {
     "HOME": "Home",
-    "PUBLICATIONS": "Publications",
     "PROJECTS": "Projects",
-    "CV": "CV",
+    "CV": "Skills",
     "CONTACT": "Contact"
   },
   "ABOUT": {
     "PICTURE_ALT": "Picture of the Creator, Maximilian Hagn",
     "HELLO": "Hello World",
     "MAX": "I'm Max",
-    "SHORT_DESC": "I am studying and working in the area of computer science and business administration.",
-    "LONG_DESC": "In 2014 I started to get involved with computer science by moving to a technical high school. After graduating from this five year institution I already had a profound knowledge in this area and thus changed to a technical university to study first Business Informatics and later additionally Software and Information Engineering. In addition to several internships in this field, I worked for a computer company for three years, where I was responsible for technical support and web development. Afterwards I joined a business consulting company where I was involved in the development of a claim management software. Furthermore, I was employed as a student researcher at the technical university for my bachelor thesis, where I wrote a terminal user interface that detects violations against the MPI guidelines."
+    "SHORT_DESC": "I'm where technology meets business, transforming complex ideas into innovative solutions.",
+    "LONG_DESC": "My academic journey in Business Informatics and Software Engineering empowers me to turn complex challenges into streamlined, innovative solutions."
   },
   "PROJECTS": {
-    "HEADING": "Projects",
+    "HEADING": "From Concept to Code: A Gallery of My Completed Projects",
     "INTRO_TEXT": "In this section you can find my previous software development projects. These projects are either tasks I had to solve at school and university or private projects. For most of the projects the source code can be accessed, viewed and reused via GitHub. If projects are still actively hosted on my server, the website of the project is also listed. In the following you see a selection of my best projects, however, another tag can be selected via the search icon.",
     "WEBSITE": "Explore the Website",
     "SOURCE": "View the Source Code",
@@ -109,8 +108,8 @@
     "LICENSES": "B and AM driving license, motorboat driving license"
   },
   "CONTACT": {
-    "HEADING": "Contact",
-    "INTRO_TEXT": "Feel free to send me an email if you have any questions about me or my projects. However, I am also always interested in freelance opportunities.",
+    "HEADING": "Let's Talk Technology",
+    "INTRO_TEXT": "Interested in discussing a project or learning more about my work? I'd love to hear from you. Reach out to start a conversation and explore how we can collaborate on future technology solutions.",
     "TOOLTIP_MAIL": "Contact Me Via E-Mail",
     "TOOLTIP_PHONE": "Request Phone Number"
   }

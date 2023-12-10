@@ -1,99 +1,137 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, ViewChild} from '@angular/core';
-import {Project} from "../../models/project";
-import projects from '../../../assets/data/projects.json';
-import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
+import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild} from '@angular/core';
+import {faBook, faEarthEurope} from "@fortawesome/free-solid-svg-icons";
 import {faGithub} from "@fortawesome/free-brands-svg-icons";
-import {faEarthEurope, faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
-import {Keyword} from "../../models/keyword";
-import {NgScrollbar} from "ngx-scrollbar";
 import {Subscription} from "rxjs";
+import {NgScrollbar} from "ngx-scrollbar";
+import projects from '../../../assets/data/projects.json';
 import {DOCUMENT} from "@angular/common";
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
+import {Projectold} from "../../models/projectold";
+import {Keyword} from "../../models/keyword";
+import {ProjectDto} from "../../models/ProjectDto";
+import {ProjectService} from "../../services/project.service";
+import {Language} from "../../models/Language";
+import {TextDto} from "../../models/TextDto";
+import {ProjectStats} from "../../models/ProjectStats";
+import {HyperlinkDto} from "../../models/HyperlinkDto";
+import {DeviconService} from "../../services/devicon.service";
+import {SafeUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.css']
 })
-export class ProjectsComponent implements AfterViewInit {
+export class ProjectsComponent implements OnInit {
 
-  /*Scroll Animations*/
   @Input() scrollbarRef: NgScrollbar;
-  @ViewChild('heading', {read: ElementRef}) headingElement;
-  @ViewChild('intro_text', {read: ElementRef}) introTextElement;
-  @ViewChild('search_button', {read: ElementRef}) searchButtonElement;
-  @ViewChild('project_container', {read: ElementRef}) projectContainerElement;
-  public scrollTops: number[] = new Array<number>(4);
-  public isVisible: boolean[] = new Array(4).fill(false);
-  /*Icons*/
-  faGithub = faGithub;
-  faBrowser = faEarthEurope;
-  faMagnifyingGlass = faMagnifyingGlass;
-  public projects: Project[] = projects;
-  public currentSelectedProjects: Project[];
+  public currentSelectedProjects: Projectold[];
   public currentLanguage: string = "en";
-  public currentSelect: Keyword;
-  public selectableTags: Keyword[] =
-    [
-      {tag: "Top"},
-      {tag: "Angular"},
-      {tag: "Blender"},
-      {tag: "C"},
-      {tag: "C++"},
-      {tag: "CSS"},
-      {tag: "Flex"},
-      {tag: "Java"},
-      {tag: "Java Spring Boot"},
-      {tag: "JavaScript"},
-      {tag: "LLVM"},
-      {tag: "Matlab"},
-      {tag: "MPI"},
-      {tag: "OpenMP"},
-      {tag: "R Studio"},
-      {tag: "Security"},
-      {tag: "University"},
-      {tag: "Websites"},
-      {tag: "Yacc/Bison"}
-    ];
-  private _scrollSubscription = Subscription.EMPTY;
+  public projects: ProjectDto[];
+  public projectStats: ProjectStats;
+  public loadingStats: boolean = true;
+  public loadingProjects: boolean = true;
+  public Language = Language;
+  public colors = [
+    'bg-gray-900 text-gray-400',
+    'bg-gray-700 text-gray-300',
+    'bg-gray-500 text-gray-100'];
 
-  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document) {
+  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private projectService: ProjectService, private deviconService: DeviconService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
     });
-    this.changeSelectedProjects(this.selectableTags[0]);
   }
 
-  public ngAfterViewInit(): void {
-    setTimeout(() => {
-      this.calculateScrollTops();
-      this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
-        this.animate(e)
-      });
-    }, 1000)
+  ngOnInit(): void {
+    this.getProjects();
+    this.getProjectStats();
   }
 
-  @HostListener('window:resize', ['$event'])
-  onWindowResize() {
-    this.calculateScrollTops();
-  }
-
-  public calculateScrollTops(): void {
-    this.scrollTops[0] = this.headingElement.nativeElement.offsetTop + (this.headingElement.nativeElement.scrollHeight / 2);
-    this.scrollTops[1] = this.introTextElement.nativeElement.offsetTop + (this.introTextElement.nativeElement.scrollHeight / 2);
-    this.scrollTops[2] = this.searchButtonElement.nativeElement.offsetTop + (this.searchButtonElement.nativeElement.scrollHeight / 2);
-    this.scrollTops[3] = this.projectContainerElement.nativeElement.offsetTop + 100;
-  }
-
-  public animate(event): void {
-    this.scrollTops.forEach((scrollTop, index) => {
-      if (event.target.scrollTop + this.document.body.clientHeight > scrollTop) {
-        this.isVisible[index] = true;
+  getProjectStats(): void {
+    this.projectService.getProjectStats().subscribe(
+      (projectStats: ProjectStats) => {
+        this.projectStats = projectStats;
+        this.loadingStats = false;
       }
-    })
+    );
   }
 
-  public changeSelectedProjects(tag: Keyword): void {
-    this.currentSelect = tag;
-    this.currentSelectedProjects = this.projects.filter(x => x.keywords.some(g => this.currentSelect.tag.includes(g.tag)));
+  getProjects(): void {
+    this.projectService.getProjects().subscribe(
+      (projects: ProjectDto[]) => {
+        this.projects = projects.filter(project =>
+          project.shortDescription &&
+          project.shortDescription.some(text =>
+            text.content !== "" && text.language === Language.ENGLISH)
+        );
+        this.assignGridClasses();
+        this.loadingProjects = false;
+      }
+    );
+  }
+
+  getTextInLanguage(textDto: TextDto[], language: Language): string {
+    return textDto?.find(text => text.language === language)?.content || '';
+  }
+
+  getGitHubRepo(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
+    return hyperlinkDto?.find(hyperlink => hyperlink.description === 'GitHub Repository' && hyperlink.active === true);
+  }
+
+  getWebsite(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
+    return hyperlinkDto?.find(hyperlink => hyperlink.description === 'Website' && hyperlink.active === true);
+  }
+
+  getDocuments(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
+    return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && hyperlink.active === true);
+  }
+
+  getSkillGraphic(name: string): string {
+    return this.deviconService.getDeviconPath(name);
+  }
+
+  assignGridClasses() {
+    this.projects.forEach((project, index) => {
+      if (index < 6) {
+        project.gridClass = this.getGridClass(2)
+      } else if (index < 12) {
+        project.gridClass = this.getGridClass(1);
+      } else {
+        project.gridClass = this.getGridClass(1);
+      }
+    });
+    this.shuffleArray(this.projects)
+  }
+
+  getGridClass(units: number): string {
+    const combinations = {
+      3: 'col-span-6',
+      2: 'col-span-4',
+      1: 'col-span-4'
+    };
+
+
+    return combinations[units] + ' ' + this.getRandomColor();
+  }
+
+  isEnglish = (text: TextDto) => text.language === Language.ENGLISH;
+
+
+  getRandomColor(): string {
+    const randomNumber = Math.floor(Math.random() * this.colors.length);
+    return this.colors[randomNumber];
+  }
+
+  shuffleArray(array: any[]): any[] {
+    let currentIndex = array.length, temporaryValue, randomIndex;
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+    return array;
   }
 }

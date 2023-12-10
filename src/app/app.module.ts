@@ -12,12 +12,12 @@ import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
 import {TranslateHttpLoader} from "@ngx-translate/http-loader";
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {AppComponent} from './app.component';
-import {CvComponent} from "./components/cv/cv.component";
-import {LandingComponent} from "./components/landing/landing.component";
+import {SkillsComponent} from "./components/skills/skills.component";
+import {HeroComponent} from "./components/hero/hero.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
-import {PublicationsComponent} from "./components/publications/publications.component";
-import {ContactComponent} from './components/contact/contact.component';
+import {FooterComponent} from './components/footer/footer.component';
 import {NgScrollbarModule} from "ngx-scrollbar";
+import { ContactComponent } from './components/contact/contact.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/data/', '.json');
@@ -28,10 +28,10 @@ registerLocaleData(localeDe, localeDeExtra);
 @NgModule({
   declarations: [
     AppComponent,
-    CvComponent,
-    LandingComponent,
+    SkillsComponent,
+    HeroComponent,
     ProjectsComponent,
-    PublicationsComponent,
+    FooterComponent,
     ContactComponent
   ],
   imports: [

@@ -5,7 +5,7 @@ import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {TranslateService} from "@ngx-translate/core";
 import {Subscription} from "rxjs";
 
-declare function initCanvas(): any;
+
 
 @Component({
   selector: 'app-root',
@@ -16,11 +16,13 @@ export class AppComponent implements AfterViewInit {
 
   /*Scroll Animations*/
   @ViewChild(NgScrollbar, {static: true}) scrollbarRef: NgScrollbar;
-  @ViewChild('landing', {read: ElementRef}) landingElement;
-  @ViewChild('publications', {read: ElementRef}) publicationsElement;
+  @ViewChild('hero', {read: ElementRef}) heroElement;
   @ViewChild('projects', {read: ElementRef}) projectsElement;
-  @ViewChild('cv', {read: ElementRef}) cvElement;
+  @ViewChild('skills', {read: ElementRef}) skillsElement;
   @ViewChild('contact', {read: ElementRef}) contactElement;
+  @ViewChild('header', {read: ElementRef}) headerElement;
+  @ViewChild('dummy_box', {read: ElementRef}) dummyBoxElement;
+  @ViewChild('headerInner', {read: ElementRef}) headerInnerElement;
   public activeMenuEntry: number;
   public isLanguageChanged: boolean = false;
   public isLoaded: boolean;
@@ -49,7 +51,6 @@ export class AppComponent implements AfterViewInit {
         this.getActiveSection(e)
       });
     }, 1000)
-    initCanvas();
     this.sleep();
   }
 
@@ -58,16 +59,35 @@ export class AppComponent implements AfterViewInit {
     if (event.target.scrollTop + this.document.body.clientHeight < (this.projectsElement.nativeElement.offsetTop + 100)) {
       this.activeMenuEntry = 1;
     } else if (event.target.scrollTop + this.document.body.clientHeight >= this.projectsElement.nativeElement.offsetTop &&
-      event.target.scrollTop + this.document.body.clientHeight < this.publicationsElement.nativeElement.offsetTop) {
+      event.target.scrollTop + this.document.body.clientHeight < this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 2;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.publicationsElement.nativeElement.offsetTop &&
-      event.target.scrollTop + this.document.body.clientHeight < this.cvElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 3;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.cvElement.nativeElement.offsetTop &&
+    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop &&
       event.target.scrollTop + this.document.body.clientHeight < this.contactElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 4;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.contactElement.nativeElement.offsetTop) {
+      this.activeMenuEntry = 3;
+    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 5;
+    }
+    if (event.target.scrollTop > this.projectsElement.nativeElement.offsetTop + 100) {
+      this.dummyBoxElement.nativeElement.style.flexBasis = '0'
+      this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
+    }
+
+    this.setHeaderCss(event.target.scrollTop)
+  }
+
+  public setHeaderCss(scrollTop: number): void {
+    let relativeChange = scrollTop / this.projectsElement.nativeElement.offsetTop;
+    relativeChange = relativeChange < 1 ? relativeChange : 1;
+
+    let flexBasisDummyBox = (1 - relativeChange) * 50;
+    let maxWithHeaderInner =  (window.innerWidth / 16) + (80 - (window.innerWidth / 16)) * relativeChange
+    this.headerInnerElement.nativeElement.style.maxWidth = maxWithHeaderInner + 'rem'
+    this.dummyBoxElement.nativeElement.style.flexBasis = flexBasisDummyBox + '%';
+
+    if (scrollTop > this.projectsElement.nativeElement.offsetTop) {
+      this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
+    } else {
+      this.headerElement.nativeElement.style.background = 'none'
     }
   }
 
@@ -88,6 +108,6 @@ export class AppComponent implements AfterViewInit {
     setTimeout(() => {
       this.isLoaded = true;
     }, 1000)
-    initCanvas();
+
   }
 }

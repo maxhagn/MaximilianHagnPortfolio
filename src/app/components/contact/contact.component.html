@@ -1,27 +1,23 @@
-<div class="colored-container">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 col-xl-6 col-xxl-6">
-        <h2 #heading
-            [className]="isVisible[0] ? 'animate__animated animate__fadeIn' : 'invisible'">{{'CONTACT.HEADING' | translate}}</h2>
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8">
-            <p #intro_text
-               [className]="isVisible[1] ? 'animate__animated animate__fadeIn' : 'invisible'">{{'CONTACT.INTRO_TEXT' | translate}}</p>
-          </div>
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
-            <div #link_container
-                 [className]="isVisible[2] ? 'link-container animate__animated animate__fadeIn' : 'invisible'">
-              <a [ngbTooltip]="'CONTACT.TOOLTIP_MAIL' | translate"
-                 href="mailto:maximilian@hagn.network">
-                <fa-icon [icon]="faEnvelope"></fa-icon>
-              </a>
-              <a [ngbTooltip]="'CONTACT.TOOLTIP_PHONE' | translate"
-                 href="mailto:maximilian@hagn.network">
-                <fa-icon [icon]="faPhone"></fa-icon>
-              </a>
+<div class="bg-white py-16 md:py-32 lg:py-52">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto w-fit space-y-16 divide-y divide-gray-100 lg:mx-0 lg:max-w-none">
+      <div class="flex-col md:flex-row flex gap-x-8 gap-y-10">
+        <div class="max-w-md">
+          <h2 class="text-3xl font-bold tracking-tight text-gray-900">{{'CONTACT.HEADING' | translate}}</h2>
+          <p class="mt-4 leading-7 text-gray-600">{{'CONTACT.INTRO_TEXT' | translate}}</p>
+        </div>
+        <div class="py-10 ps-10 pe-20 rounded-2xl bg-gray-900 drop-shadow-2xl w-fit">
+          <h3 class="text-base font-semibold leading-7 text-white">Maximilian Hagn BSc. BSc.</h3>
+          <dl class="mt-3 space-y-1 text-sm leading-6 text-gray-200">
+            <div>
+              <dt class="sr-only">Email</dt>
+              <dd><a class="font-semibold text-gray-400 hover:text-red-600"  href="mailto:maximilian.hagn@gmail.com">maximilian.hagn@gmail.com</a></dd>
             </div>
-          </div>
+            <div class="mt-1">
+              <dt class="sr-only">Phone number</dt>
+              <dd>+43 676 9579022</dd>
+            </div>
+          </dl>
         </div>
       </div>
     </div>

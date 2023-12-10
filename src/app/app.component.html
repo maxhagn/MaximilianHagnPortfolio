@@ -1,13 +1,129 @@
+<header class="fixed z-50 w-full right-0 top-0" #header>
+  <nav class="mx-auto flex items-center justify-between px-2 py-2 md:px-4 xl:px-8" aria-label="Global" #headerInner>
+    <div class="hidden xl:block basis-1/2" #dummy_box></div>
+    <div class="flex xl:flex-1">
+      <a (click)="scrollToElement(hero)"
+         class="name sm:mx-2 my-2 md:px-4 xl:mx-4 text-white font-extrabold text-base md:text-xl animate__animated animate__bounceIn">Maximilian
+        Hagn</a>
+    </div>
+    <div class="flex mr-8 lg:hidden">
+      <button (click)="toggleNav()" type="button"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700">
+        <span class="sr-only">Open main menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:flex lg:gap-x-12">
+      <ul ngbNav>
+        <li [ngbNavItem]="1">
+          <a (click)="scrollToElement(hero)"
+             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             ngbNavLink>{{ 'NAVBAR.HOME' | translate }}</a>
+        </li>
+        <li [ngbNavItem]="2">
+          <a (click)="scrollToElement(projects)"
+             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             ngbNavLink>{{ 'NAVBAR.PROJECTS' | translate }}</a>
+        </li>
+        <li [ngbNavItem]="3">
+          <a (click)="scrollToElement(skills)"
+             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             ngbNavLink>{{ 'NAVBAR.CV' | translate }}</a>
+        </li>
+        <li [ngbNavItem]="4">
+          <a (click)="scrollToElement(contact)"
+             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             ngbNavLink>{{ 'NAVBAR.CONTACT' | translate }}</a>
+        </li>
+        <li [ngbNavItem]="5">
+          <a (click)="changeLang('de')"
+             *ngIf="translate.currentLang == 'en'"
+             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
+             ngbNavLink>
+            Deutsch
+          </a>
+          <a (click)="changeLang('en')"
+             *ngIf="translate.currentLang == 'de'"
+             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
+             ngbNavLink>
+            English
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="lg:hidden" role="dialog" aria-modal="true" *ngIf="!isMenuCollapsed">
+    <div
+      class="fixed bg-gray-900 inset-y-0 right-0 z-10 w-full h-fit overflow-hidden px-2 pt-2 pb-8 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 drop-shadow-2xl">
+      <div class="flex items-center justify-between">
+        <div class="flex lg:flex-1">
+          <a (click)="scrollToElement(hero)" class="name mx-2 my-2 text-white font-extrabold text-base md:text-xl">Maximilian
+            Hagn</a>
+        </div>
+        <button (click)="toggleNav()" type="button"
+                class="me-4 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      <div class="mt-6 flow-root">
+        <div class="-my-6 divide-y divide-gray-500/10">
+          <ul class="flex flex-col" ngbNav>
+            <li [ngbNavItem]="1">
+              <a (click)="scrollToElement(hero)"
+                 class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                 ngbNavLink>{{ 'NAVBAR.HOME' | translate }}</a>
+            </li>
+            <li [ngbNavItem]="2">
+              <a (click)="scrollToElement(projects)"
+                 class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                 ngbNavLink>{{ 'NAVBAR.PROJECTS' | translate }}</a>
+            </li>
+            <li [ngbNavItem]="3">
+              <a (click)="scrollToElement(skills)"
+                 class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                 ngbNavLink>{{ 'NAVBAR.CV' | translate }}</a>
+            </li>
+            <li [ngbNavItem]="4">
+              <a (click)="scrollToElement(contact)"
+                 class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                 ngbNavLink>{{ 'NAVBAR.CONTACT' | translate }}</a>
+            </li>
+            <li [ngbNavItem]="5">
+              <a (click)="changeLang('de')"
+                 *ngIf="translate.currentLang == 'en'"
+                 class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                 ngbNavLink>
+                Deutsch
+              </a>
+              <a (click)="changeLang('en')"
+                 *ngIf="translate.currentLang == 'de'"
+                 class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
+                 ngbNavLink>
+                English
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--
 <nav
-  [class]="isMenuCollapsed ? 'navbar navbar-light navbar-expand-lg pt-3 mb-3' : 'nav-collapsed navbar navbar-light navbar-expand-lg pt-3 mb-3'">
-  <a (click)="scrollToElement(landing)" class="navbar-brand animate__animated animate__bounceIn">Maximilian Hagn</a>
+  [class]="isMenuCollapsed ? 'navbar bg-white navbar-light navbar-expand-lg pt-3 mb-3' : 'nav-collapsed navbar navbar-light navbar-expand-lg pt-3 mb-3'">
+
   <button (click)="toggleNav()" class="navbar-toggler" type="button">
     <fa-icon [icon]="isMenuCollapsed ? faBars : faXmark"></fa-icon>
   </button>
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul [(activeId)]="activeMenuEntry" class="navbar-nav ms-auto mb-2 mb-lg-0" ngbNav>
       <li [ngbNavItem]="1" class="nav-item">
-        <a (click)="scrollToElement(landing)" class="nav-link animate__animated animate__bounceIn"
+        <a (click)="scrollToElement(landing)" class="text-black animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.HOME' | translate}}</a>
       </li>
       <li [ngbNavItem]="2" class="nav-item">
@@ -15,19 +131,14 @@
            ngbNavLink>{{'NAVBAR.PROJECTS' | translate}}</a>
       </li>
       <li [ngbNavItem]="3" class="nav-item">
-        <a (click)="scrollToElement(publications)"
-           class="nav-link animate__animated animate__bounceIn"
-           ngbNavLink>{{'NAVBAR.PUBLICATIONS' | translate}}</a>
-      </li>
-      <li [ngbNavItem]="4" class="nav-item">
         <a (click)="scrollToElement(cv)" class="nav-link animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.CV' | translate}}</a>
       </li>
-      <li [ngbNavItem]="5" class="nav-item">
+      <li [ngbNavItem]="4" class="nav-item">
         <a (click)="scrollToElement(contact)" class="nav-link animate__animated animate__bounceIn"
            ngbNavLink>{{'NAVBAR.CONTACT' | translate}}</a>
       </li>
-      <li [ngbNavItem]="6" class="nav-item">
+      <li [ngbNavItem]="5" class="nav-item">
         <a (click)="changeLang('de')"
            *ngIf="translate.currentLang == 'en'"
            [className]="isLanguageChanged ? 'nav-link' : 'nav-link animate__animated animate__bounceIn'"
@@ -44,6 +155,7 @@
     </ul>
   </div>
 </nav>
+-->
 
 
 <ng-scrollbar #scrollable
@@ -52,20 +164,20 @@
               thumbClass="scrollbar"
               track="all">
   <div class="scroll-wrapper">
-    <div #landing>
-      <app-landing [scrollbarRef]="scrollbarRef"></app-landing>
+    <div #hero>
+      <app-hero [scrollbarRef]="scrollbarRef"></app-hero>
     </div>
     <div #projects>
       <app-projects [scrollbarRef]="scrollbarRef"></app-projects>
     </div>
-    <div #publications>
-      <app-publications [scrollbarRef]="scrollbarRef"></app-publications>
-    </div>
-    <div #cv>
-      <app-cv [scrollbarRef]="scrollbarRef"></app-cv>
+    <div #skills>
+      <app-skills [scrollbarRef]="scrollbarRef"></app-skills>
     </div>
     <div #contact>
       <app-contact [scrollbarRef]="scrollbarRef"></app-contact>
+    </div>
+    <div>
+      <app-footer [scrollbarRef]="scrollbarRef"></app-footer>
     </div>
   </div>
 </ng-scrollbar>

@@ -1,16 +1,14 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CvComponent} from "../components/cv/cv.component";
+import {SkillsComponent} from "../components/skills/skills.component";
 import {ProjectsComponent} from "../components/projects/projects.component";
-import {PublicationsComponent} from "../components/publications/publications.component";
-import {LandingComponent} from "../components/landing/landing.component";
+import {HeroComponent} from "../components/hero/hero.component";
 
 const routes: Routes = [
 
-  {path: '', component: LandingComponent},
-  {path: 'cv', component: CvComponent},
+  {path: '', component: HeroComponent},
+  {path: 'skills', component: SkillsComponent},
   {path: 'projects', component: ProjectsComponent},
-  {path: 'publications', component: PublicationsComponent}
 
 ];
 
