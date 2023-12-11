@@ -137,6 +137,7 @@ yarn add devicon
 ```
 
 Add css rules in your stylesheet
+
 ```css
 .devicon-devicon-plain {
   max-width: 2em;

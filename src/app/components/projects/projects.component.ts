@@ -1,13 +1,7 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild} from '@angular/core';
-import {faBook, faEarthEurope} from "@fortawesome/free-solid-svg-icons";
-import {faGithub} from "@fortawesome/free-brands-svg-icons";
-import {Subscription} from "rxjs";
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {NgScrollbar} from "ngx-scrollbar";
-import projects from '../../../assets/data/projects.json';
 import {DOCUMENT} from "@angular/common";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
-import {Projectold} from "../../models/projectold";
-import {Keyword} from "../../models/keyword";
 import {ProjectDto} from "../../models/ProjectDto";
 import {ProjectService} from "../../services/project.service";
 import {Language} from "../../models/Language";
@@ -15,7 +9,6 @@ import {TextDto} from "../../models/TextDto";
 import {ProjectStats} from "../../models/ProjectStats";
 import {HyperlinkDto} from "../../models/HyperlinkDto";
 import {DeviconService} from "../../services/devicon.service";
-import {SafeUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-projects',
@@ -25,7 +18,6 @@ import {SafeUrl} from "@angular/platform-browser";
 export class ProjectsComponent implements OnInit {
 
   @Input() scrollbarRef: NgScrollbar;
-  public currentSelectedProjects: Projectold[];
   public currentLanguage: string = "en";
   public projects: ProjectDto[];
   public projectStats: ProjectStats;
@@ -87,10 +79,6 @@ export class ProjectsComponent implements OnInit {
     return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && hyperlink.active === true);
   }
 
-  getSkillGraphic(name: string): string {
-    return this.deviconService.getDeviconPath(name);
-  }
-
   assignGridClasses() {
     this.projects.forEach((project, index) => {
       if (index < 6) {
@@ -111,12 +99,8 @@ export class ProjectsComponent implements OnInit {
       1: 'col-span-4'
     };
 
-
     return combinations[units] + ' ' + this.getRandomColor();
   }
-
-  isEnglish = (text: TextDto) => text.language === Language.ENGLISH;
-
 
   getRandomColor(): string {
     const randomNumber = Math.floor(Math.random() * this.colors.length);

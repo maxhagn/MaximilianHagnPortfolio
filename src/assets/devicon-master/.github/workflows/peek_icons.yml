@@ -1,7 +1,7 @@
 name: Peek Icons
 on:
   pull_request:
-      types: [labeled]
+    types: [ labeled ]
 jobs:
   peek:
     # four outcomes: successful check and upload,
@@ -15,10 +15,10 @@ jobs:
 
       - name: Setup Python v3.8
         uses: actions/setup-python@v2
-        with: 
+        with:
           python-version: 3.8
 
-      - name: Install dependencies 
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r ./.github/scripts/requirements.txt
@@ -40,8 +40,8 @@ jobs:
           PR_TITLE: ${{ github.event.pull_request.title }}
         shell: cmd
         run: >
-          python ./.github/scripts/icomoon_peek.py 
-          ./.github/scripts/build_assets/geckodriver-v0.30.0-win64/geckodriver.exe ./icomoon.json 
+          python ./.github/scripts/icomoon_peek.py
+          ./.github/scripts/build_assets/geckodriver-v0.30.0-win64/geckodriver.exe ./icomoon.json
           ./devicon.json ./icons ./ --headless "%PR_TITLE%"
 
       - name: Upload the err messages (created by icomoon_peek.py)

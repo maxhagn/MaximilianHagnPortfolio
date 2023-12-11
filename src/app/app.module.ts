@@ -17,7 +17,7 @@ import {HeroComponent} from "./components/hero/hero.component";
 import {ProjectsComponent} from "./components/projects/projects.component";
 import {FooterComponent} from './components/footer/footer.component';
 import {NgScrollbarModule} from "ngx-scrollbar";
-import { ContactComponent } from './components/contact/contact.component';
+import {ContactComponent} from './components/contact/contact.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/data/', '.json');

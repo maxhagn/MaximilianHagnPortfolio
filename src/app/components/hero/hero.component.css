@@ -1,24 +1,18 @@
 @import "~animate.css/animate.min.css";
 
 .image-container {
-  background-image: url("../../../assets/images/hero.jpeg");
+  background-image: url("../../../assets/images/hero.webp");
   background-size: cover;
   background-position: center;
 }
 
 .mobile-image-container {
-  background-image: url("../../../assets/images/hero.jpeg");
+  background-image: url("../../../assets/images/hero.webp");
   background-size: cover;
   background-position: center;
   height: 80%;
   width: 90%;
   max-width: 30rem;
-}
-
-@media screen and (max-width: 400px) {
-  .mobile-image-wrapper {
-    display: none;
-  }
 }
 
 h1, h2, h3, span {

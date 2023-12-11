@@ -1,7 +1,7 @@
 name: Optimize the added/changed svgs
 on:
   pull_request:
-      types: [labeled]
+    types: [ labeled ]
 jobs:
   peek:
     name: Optimize the added/changed svgs

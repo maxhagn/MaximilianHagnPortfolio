@@ -6,7 +6,7 @@ var devicon = angular.module('devicon', ['ngSanitize', 'ngAnimate']);
 ||==============================================================
 */
 
-devicon.controller('IconListCtrl', function($scope, $http, $compile) {
+devicon.controller('IconListCtrl', function ($scope, $http, $compile) {
 
   // Determination of the latest release tagging
   // which is used for showing in the header of the page
@@ -16,7 +16,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
 
   $scope.latestReleaseTagging = 'master';
   $http.get(url).success(function (data) {
-    if(data.length > 0) {
+    if (data.length > 0) {
       $scope.latestReleaseTagging = data[0].name;
     }
   }).error(function () {
@@ -27,7 +27,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
   var baseUrl = `https://cdn.jsdelivr.net/gh/${gitHubPath}${versionStr}/`
 
   // Get devicon.json
-  $http.get(baseUrl + 'devicon.json').success(function(data) {
+  $http.get(baseUrl + 'devicon.json').success(function (data) {
 
     /*
     | Re-format devicon.json
@@ -50,7 +50,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
     $scope.svgDisplayChecker = false;
 
     // Loop through devicon.json
-    angular.forEach(data, function(devicon, key) {
+    angular.forEach(data, function (devicon, key) {
 
       // New icon format
       var icon = {
@@ -103,7 +103,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
   | param icon: the new icon.
   |--------------------------------
   */
-  $scope.selectIcon = function(icon) {
+  $scope.selectIcon = function (icon) {
     $scope.selectedIcon = icon;
     $scope.selectedFontIcon = icon.font[0];
     $scope.selectedFontIndex = 0;
@@ -121,7 +121,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
   | Change selected icon font version
   |--------------------------------
   */
-  $scope.selectFont = function(fontVersion, colored, index) {
+  $scope.selectFont = function (fontVersion, colored, index) {
     $scope.selectedFontIcon = fontVersion;
     $scope.colored = colored ? true : false;
     $scope.selectedFontIndex = index;
@@ -132,9 +132,9 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
   | Change selected icon svg version
   |--------------------------------
   */
-  $scope.selectSvg = function(svgVersion, index) {
+  $scope.selectSvg = function (svgVersion, index) {
 
-    $http.get(baseUrl + 'icons/' + $scope.selectedIcon.name + '/' + $scope.selectedIcon.name + '-' + svgVersion + '.svg').success(function(data){
+    $http.get(baseUrl + 'icons/' + $scope.selectedIcon.name + '/' + $scope.selectedIcon.name + '-' + svgVersion + '.svg').success(function (data) {
 
       var svgElement = angular.element(data);
       var innerSvgElement = null;
@@ -147,17 +147,17 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
        */
       for (const [key, value] of Object.entries(svgElement)) {
         /** [object SVGSVGElement] ensures we have the actual svg content */
-        if(value.toString() == '[object SVGSVGElement]') {
+        if (value.toString() == '[object SVGSVGElement]') {
           innerSvgElement = value;
           break;
         }
       }
 
-      if(innerSvgElement === null) {
+      if (innerSvgElement === null) {
         console.error('Could not find content of given SVG.')
       } else {
-        var innerSVG            = (innerSvgElement.innerHTML);
-        $scope.selectedSvgIcon  = innerSVG;
+        var innerSVG = (innerSvgElement.innerHTML);
+        $scope.selectedSvgIcon = innerSVG;
         $scope.selectedSvgIndex = index;
       }
     });
@@ -171,7 +171,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
    * @param {String} id - id of the element we are copying its text
    * content from.
    */
-  $scope.copyToClipboard = function(event, id) {
+  $scope.copyToClipboard = function (event, id) {
     let text = document.getElementById(id).textContent
     navigator.clipboard.writeText(text)
       .then(() => {
@@ -187,7 +187,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
    * @param {String} text - text the tooltip should have.
    * @param {Element} copyBtn - the copyBtn element, which is an <img>
    */
-  $scope.displayTooltip = function(text, copyBtn) {
+  $scope.displayTooltip = function (text, copyBtn) {
     let tooltip = copyBtn.parentElement.getElementsByClassName("tooltip")[0]
     tooltip.textContent = text
     // reset opacity (for some reason, default opacity is null)
@@ -203,7 +203,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
         if (--count == 0) {
           clearInterval(intervalObj)
           tooltip.style.visibility = "hidden"
-        } 
+        }
       }, 50)
     }, 2000)
   }
@@ -212,7 +212,7 @@ devicon.controller('IconListCtrl', function($scope, $http, $compile) {
    * Display the color picker.
    * @param {String} id - id of the menu we are showing.
    */
-  $scope.toggleColorPickerMenu = function(id) {
+  $scope.toggleColorPickerMenu = function (id) {
     let menu = document.getElementById(id)
     menu.style.display = menu.style.display == "none" || menu.style.display == "" ? "inherit" : "none"
   }
@@ -231,11 +231,11 @@ devicon.directive('imgToSvg', function ($http, $compile) {
   var baseUrl = window.location.href;
 
   return {
-    link : function($scope, $element, $attrs) {
+    link: function ($scope, $element, $attrs) {
 
-      $attrs.$observe('src', function(val){
+      $attrs.$observe('src', function (val) {
 
-        $http.get(baseUrl + val).success(function(data){
+        $http.get(baseUrl + val).success(function (data) {
 
           var svg = angular.element(data);
           svg = svg.removeAttr('xmlns');
@@ -261,11 +261,11 @@ devicon.directive('imgToSvg', function ($http, $compile) {
 devicon.directive('svgColor', function () {
 
   return {
-    link : function($scope, $element, $attrs) {
-      $element.on('mouseenter', function(){
+    link: function ($scope, $element, $attrs) {
+      $element.on('mouseenter', function () {
         $element.removeClass('not-colored');
       });
-      $element.on('mouseleave', function(){
+      $element.on('mouseleave', function () {
         $element.addClass('not-colored');
       });
     }
@@ -289,7 +289,7 @@ devicon.directive('iconDetails', function ($http, $compile) {
       icon: "="
     },
     compile: function CompilingFunction($templateElement) {
-      $element.on('click', function(){
+      $element.on('click', function () {
         $templateElement.replaceWith(this.template);
       });
     }

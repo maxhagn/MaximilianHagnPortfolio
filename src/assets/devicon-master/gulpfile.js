@@ -31,7 +31,7 @@ async function createDeviconMinCSS() {
 
   return gulp
     .src(finalMinSCSSName)
-    .pipe(sass.sync({ outputStyle: "compressed" }).on("error", sass.logError))
+    .pipe(sass.sync({outputStyle: "compressed"}).on("error", sass.logError))
     .pipe(gulp.dest("./"));
 }
 
@@ -76,7 +76,7 @@ function createAliasSCSS(deviconJson) {
  * devicon-alias.scss.
  */
 function createAliasStatement(fontObj) {
-  let { name, aliases } = fontObj;
+  let {name, aliases} = fontObj;
 
   return aliases
     .map(aliasObj => {
@@ -100,7 +100,7 @@ function createColorsCSS(deviconJson) {
     .map(fontObj => {
       let {
         name,
-        versions: { font: fonts },
+        versions: {font: fonts},
         color,
         aliases
       } = fontObj;
@@ -198,8 +198,8 @@ function configOptionCallback(file) {
 }
 
 /**
- * Bump the NPM version of this project. 
- * This is called via the command line 
+ * Bump the NPM version of this project.
+ * This is called via the command line
  * using the format "npm run bump -- -v='MAJOR.MINOR.PATCH'"
  * @returns a Promise.resolve()
  */

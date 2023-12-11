@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
-import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {Injectable} from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DeviconService {
 
-  deviconMap= new Map<string, string>([
+  deviconMap = new Map<string, string>([
     ["C", "devicon-c-plain"],
     ["C++", "devicon-cplusplus-plain"],
+    ["C#", "devicon-csharp-plain"],
     ["Java", "devicon-java-plain"],
     ["PHP", "devicon-php-plain"],
     ["Apache", "devicon-apache-plain"],
@@ -20,18 +20,19 @@ export class DeviconService {
     ["Debian", "devicon-debian-plain"],
     ["Docker", "devicon-docker-plain"],
     [".Net", "devicon-dot-net-plain"],
+    ["Visual Studio Code", "devicon-vscode-plain"],
     ["eslint", "devicon-eslint-plain"],
     ["Figma", "devicon-figma-plain"],
     ["GCC", "devicon-gcc-plain"],
     ["GitHub", "devicon-github-plain"],
     ["Git", "devicon-git-plain"],
     ["Grafana", "devicon-grafana-plain"],
+    ["Prometheus", "devicon-prometheus-original"],
     ["Gradle", "devicon-gradle-plain"],
     ["Haskell", "devicon-haskell-plain"],
     ["HTML5", "devicon-html5-plain"],
-    ["Intellij", "devicon-intellij-plain"],
+    ["IntelliJ", "devicon-intellij-plain"],
     ["JavaScript", "devicon-javascript-plain"],
-    ["Java Script", "devicon-javascript-plain"], // fix skill in projects website // fix skill in projects website
     ["Kotlin", "devicon-kotlin-plain"],
     ["Laravel", "devicon-laravel-plain"],
     ["Latex", "devicon-latex-plain"],
@@ -39,8 +40,9 @@ export class DeviconService {
     ["MATLAB", "devicon-matlab-plain"], // fix skill in projects website // fix skill in projects website
     ["MongoDB", "devicon-mongodb-plain"],
     ["MySQL", "devicon-mysql-plain"],
+    ["Bootstrap", "devicon-bootstrap-plain"],
     ["Nginx", "devicon-nginx-plain"],
-    ["NPM", "devicon-npm-plain"],
+    ["NPM", "devicon-npm-original-wordmark"],
     ["PostgresSQL", "devicon-postgresql-plain"],
     ["jQuery", "devicon-jquery-plain"],
     ["Blender", "devicon-blender-original"],
@@ -50,6 +52,7 @@ export class DeviconService {
     ["Redis", "devicon-redis-plain"],
     ["Sass", "devicon-sass-plain"],
     ["Swift", "devicon-swift-plain"],
+    ["Firebase", "devicon-firebase-plain"],
     ["Selenium", "devicon-selenium-plain"],
     ["Spring Boot", "devicon-spring-plain"],
     ["TailwindCSS", "devicon-tailwindcss-plain"],
@@ -59,7 +62,8 @@ export class DeviconService {
     ["Kubernetes", "devicon-kubernetes-plain"],
   ]);
 
-  constructor() { }
+  constructor() {
+  }
 
   getDeviconPath(skill: string): string {
     let cssClass = this.deviconMap.get(skill);

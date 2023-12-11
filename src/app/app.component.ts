@@ -6,7 +6,6 @@ import {TranslateService} from "@ngx-translate/core";
 import {Subscription} from "rxjs";
 
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -46,12 +45,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
-        this.getActiveSection(e)
-      });
-    }, 1000)
-    this.sleep();
+    this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
+      this.getActiveSection(e)
+    });
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -80,7 +76,7 @@ export class AppComponent implements AfterViewInit {
     relativeChange = relativeChange < 1 ? relativeChange : 1;
 
     let flexBasisDummyBox = (1 - relativeChange) * 50;
-    let maxWithHeaderInner =  (window.innerWidth / 16) + (80 - (window.innerWidth / 16)) * relativeChange
+    let maxWithHeaderInner = (window.innerWidth / 16) + (80 - (window.innerWidth / 16)) * relativeChange
     this.headerInnerElement.nativeElement.style.maxWidth = maxWithHeaderInner + 'rem'
     this.dummyBoxElement.nativeElement.style.flexBasis = flexBasisDummyBox + '%';
 
@@ -102,12 +98,5 @@ export class AppComponent implements AfterViewInit {
 
   public toggleNav() {
     this.isMenuCollapsed = !this.isMenuCollapsed;
-  }
-
-  async sleep() {
-    setTimeout(() => {
-      this.isLoaded = true;
-    }, 1000)
-
   }
 }

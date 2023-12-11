@@ -32,9 +32,6 @@
   src: url(/assets/fonts/Inter-ExtraBold.ttf);
 }
 
-/*----------COLORS----------*/
-
-/*HELLBLAU: #67adf4, #acd5f3*/
 :root {
   --main-background-color: #fdfdfe;
   --main-color: #67adf4;
@@ -45,13 +42,10 @@
   --scrollbar-thumb-hover-color: #9a9999;
 }
 
-/*----------FONT----------*/
 * {
   font-family: "Inter-Regular", serif;
 }
 
-/*----------GENERALS----------*/
-/*----------SCROLLBAR----------*/
 ::-webkit-scrollbar {
   background-color: transparent;
   width: 9px;
@@ -115,8 +109,6 @@
   transition: 100ms background-color ease-in !important;
 }
 
-
-/*----------GENERALS----------*/
 html, body {
   scroll-behavior: smooth;
   font-size: 16px;
