@@ -16,38 +16,38 @@
       </button>
     </div>
     <div class="hidden lg:flex lg:gap-x-12">
-      <ul>
+      <ul class="flex flex-row">
         <li>
           <a (click)="scrollToElement(hero)"
-             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
-             ngbNavLink>{{ 'NAVBAR.HOME' | translate }}</a>
+             class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             >{{ 'NAVBAR.HOME' | translate }}</a>
         </li>
         <li>
           <a (click)="scrollToElement(projects)"
-             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
-             ngbNavLink>{{ 'NAVBAR.PROJECTS' | translate }}</a>
+             class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             >{{ 'NAVBAR.PROJECTS' | translate }}</a>
         </li>
         <li>
           <a (click)="scrollToElement(skills)"
-             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
-             ngbNavLink>{{ 'NAVBAR.CV' | translate }}</a>
+             class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             >{{ 'NAVBAR.CV' | translate }}</a>
         </li>
         <li>
           <a (click)="scrollToElement(contact)"
-             class="text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
-             ngbNavLink>{{ 'NAVBAR.CONTACT' | translate }}</a>
+             class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+             >{{ 'NAVBAR.CONTACT' | translate }}</a>
         </li>
         <li>
           <a (click)="changeLang('de')"
              *ngIf="translate.currentLang == 'en'"
-             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
-             ngbNavLink>
+             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
+             >
             Deutsch
           </a>
           <a (click)="changeLang('en')"
              *ngIf="translate.currentLang == 'de'"
-             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
-             ngbNavLink>
+             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
+             >
             English
           </a>
         </li>
@@ -76,34 +76,34 @@
             <li>
               <a (click)="scrollToElement(hero)"
                  class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                 ngbNavLink>{{ 'NAVBAR.HOME' | translate }}</a>
+                 >{{ 'NAVBAR.HOME' | translate }}</a>
             </li>
             <li>
               <a (click)="scrollToElement(projects)"
                  class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                 ngbNavLink>{{ 'NAVBAR.PROJECTS' | translate }}</a>
+                 >{{ 'NAVBAR.PROJECTS' | translate }}</a>
             </li>
             <li>
               <a (click)="scrollToElement(skills)"
                  class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                 ngbNavLink>{{ 'NAVBAR.CV' | translate }}</a>
+                 >{{ 'NAVBAR.CV' | translate }}</a>
             </li>
             <li>
               <a (click)="scrollToElement(contact)"
                  class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                 ngbNavLink>{{ 'NAVBAR.CONTACT' | translate }}</a>
+                 >{{ 'NAVBAR.CONTACT' | translate }}</a>
             </li>
             <li>
               <a (click)="changeLang('de')"
                  *ngIf="translate.currentLang == 'en'"
                  class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                 ngbNavLink>
+                 >
                 Deutsch
               </a>
               <a (click)="changeLang('en')"
                  *ngIf="translate.currentLang == 'de'"
                  class="-mx-2 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-                 ngbNavLink>
+                 >
                 English
               </a>
             </li>
@@ -113,6 +113,7 @@
     </div>
   </div>
 </header>
+
 
 <ng-scrollbar #scrollable
               class="scroll-event"
