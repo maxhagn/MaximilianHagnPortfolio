@@ -11,11 +11,7 @@ server {
     location / {
         root /usr/share/nginx/html;
         index index.html index.htm;
-    }
-
-    location ~* \.(js|css|png|jpg|jpeg|webp|gif|ico|svg|woff|woff2|ttf|otf|eot)$ {
         expires 1d;
         add_header Cache-Control "public, max-age=86400";
-        root /usr/share/nginx/html;
     }
 }
