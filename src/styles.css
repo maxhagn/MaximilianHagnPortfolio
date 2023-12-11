@@ -5,37 +5,37 @@
 @font-face {
   font-family: Inter-Light;
   src: url(/assets/fonts/Inter-Light.ttf);
-  font-display: auto;
+  font-display: block;
 }
 
 @font-face {
   font-family: Inter-Regular;
   src: url(/assets/fonts/Inter-Regular.ttf);
-  font-display: auto;
+  font-display: block;
 }
 
 @font-face {
   font-family: Inter-Black;
   src: url(/assets/fonts/Inter-Black.ttf);
-  font-display: auto;
+  font-display: block;
 }
 
 @font-face {
   font-family: Inter-Semi-Bold;
   src: url(/assets/fonts/Inter-SemiBold.ttf);
-  font-display: auto;
+  font-display: block;
 }
 
 @font-face {
   font-family: Inter-Bold;
   src: url(/assets/fonts/Inter-Bold.ttf);
-  font-display: auto;
+  font-display: block;
 }
 
 @font-face {
   font-family: Inter-Extra-Bold;
   src: url(/assets/fonts/Inter-ExtraBold.ttf);
-  font-display: auto;
+  font-display: block;
 }
 
 :root {
