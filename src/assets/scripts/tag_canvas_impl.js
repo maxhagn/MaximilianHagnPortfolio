@@ -19,7 +19,7 @@ function initCanvas() {
       noMouse: true,
       textFont: 'Inter-Regular, sans-serif',
       noTagsMessage: false,
-      fadeIn: 2000,
+      fadeIn: 0,
       initial: [0.3, -0.1],
       depth: 1.2
     });

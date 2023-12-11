@@ -37,8 +37,8 @@
         <div class="flex flex-1 flex-col p-8">
           <h3 class="mt-6 text-lg font-extrabold">{{ project.name }}</h3>
           <dl class="mt-1 flex flex-grow flex-col justify-between">
-            <dd class="text-sm">{{ getTextInLanguage(project.shortDescription, Language.ENGLISH) }}</dd>
-            <div class="mt-10 flex justify-center space-x-10">
+            <dt class="text-sm">{{ getTextInLanguage(project.shortDescription, Language.ENGLISH) }}</dt>
+            <dd class="mt-10 flex justify-center space-x-10">
               <a *ngIf="getGitHubRepo(project.links)" [href]="getGitHubRepo(project.links).url"
                  class="text-gray-400 hover:text-gray-500">
                 <span class="sr-only">{{ getGitHubRepo(project.links).description }}</span>
@@ -66,7 +66,7 @@
                         stroke-linejoin="round"/>
                 </svg>
               </a>
-            </div>
+            </dd>
           </dl>
         </div>
       </li>
