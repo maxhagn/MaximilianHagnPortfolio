@@ -3,41 +3,41 @@
     <h2 class="text-3xl font-bold tracking-tight text-white py-10 sm:text-4xl text-center">
       {{ 'PROJECTS.HEADING' | translate }}
     </h2>
-    <dl *ngIf="!loadingStats"
-        class="grid grid-cols-1 gap-0.5 mb-6 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-5">
+    <dl  #project_box *ngIf="!loadingStats"
+        class="grid grid-cols-1 gap-0.5 pb-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-5">
       <div class="flex flex-col bg-gray-400/5 p-8">
         <dt class="text-sm font-semibold leading-6 text-gray-300">Total Project Engagements</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ projectStats.projectCount }}</dd>
+        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ displayProjectStats.projectCount }}</dd>
       </div>
       <div class="flex flex-col bg-gray-400/5 p-8">
         <dt class="text-sm font-semibold leading-6 text-gray-300">Websites Deployed on Kubernetes</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ projectStats.totalWebsites }}
+        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ displayProjectStats.totalWebsites }}
         </dd>
       </div>
       <div class="flex flex-col bg-gray-400/5 p-8">
         <dt class="text-sm font-semibold leading-6 text-gray-300">Client Collaboration Count</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ projectStats.clientCount }}</dd>
+        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ displayProjectStats.clientCount }}</dd>
       </div>
       <div class="flex flex-col bg-gray-400/5 p-8">
         <dt class="text-sm font-semibold leading-6 text-gray-300">Code Repositories Managed</dt>
         <dd
-          class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ projectStats.totalRepositories }}
+          class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ displayProjectStats.totalRepositories }}
         </dd>
       </div>
       <div class="flex flex-col bg-gray-400/5 p-8">
         <dt class="text-sm font-semibold leading-6 text-gray-300">Cumulative Workdays</dt>
-        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ projectStats.totalWorkdays }}
+        <dd class="order-first text-3xl font-semibold tracking-tight text-gray-100">{{ displayProjectStats.totalWorkdays }}
         </dd>
       </div>
     </dl>
-    <ul *ngIf="!loadingProjects" class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-6 grid-flow-dense"
+    <ul *ngIf="!loadingProjects" class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 gap-0.5 grid-flow-dense"
         role="list">
       <li *ngFor="let project of projects" [ngClass]="project.gridClass"
-          class="flex flex-col divide-y divide-gray-200 rounded-lg text-center shadow">
-        <div class="flex flex-1 flex-col p-8">
-          <h3 class="mt-6 text-lg font-extrabold">{{ project.name }}</h3>
+          class="flex flex-col divide-y divide-gray-200 rounded-lg bg-gray-400/5 text-left text-white">
+        <div class="flex flex-1 flex-col pt-1 ps-4 pe-4 pb-4">
+          <h3 class="mt-6 text-lg font-extrabold text-white-on-black">{{ project.name }}</h3>
           <dl class="mt-1 flex flex-grow flex-col justify-between">
-            <dt class="text-sm">{{ getTextInLanguage(project.shortDescription, Language.ENGLISH) }}</dt>
+            <dt class="text-sm text-white-on-black">{{ getTextInLanguage(project.shortDescription, Language.ENGLISH) }}</dt>
             <dd class="mt-10 flex justify-center space-x-10">
               <a *ngIf="getGitHubRepo(project.links)" [href]="getGitHubRepo(project.links).url"
                  class="text-gray-400 hover:text-gray-500">

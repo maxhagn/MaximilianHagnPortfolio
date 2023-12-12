@@ -1,4 +1,14 @@
-import {Component, ElementRef, Inject, Input, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  HostListener,
+  Inject,
+  Input,
+  OnInit,
+  QueryList,
+  ViewChild,
+  ViewChildren
+} from '@angular/core';
 import {NgScrollbar} from "ngx-scrollbar";
 import {Subscription} from "rxjs";
 import {DOCUMENT} from "@angular/common";
@@ -31,7 +41,6 @@ export class SkillsComponent implements OnInit {
     languageCount: 0,
     technologyCount: 0
   };
-  private _scrollSubscription = Subscription.EMPTY;
 
   constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private skillService: SkillService, private deviconService: DeviconService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -39,19 +48,22 @@ export class SkillsComponent implements OnInit {
     });
   }
 
+  @HostListener('window:scroll', ['$event'])
   public animate(event: any): void {
     this.setSkillStatsScroll();
   }
 
   public setSkillStatsScroll() {
-    const position = this.skillBoxElement.nativeElement.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
+    if (this.skillBoxElement) {
+      const position = this.skillBoxElement.nativeElement.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
 
-    if (position.top < windowHeight && position.bottom >= 0) {
-      const relative = Math.min(1, (windowHeight - position.top) / 400)
-      this.displaySkillStats.skillCount = Math.floor(this.skillStats.skillCount * relative)
-      this.displaySkillStats.languageCount = Math.floor(this.skillStats.languageCount * relative)
-      this.displaySkillStats.technologyCount = Math.floor(this.skillStats.technologyCount * relative)
+      if (position.top < windowHeight && position.bottom >= 0) {
+        const relative = Math.min(1, (windowHeight - position.top) / 400)
+        this.displaySkillStats.skillCount = Math.floor(this.skillStats.skillCount * relative)
+        this.displaySkillStats.languageCount = Math.floor(this.skillStats.languageCount * relative)
+        this.displaySkillStats.technologyCount = Math.floor(this.skillStats.technologyCount * relative)
+      }
     }
   }
 
@@ -65,9 +77,6 @@ export class SkillsComponent implements OnInit {
       (skillStats: SkillStats) => {
         this.skillStats = skillStats;
         this.loadingSkillStats = false;
-        this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
-          this.animate(e)
-        });
       }
     );
   }

@@ -43,7 +43,7 @@
           <div class="flex flex-row flex-wrap gap-6 text-gray-900">
             <ng-container *ngFor="let skill of skills">
               <div *ngIf="getSkillGraphic(skill.name)" [ngbTooltip]="skill.name + ' (used ' + skill.count + ' times)'"
-                   class="bg-white flex justify-center align-middle text-xl md:text-2xl lg:text-3xl xl:text-4xl p-3 md:p-4 z-50 drop-shadow-lg hover:drop-shadow-xl transition-all ease-in-out duration-75 rounded-xl md:rounded-3xl">
+                   class="bg-white flex justify-center align-middle text-xl md:text-2xl lg:text-3xl xl:text-4xl p-3 md:p-4 z-40 drop-shadow-lg hover:drop-shadow-xl transition-all ease-in-out duration-75 rounded-xl md:rounded-3xl">
                 <i [classList]="getSkillGraphic(skill.name)"></i>
               </div>
             </ng-container>
@@ -51,7 +51,7 @@
         </div>
       </div>
       <div
-        class="max-w-7xl px-6 lg:px-8 z-50 lg:w-2/3 flex justify-center align-middle drop-shadow-lg hover:drop-shadow-2xl transition-all length ease-in-out duration-75 bg-gray-900 rounded-3xl py-16">
+        class="max-w-7xl px-6 lg:px-8 z-40 lg:w-2/3 flex justify-center align-middle drop-shadow-lg hover:drop-shadow-2xl transition-all length ease-in-out duration-75 bg-gray-900 rounded-3xl py-16">
         <div class="max-w-2x lg:mx-0 lg:max-w-none flex justify-center items-center">
           <div class="h-fit w-fit" id="myCanvasContainer">
             <canvas height="600" id="tagcanvas" style="max-width: 100%" width="800">

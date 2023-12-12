@@ -9,7 +9,7 @@ import {DOCUMENT} from "@angular/common";
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements AfterViewInit {
+export class FooterComponent {
 
   @Input() scrollbarRef: NgScrollbar;
   @ViewChild('heading', {read: ElementRef}) headingElement;
@@ -20,12 +20,7 @@ export class FooterComponent implements AfterViewInit {
   constructor(@Inject(DOCUMENT) private document: Document) {
   }
 
-  public ngAfterViewInit(): void {
-    this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
-      this.animate(e)
-    });
-  }
-
+  @HostListener('window:scroll', ['$event'])
   public animate(event: any): void {
 
   }

@@ -49,80 +49,62 @@
 }
 
 * {
-  font-family: "Inter-Regular", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;font-family: "Inter-Regular", serif;
+}
+::-webkit-scrollbar {
+  height: 1rem;
+  width: .5rem
 }
 
-::-webkit-scrollbar {
-  background-color: transparent;
-  width: 9px;
-  transition: 1s all ease;
+::-webkit-scrollbar:horizontal {
+  height: .5rem;
+  width: 1rem
 }
 
 ::-webkit-scrollbar-track {
   background-color: transparent;
-  transition: 1s all ease;
-}
-
-::-webkit-scrollbar-track:hover {
-  background-color: transparent;
+  border-radius: 9999px
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-color);
-  border-radius: 32px;
+  --tw-border-opacity: 1;
+  background-color: rgba(217,217,227,.8);
+  border-color: rgba(255,255,255,var(--tw-border-opacity));
+  border-radius: 9999px;
+  border-width: 1px
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--scrollbar-thumb-hover-color);
-  border: none;
+  --tw-bg-opacity: 1;
+  background-color: rgba(217,217,227,var(--tw-bg-opacity))
 }
 
-::-webkit-scrollbar-button {
-  display: none
+.dark ::-webkit-scrollbar-thumb {
+  background-color: hsla(0,0%,100%,.1)
 }
 
-.scroll-event {
-  z-index: 2 !important;
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: hsla(0,0%,100%,.3)
 }
 
-.scrollbar-container {
-  position: fixed;
-  z-index: 10;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 10px;
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  width: 100vw;
 }
 
-.ng-scrollbar-thumb {
-  position: absolute !important;
-  will-change: opacity;
-  transform-origin: top center;
-  width: 8px !important;
-  opacity: 1;
-  background-color: #777474 !important;
-  border-radius: 32px;
-  transition: 1ms all ease;
-}
-
-.ng-scrollbar-wrapper[verticalDragging=true] > scrollbar-y.scrollbar-control .ng-scrollbar-thumb {
-  background-color: #6e6969 !important;
-  transition: 100ms background-color ease-in !important;
-}
-
-.ng-scrollbar-thumb:hover {
-  background-color: #6e6969 !important;
-  transition: 100ms background-color ease-in !important;
+body {
+  background-color: rgb(17 24 39 / 1);
 }
 
 html, body {
   scroll-behavior: smooth;
   font-size: 16px;
   margin: 0;
-  overflow-x: hidden;
-  height: 100%;
-  width: 100%;
-  background-color: rgb(17 24 39 / 1);
+
 }
 
 .text-main-color {
@@ -131,4 +113,8 @@ html, body {
 
 .hover-text-main-color:hover {
   color: #faee06
+}
+
+.text-white-on-black {
+  color: #ebebed;
 }

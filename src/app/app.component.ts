@@ -11,10 +11,8 @@ import {Subscription} from "rxjs";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent {
 
-  /*Scroll Animations*/
-  @ViewChild(NgScrollbar, {static: true}) scrollbarRef: NgScrollbar;
   @ViewChild('hero', {read: ElementRef}) heroElement;
   @ViewChild('projects', {read: ElementRef}) projectsElement;
   @ViewChild('skills', {read: ElementRef}) skillsElement;
@@ -25,17 +23,11 @@ export class AppComponent implements AfterViewInit {
   public activeMenuEntry: number;
   public isLanguageChanged: boolean = false;
   public isLoaded: boolean;
-  /*Mobile Navbar*/
   public isMenuCollapsed: boolean;
-  /*Icons*/
-  public faBars = faBars;
-  public faXmark = faXmark;
-  /*Languages*/
   public languageList = [
     {code: 'en', label: 'English'},
     {code: 'de', label: 'German'}
   ];
-  private _scrollSubscription = Subscription.EMPTY;
 
   constructor(public translate: TranslateService, @Inject(DOCUMENT) private document: Document) {
     this.translate.setDefaultLang('en');
@@ -44,31 +36,25 @@ export class AppComponent implements AfterViewInit {
     this.isLoaded = false;
   }
 
-  ngAfterViewInit(): void {
-    this._scrollSubscription = this.scrollbarRef.verticalScrolled.subscribe(e => {
-      this.getActiveSection(e)
-    });
-  }
-
   @HostListener('window:scroll', ['$event'])
-  public getActiveSection(event): void {
-    if (event.target.scrollTop + this.document.body.clientHeight < (this.projectsElement.nativeElement.offsetTop + 100)) {
+  onWindowScroll(event: any) {
+    if (window.scrollY + this.document.body.clientHeight < (this.projectsElement.nativeElement.offsetTop + 100)) {
       this.activeMenuEntry = 1;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.projectsElement.nativeElement.offsetTop &&
-      event.target.scrollTop + this.document.body.clientHeight < this.skillsElement.nativeElement.offsetTop) {
+    } else if (window.scrollY + this.document.body.clientHeight >= this.projectsElement.nativeElement.offsetTop &&
+      window.scrollY + this.document.body.clientHeight < this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 2;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop &&
-      event.target.scrollTop + this.document.body.clientHeight < this.contactElement.nativeElement.offsetTop) {
+    } else if (window.scrollY + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop &&
+      window.scrollY + this.document.body.clientHeight < this.contactElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 3;
-    } else if (event.target.scrollTop + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop) {
+    } else if (window.scrollY + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 5;
     }
-    if (event.target.scrollTop > this.projectsElement.nativeElement.offsetTop + 100) {
+    if (window.scrollY > this.projectsElement.nativeElement.offsetTop + 100) {
       this.dummyBoxElement.nativeElement.style.flexBasis = '0'
       this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
     }
 
-    this.setHeaderCss(event.target.scrollTop)
+    this.setHeaderCss(window.scrollY)
   }
 
   public setHeaderCss(scrollTop: number): void {
