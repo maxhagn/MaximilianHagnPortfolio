@@ -1,6 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Input, OnInit, ViewChild} from '@angular/core';
-import {NgScrollbar} from "ngx-scrollbar";
-import {Subscription} from "rxjs";
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +7,6 @@ import {Subscription} from "rxjs";
 })
 export class ContactComponent {
 
-  @Input() scrollbarRef: NgScrollbar;
   @ViewChild('contact_section', {read: ElementRef}) contactSectionElement;
   @ViewChild('left_container', {read: ElementRef}) leftContainerElement;
   @ViewChild('right_container', {read: ElementRef}) rightContainerElement;

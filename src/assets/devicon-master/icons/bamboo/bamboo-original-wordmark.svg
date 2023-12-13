@@ -1,11 +1,13 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="matrix(4.06815 0 0 4.06815 -2.193 -13.325)" gradientUnits="userSpaceOnUse" id="bamboo-original-wordmark-a" x1="11.217" x2="11.217"
+    <linearGradient gradientTransform="matrix(4.06815 0 0 4.06815 -2.193 -13.325)" gradientUnits="userSpaceOnUse"
+                    id="bamboo-original-wordmark-a" x1="11.217" x2="11.217"
                     y1="7.486" y2="21.607">
       <stop offset="0" stop-color="#0052cc"/>
       <stop offset="1" stop-color="#2684ff"/>
     </linearGradient>
-    <linearGradient gradientTransform="matrix(4.06815 0 0 4.06815 -2.193 -13.325)" gradientUnits="userSpaceOnUse" id="bamboo-original-wordmark-b" x1="11.168" x2="11.168"
+    <linearGradient gradientTransform="matrix(4.06815 0 0 4.06815 -2.193 -13.325)" gradientUnits="userSpaceOnUse"
+                    id="bamboo-original-wordmark-b" x1="11.168" x2="11.168"
                     y1="7.486" y2="21.607">
       <stop offset="0" stop-color="#0052cc"/>
       <stop offset="1" stop-color="#2684ff"/>

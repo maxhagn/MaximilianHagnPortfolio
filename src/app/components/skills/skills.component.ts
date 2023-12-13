@@ -1,16 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  HostListener,
-  Inject,
-  Input,
-  OnInit,
-  QueryList,
-  ViewChild,
-  ViewChildren
-} from '@angular/core';
-import {NgScrollbar} from "ngx-scrollbar";
-import {Subscription} from "rxjs";
+import {Component, ElementRef, HostListener, Inject, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {SkillService} from "../../services/skill.service";
@@ -27,7 +15,6 @@ declare function initCanvas(): any;
 })
 export class SkillsComponent implements OnInit {
 
-  @Input() scrollbarRef: NgScrollbar;
   @ViewChild('skill_box', {read: ElementRef}) skillBoxElement;
   @ViewChildren('skillTags', {read: ElementRef}) skillTagsElement;
   public loadingSkills: boolean = true;

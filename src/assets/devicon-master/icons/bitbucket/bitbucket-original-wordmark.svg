@@ -1,6 +1,7 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="matrix(4 0 0 4 .255 -8.676)" gradientUnits="userSpaceOnUse" id="bitbucket-original-wordmark-a" x1="28.593"
+    <linearGradient gradientTransform="matrix(4 0 0 4 .255 -8.676)" gradientUnits="userSpaceOnUse"
+                    id="bitbucket-original-wordmark-a" x1="28.593"
                     x2="16.672" y1="14.226" y2="23.532">
       <stop offset=".176" stop-color="#0052cc"/>
       <stop offset="1" stop-color="#2684ff"/>

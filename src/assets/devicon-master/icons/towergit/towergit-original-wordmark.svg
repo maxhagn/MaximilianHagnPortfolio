@@ -51,7 +51,8 @@
     <clipPath id="towergit-original-wordmark-c">
       <path d="M0 0h128v50H0z"/>
     </clipPath>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-C" x1="44.303" x2="116.064"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-C" x1="44.303" x2="116.064"
                     y1="48.852" y2="48.852">
       <stop offset=".096" stop-color="#00caf4" stop-opacity="0"/>
       <stop offset=".568" stop-color="#00caf4" stop-opacity=".282"/>
@@ -59,7 +60,8 @@
       <stop offset=".797" stop-color="#00caf4" stop-opacity=".302"/>
       <stop offset="1" stop-color="#00caf4" stop-opacity=".102"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-m" x1="45.74" x2="114.59"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-m" x1="45.74" x2="114.59"
                     y1="81.723" y2="81.723">
       <stop offset=".096" stop-color="#00caf4" stop-opacity="0"/>
       <stop offset=".568" stop-color="#00caf4" stop-opacity=".282"/>
@@ -67,44 +69,53 @@
       <stop offset=".797" stop-color="#00caf4" stop-opacity=".302"/>
       <stop offset="1" stop-color="#00caf4" stop-opacity=".102"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-b" x1="63.721" x2="92.078"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-b" x1="63.721" x2="92.078"
                     y1="120.596" y2="71.481">
       <stop offset=".204" stop-color="#ffd813" stop-opacity="0"/>
       <stop offset=".781" stop-color="#ffd813"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-a" x1="56.983" x2="103.347"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-a" x1="56.983" x2="103.347"
                     y1="63.4" y2="63.4">
       <stop offset=".408" stop-color="#fff" stop-opacity="0"/>
       <stop offset=".999" stop-color="#fff"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-d" x1="56.983" x2="103.347"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-d" x1="56.983" x2="103.347"
                     xlink:href="#towergit-original-wordmark-a" y1="63.4"
                     y2="63.4"/>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-u" x1="96.686" x2="96.686"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-u" x1="96.686" x2="96.686"
                     y1="114.82" y2="146.828">
       <stop offset="0" stop-color="#008dc4"/>
       <stop offset=".541" stop-color="#0072a7"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-n" x1="80.148" x2="80.148"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-n" x1="80.148" x2="80.148"
                     y1="114.819" y2="146.828">
       <stop offset="0" stop-color="#005f8e"/>
       <stop offset=".724" stop-color="#004972"/>
       <stop offset=".74" stop-color="#004972"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-w" x1="63.721" x2="92.078"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-w" x1="63.721" x2="92.078"
                     xlink:href="#towergit-original-wordmark-b" y1="120.596"
                     y2="71.481"/>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-o" x1="48.828" x2="111.539"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-o" x1="48.828" x2="111.539"
                     y1="41.785" y2="41.785">
       <stop offset=".204" stop-color="#ffd813" stop-opacity="0"/>
       <stop offset=".781" stop-color="#ffd813"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-q" x1="54.726" x2="105.604"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-q" x1="54.726" x2="105.604"
                     y1="74.93" y2="74.93">
       <stop offset=".204" stop-color="#ffd813" stop-opacity="0"/>
       <stop offset=".781" stop-color="#ffd813"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-i" x1="70.12" x2="70.12"
+    <linearGradient gradientTransform="scale(.26667 .26316)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-i" x1="70.12" x2="70.12"
                     y1="71.12" y2="54.75">
       <stop offset=".096" stop-color="#00caf4" stop-opacity="0"/>
       <stop offset=".568" stop-color="#00caf4" stop-opacity=".282"/>
@@ -112,7 +123,8 @@
       <stop offset=".797" stop-color="#00caf4" stop-opacity=".302"/>
       <stop offset="1" stop-color="#00caf4" stop-opacity=".102"/>
     </linearGradient>
-    <linearGradient gradientTransform="matrix(-.26667 0 0 .26316 -3951.75 0)" gradientUnits="userSpaceOnUse" id="towergit-original-wordmark-j" x1="-14909.275" x2="-14909.275"
+    <linearGradient gradientTransform="matrix(-.26667 0 0 .26316 -3951.75 0)" gradientUnits="userSpaceOnUse"
+                    id="towergit-original-wordmark-j" x1="-14909.275" x2="-14909.275"
                     y1="71.12" y2="54.75">
       <stop offset=".096" stop-color="#00caf4" stop-opacity="0"/>
       <stop offset=".568" stop-color="#00caf4" stop-opacity=".282"/>

@@ -1,6 +1,7 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="translate(-.555 -2.02) scale(1.0087)" gradientUnits="userSpaceOnUse" id="processing-original-wordmark-a" x1="64" x2="64"
+    <linearGradient gradientTransform="translate(-.555 -2.02) scale(1.0087)" gradientUnits="userSpaceOnUse"
+                    id="processing-original-wordmark-a" x1="64" x2="64"
                     y1="169" y2="297">
       <stop offset="0" stop-color="#fff" stop-opacity=".918"/>
       <stop offset="1" stop-color="#fff" stop-opacity=".559"/>

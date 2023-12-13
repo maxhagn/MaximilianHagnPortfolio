@@ -1,21 +1,25 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse" id="ocaml-original-a" x1="82.925" x2="82.925" y1="97.718"
+    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse"
+                    id="ocaml-original-a" x1="82.925" x2="82.925" y1="97.718"
                     y2="97.9">
       <stop offset="0" stop-color="#F29100"/>
       <stop offset="1" stop-color="#EC670F"/>
     </linearGradient>
-    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse" id="ocaml-original-b" x1="61.276" x2="61.276"
+    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse"
+                    id="ocaml-original-b" x1="61.276" x2="61.276"
                     y1="98.981" y2="144.277">
       <stop offset="0" stop-color="#F29100"/>
       <stop offset="1" stop-color="#EC670F"/>
     </linearGradient>
-    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse" id="ocaml-original-c" x1="82.781" x2="82.781" y1="0"
+    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse"
+                    id="ocaml-original-c" x1="82.781" x2="82.781" y1="0"
                     y2="144.245">
       <stop offset="0" stop-color="#F29100"/>
       <stop offset="1" stop-color="#EC670F"/>
     </linearGradient>
-    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse" id="ocaml-original-d" x1="22.871" x2="22.871"
+    <linearGradient gradientTransform="translate(0 8.224) scale(.77317)" gradientUnits="userSpaceOnUse"
+                    id="ocaml-original-d" x1="22.871" x2="22.871"
                     y1="92.114" y2="143.249">
       <stop offset="0" stop-color="#F29100"/>
       <stop offset="1" stop-color="#EC670F"/>

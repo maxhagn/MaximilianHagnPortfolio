@@ -1,6 +1,7 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="matrix(0 4.0868 -4.0632 0 -14.448 103.81)" gradientUnits="userSpaceOnUse" id="sqlite-original-wordmark-a" x1="-15.615" x2="-6.741"
+    <linearGradient gradientTransform="matrix(0 4.0868 -4.0632 0 -14.448 103.81)" gradientUnits="userSpaceOnUse"
+                    id="sqlite-original-wordmark-a" x1="-15.615" x2="-6.741"
                     y1="-9.108" y2="-9.108">
       <stop offset="0" stop-color="#95d7f4"/>
       <stop offset=".92" stop-color="#0f7fcc"/>

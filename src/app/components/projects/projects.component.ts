@@ -1,5 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, OnInit, ViewChild} from '@angular/core';
-import {NgScrollbar} from "ngx-scrollbar";
+import {Component, ElementRef, HostListener, Inject, OnInit, ViewChild} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {ProjectDto} from "../../models/ProjectDto";
@@ -9,7 +8,6 @@ import {TextDto} from "../../models/TextDto";
 import {ProjectStats} from "../../models/ProjectStats";
 import {HyperlinkDto} from "../../models/HyperlinkDto";
 import {DeviconService} from "../../services/devicon.service";
-import {SkillStats} from "../../models/SkillStats";
 
 @Component({
   selector: 'app-projects',
@@ -18,7 +16,6 @@ import {SkillStats} from "../../models/SkillStats";
 })
 export class ProjectsComponent implements OnInit {
 
-  @Input() scrollbarRef: NgScrollbar;
   @ViewChild('project_box', {read: ElementRef}) projectBoxElement;
   public currentLanguage: string = "en";
   public projects: ProjectDto[];
@@ -37,8 +34,8 @@ export class ProjectsComponent implements OnInit {
   public colors = ['']
   //public colors = [
   //  'bg-gray-400 text-black',
-   // 'bg-gray-500 text-gray-900',
-    //'bg-gray-600 text-gray-800'];
+  // 'bg-gray-500 text-gray-900',
+  //'bg-gray-600 text-gray-800'];
 
   constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private projectService: ProjectService, private deviconService: DeviconService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {

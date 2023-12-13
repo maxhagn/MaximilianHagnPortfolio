@@ -1,9 +1,6 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
-import {NgScrollbar} from "ngx-scrollbar";
+import {Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
-import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {TranslateService} from "@ngx-translate/core";
-import {Subscription} from "rxjs";
 
 
 @Component({

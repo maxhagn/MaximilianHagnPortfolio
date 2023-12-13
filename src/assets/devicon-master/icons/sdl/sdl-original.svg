@@ -1,6 +1,8 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient cx="204.9" cy="-244" fx="204.9" fy="-244" gradientTransform="matrix(-.72758 -1.42335 2.41093 -1.2386 853.636 31.827)" gradientUnits="userSpaceOnUse"
+    <radialGradient cx="204.9" cy="-244" fx="204.9" fy="-244"
+                    gradientTransform="matrix(-.72758 -1.42335 2.41093 -1.2386 853.636 31.827)"
+                    gradientUnits="userSpaceOnUse"
                     id="sdl-original-a" r="25.72">
       <stop offset="0" stop-color="#656F71"/>
       <stop offset="1" stop-color="#D3D4CF"/>

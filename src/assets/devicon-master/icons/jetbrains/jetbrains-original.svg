@@ -1,23 +1,27 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-a" x1="32.64" x2="82.77" y1="61.16"
+    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-a"
+                    x1="32.64" x2="82.77" y1="61.16"
                     y2="85.54">
       <stop offset=".21" stop-color="#fe2857"/>
       <stop offset="1" stop-color="#293896"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-b" x1="17.38" x2="82.95" y1="69.86"
+    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-b"
+                    x1="17.38" x2="82.95" y1="69.86"
                     y2="21.23">
       <stop offset="0" stop-color="#fe2857"/>
       <stop offset=".01" stop-color="#fe2857"/>
       <stop offset=".86" stop-color="#ff318c"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-c" x1="74.17" x2="160.27"
+    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-c"
+                    x1="74.17" x2="160.27"
                     y1="21.58" y2="99.76">
       <stop offset=".02" stop-color="#ff318c"/>
       <stop offset=".21" stop-color="#fe2857"/>
       <stop offset=".86" stop-color="#fdb60d"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-d" x1="155.46" x2="55.07" y1="89.8"
+    <linearGradient gradientTransform="scale(.71111)" gradientUnits="userSpaceOnUse" id="jetbrains-original-d"
+                    x1="155.46" x2="55.07" y1="89.8"
                     y2="158.9">
       <stop offset=".01" stop-color="#fdb60d"/>
       <stop offset=".86" stop-color="#fcf84a"/>

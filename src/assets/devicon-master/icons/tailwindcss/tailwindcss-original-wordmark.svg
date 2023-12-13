@@ -1,6 +1,7 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="matrix(27.16757 5.6391 -9.3985 16.30055 4747.487 -8290.643)" gradientUnits="userSpaceOnUse" id="tailwindcss-original-wordmark-a" x1="2.21"
+    <linearGradient gradientTransform="matrix(27.16757 5.6391 -9.3985 16.30055 4747.487 -8290.643)"
+                    gradientUnits="userSpaceOnUse" id="tailwindcss-original-wordmark-a" x1="2.21"
                     x2="3.211" y1="511.596"
                     y2="511.596">
       <stop offset="0" stop-color="#2298bd"/>

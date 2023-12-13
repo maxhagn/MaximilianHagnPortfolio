@@ -1,11 +1,13 @@
 <svg preserveAspectRatio="xMidYMid" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="matrix(.2169 0 0 .14527 -.16 14.112)" gradientUnits="userSpaceOnUse" id="r-original-a" x1=".741" x2="590.86"
+    <linearGradient gradientTransform="matrix(.2169 0 0 .14527 -.16 14.112)" gradientUnits="userSpaceOnUse"
+                    id="r-original-a" x1=".741" x2="590.86"
                     y1="3.666" y2="593.79">
       <stop offset="0" stop-color="#cbced0"/>
       <stop offset="1" stop-color="#84838b"/>
     </linearGradient>
-    <linearGradient gradientTransform="matrix(.17572 0 0 .17931 -.16 14.112)" gradientUnits="userSpaceOnUse" id="r-original-b" x1="301.03" x2="703.07"
+    <linearGradient gradientTransform="matrix(.17572 0 0 .17931 -.16 14.112)" gradientUnits="userSpaceOnUse"
+                    id="r-original-b" x1="301.03" x2="703.07"
                     y1="151.4" y2="553.44">
       <stop offset="0" stop-color="#276dc3"/>
       <stop offset="1" stop-color="#165caa"/>

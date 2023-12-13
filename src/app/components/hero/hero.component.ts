@@ -1,6 +1,4 @@
-import {AfterViewInit, Component, ElementRef, HostListener, Inject, Input, ViewChild} from '@angular/core';
-import {NgScrollbar} from "ngx-scrollbar";
-import {Subscription} from "rxjs";
+import {Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 
 @Component({
@@ -9,8 +7,6 @@ import {DOCUMENT} from "@angular/common";
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-
-  @Input() scrollbarRef: NgScrollbar;
   @ViewChild('left_container', {read: ElementRef}) leftContainerElement;
   @ViewChild('right_container', {read: ElementRef}) rightContainerElement;
   @ViewChild('hello_text', {read: ElementRef}) helloTextElement;

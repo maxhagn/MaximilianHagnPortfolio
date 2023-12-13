@@ -1,11 +1,13 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient gradientTransform="scale(4)" gradientUnits="userSpaceOnUse" id="jira-original-a" x1="22.034" x2="17.118" y1="9.773"
+    <linearGradient gradientTransform="scale(4)" gradientUnits="userSpaceOnUse" id="jira-original-a" x1="22.034"
+                    x2="17.118" y1="9.773"
                     y2="14.842">
       <stop offset=".176" stop-color="#0052cc"/>
       <stop offset="1" stop-color="#2684ff"/>
     </linearGradient>
-    <linearGradient gradientTransform="scale(4)" gradientUnits="userSpaceOnUse" id="jira-original-b" x1="16.641" x2="10.957" y1="15.564"
+    <linearGradient gradientTransform="scale(4)" gradientUnits="userSpaceOnUse" id="jira-original-b" x1="16.641"
+                    x2="10.957" y1="15.564"
                     y2="21.094">
       <stop offset=".176" stop-color="#0052cc"/>
       <stop offset="1" stop-color="#2684ff"/>
