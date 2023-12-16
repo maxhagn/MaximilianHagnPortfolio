@@ -1,5 +1,8 @@
 import {Component, ElementRef, HostListener, Inject, ViewChild} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
+import {Platform} from "@angular/cdk/platform";
+import {DeviconService} from "../../services/devicon.service";
+import {DeviceDetectorService} from "ngx-device-detector";
 
 @Component({
   selector: 'app-hero',
@@ -16,12 +19,12 @@ export class HeroComponent {
   @ViewChild('mobile_image', {read: ElementRef}) mobileImageElement;
   @ViewChild('hero_wrapper', {read: ElementRef}) heroWrapperElement;
 
-  constructor(@Inject(DOCUMENT) private document: Document) {
+  constructor(private deviceService: DeviceDetectorService, @Inject(DOCUMENT) private document: Document) {
   }
 
   @HostListener('window:scroll', ['$event'])
   public animate(event: any): void {
-    if (window.scrollY < this.heroWrapperElement.nativeElement.scrollHeight) {
+    if (window.scrollY < this.heroWrapperElement.nativeElement.scrollHeight && this.deviceService.isDesktop()) {
       const translateSlow = window.scrollY * 2;
       const translateMedium = window.scrollY * 2.25;
       const translateFast = window.scrollY * 2.5;
