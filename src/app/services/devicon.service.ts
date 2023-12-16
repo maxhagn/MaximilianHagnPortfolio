@@ -13,7 +13,6 @@ export class DeviconService {
     ["PHP", "devicon-php-plain"],
     ["Apache", "devicon-apache-plain"],
     ["Angular", "devicon-angularjs-plain"],
-    ["Cmake", "devicon-cmake-plain"],
     ["CMake", "devicon-cmake-plain"],
     ["CSS", "devicon-css3-plain"],
     ["Cucumber", "devicon-cucumber-plain"],
@@ -30,14 +29,13 @@ export class DeviconService {
     ["Prometheus", "devicon-prometheus-original"],
     ["Gradle", "devicon-gradle-plain"],
     ["Haskell", "devicon-haskell-plain"],
-    ["HTML5", "devicon-html5-plain"],
+    ["HTML", "devicon-html5-plain"],
     ["IntelliJ", "devicon-intellij-plain"],
     ["JavaScript", "devicon-javascript-plain"],
     ["Kotlin", "devicon-kotlin-plain"],
     ["Laravel", "devicon-laravel-plain"],
     ["Latex", "devicon-latex-plain"],
     ["Matlab", "devicon-matlab-plain"],
-    ["MATLAB", "devicon-matlab-plain"], // fix skill in projects website // fix skill in projects website
     ["MongoDB", "devicon-mongodb-plain"],
     ["MySQL", "devicon-mysql-plain"],
     ["Bootstrap", "devicon-bootstrap-plain"],
@@ -58,8 +56,10 @@ export class DeviconService {
     ["TailwindCSS", "devicon-tailwindcss-plain"],
     ["Ubuntu", "devicon-ubuntu-plain"],
     ["TypeScript", "devicon-typescript-plain"],
-    ["Vue", "devicon-vuejs-plain"],
+    ["Vue.js", "devicon-vuejs-plain"],
     ["Kubernetes", "devicon-kubernetes-plain"],
+    ["Node.js", "devicon-nodejs-plain"],
+    ["UNIX", "devicon-unix-original"],
   ]);
 
   constructor() {
