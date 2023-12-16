@@ -20,11 +20,11 @@ export class ContactComponent {
   }
 
   public cardsFlyIn(): void {
-    let relativeChange = window.scrollY / this.contactSectionElement.nativeElement.offsetTop;
-
-    let translate = (1 - relativeChange) * 500;
-
-    this.leftContainerElement.nativeElement.style.transform = `translateX(-${translate}px)`;
-    this.rightContainerElement.nativeElement.style.transform = `translateX(${translate}px)`;
+    if (window.scrollY > this.contactSectionElement.nativeElement.scrollHeight) {
+      let relativeChange = window.scrollY / this.contactSectionElement.nativeElement.offsetTop;
+      let translate = (1 - relativeChange) * 500;
+      this.leftContainerElement.nativeElement.style.transform = `translateX(-${translate}px)`;
+      this.rightContainerElement.nativeElement.style.transform = `translateX(${translate}px)`;
+    }
   }
 }
