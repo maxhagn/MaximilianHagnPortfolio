@@ -62,7 +62,7 @@ export class AppComponent implements OnInit{
     } else if (window.scrollY + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 5;
     }
-    if (window.scrollY > this.projectsElement.nativeElement.offsetTop + 100) {
+    if (window.scrollY > this.projectsElement.nativeElement.offsetTop) {
       this.dummyBoxElement.nativeElement.style.flexBasis = '0'
       this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
     }
@@ -72,7 +72,7 @@ export class AppComponent implements OnInit{
 
   public setHeaderCss(scrollTop: number): void {
     let relativeChange = scrollTop / this.projectsElement.nativeElement.offsetTop;
-    relativeChange = relativeChange < 1 ? relativeChange : 1;
+    relativeChange = relativeChange *2 < 1 ? relativeChange *2 : 1;
 
     let flexBasisDummyBox = (1 - relativeChange) * 50;
     let maxWithHeaderInner = (window.innerWidth / 16) + (80 - (window.innerWidth / 16)) * relativeChange
@@ -89,6 +89,11 @@ export class AppComponent implements OnInit{
   onOpenOverlay(project: ProjectDto) {
     this.currentProject = project;
 
+    if (this.currentProject) {
+      document.documentElement.style.overflowY = 'hidden';
+    } else {
+      document.documentElement.style.overflowY = 'auto';
+    }
   }
 
   public changeLang(lang: string): void {
@@ -107,11 +112,7 @@ export class AppComponent implements OnInit{
   getProjects(): void {
     this.projectService.getProjects().subscribe(
       (projects: ProjectDto[]) => {
-        this.projects = projects.filter(project =>
-          project.shortDescription &&
-          project.shortDescription.some(text =>
-            text.content !== "" && text.language === Language.ENGLISH)
-        );
+        this.projects = projects;
         this.assignGridClasses();
       }
     );
@@ -119,22 +120,18 @@ export class AppComponent implements OnInit{
 
   assignGridClasses() {
     this.projects.forEach((project, index) => {
-      if (index < 6) {
-        project.gridClass = this.getGridClass(3)
-      } else if (index < 12) {
-        project.gridClass = this.getGridClass(1);
+      if (index < 10) {
+        project.gridClass = this.getGridClass(2)
       } else {
         project.gridClass = this.getGridClass(1);
       }
     });
-    this.shuffleArray(this.projects)
   }
 
   getGridClass(units: number): string {
     const combinations = {
-      3: 'col-span-2',
       2: 'col-span-2',
-      1: 'col-span-2'
+      1: 'col-span-1'
     };
 
     return combinations[units] + ' ' + this.getRandomColor();
@@ -144,17 +141,4 @@ export class AppComponent implements OnInit{
     const randomNumber = Math.floor(Math.random() * this.colors.length);
     return this.colors[randomNumber];
   }
-
-  shuffleArray(array: any[]): any[] {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
-
 }

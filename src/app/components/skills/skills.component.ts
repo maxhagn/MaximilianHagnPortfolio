@@ -79,7 +79,6 @@ export class SkillsComponent implements OnInit {
             ...skill,
             icon: this.deviconService.getDeviconPath(skill.name)
           }))
-          .filter(skill => skill.icon != '')
           .sort((a, b) => b.count - a.count);
         this.loadingSkills = false;
         this.skillTagsElement.changes.subscribe((skillTagElement: QueryList<ElementRef>) => {
@@ -90,13 +89,4 @@ export class SkillsComponent implements OnInit {
       }
     );
   }
-
-  getSkillGraphic(name: string): string {
-    return this.deviconService.getDeviconPath(name);
-  }
-
-  getArrayChunk(arr: any[], start: number, chunkSize: number): SkillWithCountDto[] {
-    return arr.slice(start, start + chunkSize);
-  }
-
 }

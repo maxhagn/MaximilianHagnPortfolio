@@ -26,6 +26,14 @@ export class ProjectComponent {
     this.overlayProject.emit(null);
   }
 
+  snakeCaseToNormal(string: string): string {
+    return string
+      .toLowerCase()
+      .split('_')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
   getContentByLanguage(language: Language, textDtos: TextDto[]): string | null {
     const textDto = textDtos.find(text => text.language === language);
     return textDto ? textDto.content : null;

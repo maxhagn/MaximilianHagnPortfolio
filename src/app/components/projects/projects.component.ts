@@ -32,7 +32,6 @@ export class ProjectsComponent implements OnInit {
   @Output() overlayProject: EventEmitter<ProjectDto> = new EventEmitter();
   public projectStats: ProjectStats;
   public loadingStats: boolean = true;
-  public loadingProjects: boolean = true;
   public Language = Language;
   public displayProjectStats: ProjectStats = {
     totalWorkdays: 0,
@@ -67,7 +66,10 @@ export class ProjectsComponent implements OnInit {
       const windowHeight = window.innerHeight;
 
       if (position.top < windowHeight && position.bottom >= 0) {
-        const relative = Math.min(1, (windowHeight - position.top) / 400)
+        const relative = Math.min(1, (windowHeight - position.top -100 ) / 600)
+        console.log(relative)
+        this.projectBoxElement.nativeElement.style.opacity = relative;
+        this.projectBoxElement.nativeElement.style.transform = `scale(${relative})`;
         this.displayProjectStats.totalRepositories = Math.floor(this.projectStats.totalRepositories * relative)
         this.displayProjectStats.totalWebsites = Math.floor(this.projectStats.totalWebsites * relative)
         this.displayProjectStats.totalWorkdays = Math.floor(this.projectStats.totalWorkdays * relative)
@@ -102,5 +104,4 @@ export class ProjectsComponent implements OnInit {
   getDocuments(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
     return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && hyperlink.active === true);
   }
-
 }

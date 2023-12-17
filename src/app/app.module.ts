@@ -17,6 +17,7 @@ import {FooterComponent} from './components/footer/footer.component';
 import {ContactComponent} from './components/contact/contact.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {ProjectComponent} from "./components/project/project.component";
+import {InViewportDirective} from "./directives/in-viewport.directive";
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/data/', '.json');
@@ -33,23 +34,24 @@ registerLocaleData(localeDe, localeDeExtra);
     FooterComponent,
     ContactComponent
   ],
-    imports: [
-        BrowserModule,
-        NgbModule,
-        AppRoutingModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        FormsModule,
-        TranslateModule.forRoot({
-            loader: {
-                provide: TranslateLoader,
-                useFactory: HttpLoaderFactory,
-                deps: [HttpClient]
-            },
-            defaultLanguage: 'en',
-        }),
-        ProjectComponent
-    ],
+  imports: [
+    InViewportDirective,
+    BrowserModule,
+    NgbModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      },
+      defaultLanguage: 'en',
+    }),
+    ProjectComponent
+  ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     {provide: LOCALE_ID, useValue: "de"}

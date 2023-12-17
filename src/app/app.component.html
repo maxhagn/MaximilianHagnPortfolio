@@ -27,7 +27,7 @@
           </button>
         </li>
         <li>
-          <button (click)="scrollToElement(projects)"
+          <button (click)="scrollToElement(projects_link)"
                   class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
           >{{ 'NAVBAR.PROJECTS' | translate }}
           </button>
@@ -35,7 +35,7 @@
         <li>
           <button (click)="scrollToElement(skills)"
                   class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
-          >{{ 'NAVBAR.CV' | translate }}
+          >{{ 'NAVBAR.SKILLS' | translate }}
           </button>
         </li>
         <li>
@@ -129,7 +129,7 @@
 </header>
 
 <app-project [project]="currentProject" *ngIf="currentProject" (overlayProject)="onOpenOverlay($event)"></app-project>
-<div class="scroll-container">
+
 <div #hero>
   <app-hero></app-hero>
 </div>
@@ -145,4 +145,4 @@
 <div>
   <app-footer></app-footer>
 </div>
-</div>
+
