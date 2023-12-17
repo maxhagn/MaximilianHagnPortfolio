@@ -67,7 +67,6 @@ export class ProjectsComponent implements OnInit {
 
       if (position.top < windowHeight && position.bottom >= 0) {
         const relative = Math.min(1, (windowHeight - position.top -100 ) / 600)
-        console.log(relative)
         this.projectBoxElement.nativeElement.style.opacity = relative;
         this.projectBoxElement.nativeElement.style.transform = `scale(${relative})`;
         this.displayProjectStats.totalRepositories = Math.floor(this.projectStats.totalRepositories * relative)

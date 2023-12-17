@@ -1,25 +1,25 @@
 <div #hero_wrapper class="flex justify-center align-middle max-w-full w-full">
-  <div #left_container class="hidden xl:block w-1/2 h-screen p-0 image-container">
+  <div #left_container class="hidden xl:block w-1/2 h-screen p-0 image-container will-change-auto">
   </div>
   <div
     #right_container
-    class="w-full xl:w-1/2 h-screen flex flex-col xl:flex-row justify-center mx-auto text-start bg-gray-900">
-    <div #mobile_image class="mobile-image-wrapper h-1/2 flex xl:hidden justify-center h-100 items-end">
+    class="w-full xl:w-1/2 h-screen flex flex-col xl:flex-row justify-center mx-auto text-start bg-gray-900 will-change-auto">
+    <div #mobile_image class="mobile-image-wrapper h-1/2 flex xl:hidden justify-center h-100 items-end will-change-auto">
       <div class="mobile-image-container mx-auto p-0 drop-shadow-2xl rounded-2xl"></div>
     </div>
     <div
       class="row items-start pt-16 xl:pt-0 xl:items-center px-12 xl:px-0 m-auto h-1/2 xl:h-100 max-w-lg lg:max-w-sm xl:max-w-xl 2xl:max-w-2xl">
       <div class="col">
         <h1 #hello_text
-            class="text-main-color text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-right">{{ 'HERO.HELLO' | translate }}
+            class="text-main-color text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-right will-change-auto">{{ 'HERO.HELLO' | translate }}
           <span
             class="text-gray-100 text-4xl md:text-4xl lg:text-5xl xl:text-6xl ">;</span></h1>
         <h2 #name_text
-            class="text-gray-100 text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-3 text-right">{{ 'HERO.MAX' | translate }}
+            class="text-gray-100 text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold mt-3 text-right will-change-auto">{{ 'HERO.MAX' | translate }}
           <span
             class="text-main-color text-3xl md:text-3xl lg:text-4xl xl:text-5xl ">;</span></h2>
         <h3 #catchy_text
-            class="text-white mt-6 lg:mt-20 text-xl leading-relaxed md:text-3xl lg:text-3xl xl:text-5xl font-extrabold text-left">{{ 'HERO.CATCHY_TEXT' | translate }}</h3>
+            class="text-white mt-6 lg:mt-20 text-xl leading-relaxed md:text-3xl lg:text-3xl xl:text-5xl font-extrabold text-left will-change-auto">{{ 'HERO.CATCHY_TEXT' | translate }}</h3>
       </div>
     </div>
   </div>
