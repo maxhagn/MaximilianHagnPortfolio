@@ -5,4 +5,5 @@ export interface SkillWithCountDto {
   name: string;
   skillCategory: SkillCategory;
   count: number;
+  icon: string;
 }

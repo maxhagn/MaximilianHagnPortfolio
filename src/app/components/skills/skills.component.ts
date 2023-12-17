@@ -5,6 +5,7 @@ import {SkillService} from "../../services/skill.service";
 import {SkillStats} from "../../models/SkillStats";
 import {SkillWithCountDto} from "../../models/SkillWithCountDto";
 import {DeviconService} from "../../services/devicon.service";
+import {SkillDto} from "../../models/SkillDto";
 
 declare function initCanvas(): any;
 
@@ -22,12 +23,14 @@ export class SkillsComponent implements OnInit {
   public currentLanguage: string = "en";
   public skills: SkillWithCountDto[];
   public skillStats: SkillStats;
+  public currentPage: number = 0;
   public displaySkillStats: SkillStats = {
     skillCount: 0,
     softSkillCount: 0,
     languageCount: 0,
     technologyCount: 0
   };
+
 
   constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private skillService: SkillService, private deviconService: DeviconService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -71,9 +74,13 @@ export class SkillsComponent implements OnInit {
   getSkills(): void {
     this.skillService.getSkills().subscribe(
       (skills: SkillWithCountDto[]) => {
-        this.skills = skills.sort((a, b) => {
-          return b.count - a.count
-        });
+        this.skills = skills
+          .map(skill => ({
+            ...skill,
+            icon: this.deviconService.getDeviconPath(skill.name)
+          }))
+          .filter(skill => skill.icon != '')
+          .sort((a, b) => b.count - a.count);
         this.loadingSkills = false;
         this.skillTagsElement.changes.subscribe((skillTagElement: QueryList<ElementRef>) => {
           if (skillTagElement.length > 0) {
@@ -87,4 +94,9 @@ export class SkillsComponent implements OnInit {
   getSkillGraphic(name: string): string {
     return this.deviconService.getDeviconPath(name);
   }
+
+  getArrayChunk(arr: any[], start: number, chunkSize: number): SkillWithCountDto[] {
+    return arr.slice(start, start + chunkSize);
+  }
+
 }

@@ -1,4 +1,4 @@
-<div class="bg-white py-8 md:py-16 max-w-full">
+<div class="bg-white pt-1 pb-16 md:py-16 max-w-full px-1">
     <div *ngIf="!loadingSkillStats"
       class="mx-auto container px-6 lg:px-32 bg-gray-800 drop-shadow-lg hover:drop-shadow-2xl transition-all ease-in-out duration-75 rounded-3xl mt-1 md:mt-6 py-8 md:py-32">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
@@ -32,26 +32,46 @@
             </dl>
           </div>
         </div>
-
     </div>
   </div>
-  <div *ngIf="!loadingSkills" class="mx-auto container pt-4">
-    <div class="flex flex-col-reverse md:flex-row-reverse md:justify-end gap-4">
-      <div class="max-w-4xl lg:w-1/3">
-        <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-          <div class="flex flex-row flex-wrap gap-6 text-gray-900">
-            <ng-container *ngFor="let skill of skills">
-              <div *ngIf="getSkillGraphic(skill.name)" [ngbTooltip]="skill.name + ' (used ' + skill.count + ' times)'"
-                   class="bg-white flex justify-center align-middle text-xl md:text-2xl lg:text-3xl xl:text-4xl p-3 md:p-4 z-40 drop-shadow-lg hover:drop-shadow-xl transition-all ease-in-out duration-75 rounded-xl md:rounded-3xl">
-                <i [classList]="getSkillGraphic(skill.name)"></i>
+  <div *ngIf="!loadingSkills" class="mx-auto container pt-1 md:pt-4">
+    <div class="flex flex-col-reverse lg:flex-row-reverse lg:justify-end gap-4">
+      <div class="px-6 lg:px-8 z-40 flex flex-col flex-grow justify-center align-middle drop-shadow-lg hover:drop-shadow-2xl transition-all length ease-in-out duration-75 bg-gray-600 rounded-3xl py-16">
+        <div class="mx-auto flex-grow lg:mx-0 lg:max-w-none">
+          <div class="grid grid-cols-7 lg:grid-cols-3 gap-4 text-gray-900">
+            <ng-container *ngFor="let skill of getArrayChunk(skills, 21 * currentPage, 21)">
+              <div *ngIf="skill.icon" [ngbTooltip]="skill.name + ' (used ' + skill.count + ' times)'"
+                   class="bg-gray-900 flex w-fit text-white justify-center align-middle text-4xl md:text-5xl lg:text-4xl xl:text-5xl p-3 md:p-4 z-40 drop-shadow-lg hover:drop-shadow-xl transition-all ease-in-out duration-75 rounded-xl md:rounded-3xl">
+                <i [classList]="skill.icon"></i>
               </div>
             </ng-container>
           </div>
         </div>
+        <nav class="flex items-center justify-between border-t border-gray-200 px-4 sm:px-0 mt-8">
+          <div class="-mt-px flex w-0 flex-1">
+            <button (click)="currentPage > 0 ? currentPage=currentPage-1 : 0" class="inline-flex items-center border-t-2 border-transparent pr-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+              <svg class="mr-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M18 10a.75.75 0 01-.75.75H4.66l2.1 1.95a.75.75 0 11-1.02 1.1l-3.5-3.25a.75.75 0 010-1.1l3.5-3.25a.75.75 0 111.02 1.1l-2.1 1.95h12.59A.75.75 0 0118 10z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+          <div class="hidden md:-mt-px md:flex">
+            <button (click)="currentPage=0" [classList]="currentPage === 0 ? 'inline-flex items-center border-t-2 border-gray-900 px-4 pt-4 text-sm font-medium text-gray-900' : 'inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'">1</button>
+            <button (click)="currentPage=1" [classList]="currentPage === 1 ? 'inline-flex items-center border-t-2 border-gray-900 px-4 pt-4 text-sm font-medium text-gray-900' : 'inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'" aria-current="page">2</button>
+            <button (click)="currentPage=2" [classList]="currentPage === 2 ? 'inline-flex items-center border-t-2 border-gray-900 px-4 pt-4 text-sm font-medium text-gray-900' : 'inline-flex items-center border-t-2 border-transparent px-4 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700'">3</button>
+          </div>
+          <div class="-mt-px flex w-0 flex-1 justify-end">
+            <button (click)="currentPage < 2 ? currentPage=currentPage+1 : 2" class="inline-flex items-center border-t-2 border-transparent pl-1 pt-4 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
+              <svg class="ml-3 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M2 10a.75.75 0 01.75-.75h12.59l-2.1-1.95a.75.75 0 111.02-1.1l3.5 3.25a.75.75 0 010 1.1l-3.5 3.25a.75.75 0 11-1.02-1.1l2.1-1.95H2.75A.75.75 0 012 10z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </nav>
       </div>
       <div
-        class="max-w-7xl px-6 lg:px-8 z-40 lg:w-2/3 flex justify-center align-middle drop-shadow-lg hover:drop-shadow-2xl transition-all length ease-in-out duration-75 bg-gray-900 rounded-3xl py-16">
-        <div class="max-w-2x lg:mx-0 lg:max-w-none flex justify-center items-center">
+        class="px-6 lg:px-8 z-40 flex flex-grow justify-center align-middle drop-shadow-lg hover:drop-shadow-2xl transition-all length ease-in-out duration-75 bg-gray-900 rounded-3xl py-16">
+        <div class="lg:mx-0 lg:max-w-none flex justify-center items-center">
           <div class="h-fit w-fit" id="myCanvasContainer">
             <canvas height="600" id="tagcanvas" style="max-width: 100%" width="800">
               <ul id="tags">

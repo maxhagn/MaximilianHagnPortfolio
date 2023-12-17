@@ -1,4 +1,14 @@
-import {Component, ElementRef, HostListener, Inject, OnInit, ViewChild} from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  HostListener,
+  Inject,
+  Input,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import {DOCUMENT} from "@angular/common";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {ProjectDto} from "../../models/ProjectDto";
@@ -18,7 +28,8 @@ export class ProjectsComponent implements OnInit {
 
   @ViewChild('project_box', {read: ElementRef}) projectBoxElement;
   public currentLanguage: string = "en";
-  public projects: ProjectDto[];
+  @Input() projects: Array<ProjectDto>;
+  @Output() overlayProject: EventEmitter<ProjectDto> = new EventEmitter();
   public projectStats: ProjectStats;
   public loadingStats: boolean = true;
   public loadingProjects: boolean = true;
@@ -31,11 +42,9 @@ export class ProjectsComponent implements OnInit {
     projectCount: 0
   };
 
-  public colors = ['']
-  //public colors = [
-  //  'bg-gray-400 text-black',
-  // 'bg-gray-500 text-gray-900',
-  //'bg-gray-600 text-gray-800'];
+  openOverlay(project: ProjectDto) {
+    this.overlayProject.emit(project);
+  }
 
   constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private projectService: ProjectService, private deviconService: DeviconService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -44,7 +53,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getProjects();
     this.getProjectStats();
   }
 
@@ -79,20 +87,6 @@ export class ProjectsComponent implements OnInit {
     );
   }
 
-  getProjects(): void {
-    this.projectService.getProjects().subscribe(
-      (projects: ProjectDto[]) => {
-        this.projects = projects.filter(project =>
-          project.shortDescription &&
-          project.shortDescription.some(text =>
-            text.content !== "" && text.language === Language.ENGLISH)
-        );
-        this.assignGridClasses();
-        this.loadingProjects = false;
-      }
-    );
-  }
-
   getTextInLanguage(textDto: TextDto[], language: Language): string {
     return textDto?.find(text => text.language === language)?.content || '';
   }
@@ -109,43 +103,4 @@ export class ProjectsComponent implements OnInit {
     return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && hyperlink.active === true);
   }
 
-  assignGridClasses() {
-    this.projects.forEach((project, index) => {
-      if (index < 6) {
-        project.gridClass = this.getGridClass(3)
-      } else if (index < 12) {
-        project.gridClass = this.getGridClass(1);
-      } else {
-        project.gridClass = this.getGridClass(1);
-      }
-    });
-    this.shuffleArray(this.projects)
-  }
-
-  getGridClass(units: number): string {
-    const combinations = {
-      3: 'col-span-4',
-      2: 'col-span-2',
-      1: 'col-span-2'
-    };
-
-    return combinations[units] + ' ' + this.getRandomColor();
-  }
-
-  getRandomColor(): string {
-    const randomNumber = Math.floor(Math.random() * this.colors.length);
-    return this.colors[randomNumber];
-  }
-
-  shuffleArray(array: any[]): any[] {
-    let currentIndex = array.length, temporaryValue, randomIndex;
-    while (currentIndex !== 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
 }

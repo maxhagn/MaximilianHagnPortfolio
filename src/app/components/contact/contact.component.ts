@@ -1,4 +1,5 @@
 import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
+import {DeviceDetectorService} from "ngx-device-detector";
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,7 @@ export class ContactComponent {
   @ViewChild('left_container', {read: ElementRef}) leftContainerElement;
   @ViewChild('right_container', {read: ElementRef}) rightContainerElement;
 
-  constructor() {
+  constructor(private deviceService: DeviceDetectorService) {
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -20,7 +21,7 @@ export class ContactComponent {
   }
 
   public cardsFlyIn(): void {
-    if (window.scrollY > this.contactSectionElement.nativeElement.scrollHeight) {
+    if (window.scrollY > this.contactSectionElement.nativeElement.scrollHeight && this.deviceService.isDesktop()) {
       let relativeChange = window.scrollY / this.contactSectionElement.nativeElement.offsetTop;
       let translate = (1 - relativeChange) * 500;
       this.leftContainerElement.nativeElement.style.transform = `translateX(-${translate}px)`;
