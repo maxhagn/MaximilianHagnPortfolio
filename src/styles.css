@@ -128,7 +128,7 @@ html, body {
 /*TOOLTIP BT*/
 .tooltip {
   position: absolute;
-  z-index: 1080;
+  z-index: 98;
   display: block;
   margin: 0;
   font-style: normal;

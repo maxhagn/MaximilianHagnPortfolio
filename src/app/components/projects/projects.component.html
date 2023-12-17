@@ -42,9 +42,9 @@
   <ul *ngIf="projects" class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-10 gap-0.5 grid-flow-dense"
       role="list">
     <li *ngFor="let project of projects" [ngClass]="project.gridClass" (click)="openOverlay(project)" appInViewport
-        class="flex flex-col divide-y will-change-auto divide-gray-200 rounded-lg bg-gray-400/5 text-left text-white cursor-pointer hover:bg-gray-800">
+        class="flex flex-col  will-change-auto divide-gray-200 rounded-lg bg-gray-400/5 text-left text-white cursor-pointer hover:bg-gray-800">
       <div class="flex flex-1 flex-col pt-1 ps-4 pe-4 pb-4">
-        <h3 [classList]="!project.gridClass.startsWith('col-span-1') ? 'mt-6 text-lg font-extrabold text-white-on-black' : 'mt-6 text-lg font-extrabold text-white-on-black line-clamp-2'">{{ project.name }}</h3>
+        <h3 [classList]="!project.gridClass.startsWith('col-span-1') ? 'mt-6 text-lg font-extrabold text-white-on-black' : 'mt-6 text-sm md:text-lg text-white-on-black line-clamp-2'">{{ project.name }}</h3>
         <dl class="mt-1 flex flex-grow flex-col justify-between">
           <dt *ngIf="!project.gridClass.startsWith('col-span-1')"
             class="text-sm text-white-on-black">{{ getTextInLanguage(project.shortDescription, Language.ENGLISH) }}

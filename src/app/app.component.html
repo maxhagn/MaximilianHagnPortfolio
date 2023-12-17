@@ -1,5 +1,5 @@
-<header #header class="fixed w-full right-0 top-0 z-50">
-  <nav #headerInner aria-label="Global" class="mx-auto flex items-center justify-between px-2 py-2 md:px-4 xl:px-8">
+<header *ngIf="!currentProject" #header class="fixed w-full top-0 right-0 z-10">
+  <nav #headerInner aria-label="Global" *ngIf="isMenuCollapsed" class="mx-auto flex items-center justify-between px-2 py-2 md:px-4 xl:px-8">
     <div #dummy_box class="hidden xl:block basis-1/2 will-change-auto"></div>
     <div class="flex xl:flex-1">
       <button (click)="scrollToElement(hero)"
@@ -63,7 +63,7 @@
   </nav>
   <div *ngIf="!isMenuCollapsed" aria-modal="true" class="lg:hidden" role="dialog">
     <div
-      class="fixed bg-gray-900 inset-y-0 right-0 z-10 w-full h-fit overflow-hidden px-3 pt-2 pb-8 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 drop-shadow-2xl">
+      class="fixed bg-gray-900 inset-y-0 top-0 right-0 z-10 w-full h-fit overflow-hidden px-3 pt-2 pb-8 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 drop-shadow-2xl">
       <div class="flex items-center justify-between">
         <div class="flex lg:flex-1">
           <button (click)="scrollToElement(hero)" class="name mx-2 my-2 text-white font-extrabold text-base md:text-xl">
@@ -98,7 +98,7 @@
             <li>
               <button (click)="scrollToElement(skills)"
                       class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >{{ 'NAVBAR.CV' | translate }}
+              >{{ 'NAVBAR.SKILLS' | translate }}
               </button>
             </li>
             <li>
@@ -128,8 +128,6 @@
   </div>
 </header>
 
-<app-project [project]="currentProject" *ngIf="currentProject" (overlayProject)="onOpenOverlay($event)"></app-project>
-
 <div #hero>
   <app-hero></app-hero>
 </div>
@@ -146,3 +144,4 @@
   <app-footer></app-footer>
 </div>
 
+<app-project [project]="currentProject" *ngIf="currentProject" (overlayProject)="onOpenOverlay($event)"></app-project>
