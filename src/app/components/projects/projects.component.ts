@@ -3,13 +3,11 @@ import {
   ElementRef,
   EventEmitter,
   HostListener,
-  Inject,
   Input,
   OnInit,
   Output,
   ViewChild
 } from '@angular/core';
-import {DOCUMENT} from "@angular/common";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {ProjectDto} from "../../models/ProjectDto";
 import {ProjectService} from "../../services/project.service";
@@ -17,7 +15,7 @@ import {Language} from "../../models/Language";
 import {TextDto} from "../../models/TextDto";
 import {ProjectStats} from "../../models/ProjectStats";
 import {HyperlinkDto} from "../../models/HyperlinkDto";
-import {DeviconService} from "../../services/devicon.service";
+import {DeviceDetectorService} from "ngx-device-detector";
 
 @Component({
   selector: 'app-projects',
@@ -33,6 +31,7 @@ export class ProjectsComponent implements OnInit {
   public projectStats: ProjectStats;
   public loadingStats: boolean = true;
   public Language = Language;
+  public blacklist = [document.querySelector("a")]
   public displayProjectStats: ProjectStats = {
     totalWorkdays: 0,
     totalWebsites: 0,
@@ -41,11 +40,15 @@ export class ProjectsComponent implements OnInit {
     projectCount: 0
   };
 
-  openOverlay(project: ProjectDto) {
+  openOverlay(event: any, project: ProjectDto) {
+    if (this.blacklist.includes(event.target)) {
+      console.log("clicked")
+      return;
+    }
     this.overlayProject.emit(project);
   }
 
-  constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private projectService: ProjectService, private deviconService: DeviconService) {
+  constructor(private translate: TranslateService, private deviceService: DeviceDetectorService, private projectService: ProjectService) {
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
     });
@@ -56,24 +59,25 @@ export class ProjectsComponent implements OnInit {
   }
 
   @HostListener('window:scroll', ['$event'])
-  public animate(event: any): void {
+  public animate(): void {
     this.setProjectStatsScroll();
   }
 
   public setProjectStatsScroll() {
-    if (this.projectBoxElement) {
+    if (this.projectBoxElement  && this.deviceService.isDesktop()) {
       const position = this.projectBoxElement.nativeElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       if (position.top < windowHeight && position.bottom >= 0) {
-        const relative = Math.min(1, (windowHeight - position.top -100 ) / 600)
-        this.projectBoxElement.nativeElement.style.opacity = relative;
-        this.projectBoxElement.nativeElement.style.transform = `scale(${relative})`;
-        this.displayProjectStats.totalRepositories = Math.floor(this.projectStats.totalRepositories * relative)
-        this.displayProjectStats.totalWebsites = Math.floor(this.projectStats.totalWebsites * relative)
-        this.displayProjectStats.totalWorkdays = Math.floor(this.projectStats.totalWorkdays * relative)
-        this.displayProjectStats.projectCount = Math.floor(this.projectStats.projectCount * relative)
-        this.displayProjectStats.clientCount = Math.floor(this.projectStats.clientCount * relative)
+        const relativeNumbers = Math.min(1, (windowHeight - position.top - 100 ) / 600);
+        const relativeScale = Math.max(Math.min(1, (windowHeight - position.top - 100 ) / 600), .75);
+        this.projectBoxElement.nativeElement.style.opacity = relativeScale;
+        this.projectBoxElement.nativeElement.style.transform = `scale(${relativeScale})`;
+        this.displayProjectStats.totalRepositories = Math.floor(this.projectStats.totalRepositories * relativeNumbers)
+        this.displayProjectStats.totalWebsites = Math.floor(this.projectStats.totalWebsites * relativeNumbers)
+        this.displayProjectStats.totalWorkdays = Math.floor(this.projectStats.totalWorkdays * relativeNumbers)
+        this.displayProjectStats.projectCount = Math.floor(this.projectStats.projectCount * relativeNumbers)
+        this.displayProjectStats.clientCount = Math.floor(this.projectStats.clientCount * relativeNumbers)
       }
     }
   }
@@ -101,6 +105,9 @@ export class ProjectsComponent implements OnInit {
   }
 
   getDocuments(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
-    return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && hyperlink.active === true);
+    return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && !hyperlink.description.startsWith('Image') && hyperlink.active === true);
   }
+
+  protected readonly event = event;
+  protected readonly window = window;
 }

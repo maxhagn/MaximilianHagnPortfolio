@@ -11,7 +11,7 @@ import {Language} from "./models/Language";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
 
   @ViewChild('hero', {read: ElementRef}) heroElement;
   @ViewChild('projects_link', {read: ElementRef}) projectsElement;
@@ -20,12 +20,13 @@ export class AppComponent implements OnInit{
   @ViewChild('header', {read: ElementRef}) headerElement;
   @ViewChild('dummy_box', {read: ElementRef}) dummyBoxElement;
   @ViewChild('headerInner', {read: ElementRef}) headerInnerElement;
-  public activeMenuEntry: number;
+  public activeMenuEntry: number = 1;
   public isLanguageChanged: boolean = false;
   public isLoaded: boolean;
   public isMenuCollapsed: boolean;
   public projects: Array<ProjectDto>;
   public currentProject: ProjectDto;
+  public colors = ['']
   public languageList = [
     {code: 'en', label: 'English'},
     {code: 'de', label: 'German'}
@@ -42,44 +43,41 @@ export class AppComponent implements OnInit{
     this.isLoaded = false;
   }
 
-  public colors = ['']
-  //public colors = [
-  //  'bg-gray-400 text-black',
-  // 'bg-gray-500 text-gray-900',
-  //'bg-gray-600 text-gray-800'];
-
-
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: any) {
-    if (window.scrollY + this.document.body.clientHeight < (this.projectsElement.nativeElement.offsetTop + 100)) {
-      this.activeMenuEntry = 1;
-    } else if (window.scrollY + this.document.body.clientHeight >= this.projectsElement.nativeElement.offsetTop &&
-      window.scrollY + this.document.body.clientHeight < this.skillsElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 2;
-    } else if (window.scrollY + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop &&
-      window.scrollY + this.document.body.clientHeight < this.contactElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 3;
-    } else if (window.scrollY + this.document.body.clientHeight >= this.skillsElement.nativeElement.offsetTop) {
-      this.activeMenuEntry = 5;
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event) {
+    if (window.innerWidth >= 1024) {
+      this.isMenuCollapsed = true;
+      this.setHeaderCss();
     }
-    if (window.scrollY > this.projectsElement.nativeElement.offsetTop) {
-      this.dummyBoxElement.nativeElement.style.flexBasis = '0'
-      this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
-    }
-
-    this.setHeaderCss(window.scrollY)
   }
 
-  public setHeaderCss(scrollTop: number): void {
-    let relativeChange = scrollTop / this.projectsElement.nativeElement.offsetTop;
-    relativeChange = relativeChange *2 < 1 ? relativeChange *2 : 1;
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    if (window.scrollY < (this.projectsElement.nativeElement.offsetTop)) {
+      this.activeMenuEntry = 1;
+    } else if (window.scrollY >= this.projectsElement.nativeElement.offsetTop &&
+      window.scrollY < this.skillsElement.nativeElement.offsetTop) {
+      this.activeMenuEntry = 2;
+    } else if (window.scrollY >= this.skillsElement.nativeElement.offsetTop &&
+      window.scrollY < this.contactElement.nativeElement.offsetTop) {
+      this.activeMenuEntry = 3;
+    } else {
+      this.activeMenuEntry = 4;
+    }
 
-    let flexBasisDummyBox = (1 - relativeChange) * 50;
+    this.setHeaderCss()
+  }
+
+  public setHeaderCss(): void {
+    let relativeChange = window.scrollY / this.projectsElement.nativeElement.offsetTop;
+    relativeChange = relativeChange * 2 < 1 ? relativeChange * 2 : 1;
+
+    let flexBasisDummyBox = Math.min((1 - relativeChange) * 50, 50);
     let maxWithHeaderInner = (window.innerWidth / 16) + (80 - (window.innerWidth / 16)) * relativeChange
     this.headerInnerElement.nativeElement.style.maxWidth = maxWithHeaderInner + 'rem'
     this.dummyBoxElement.nativeElement.style.flexBasis = flexBasisDummyBox + '%';
 
-    if (scrollTop > this.projectsElement.nativeElement.offsetTop) {
+    if (window.innerWidth < 1024 || window.scrollY > this.projectsElement.nativeElement.offsetTop) {
       this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
     } else {
       this.headerElement.nativeElement.style.background = 'none'
@@ -91,8 +89,10 @@ export class AppComponent implements OnInit{
 
     if (this.currentProject) {
       document.documentElement.style.overflowY = 'hidden';
+      this.headerElement.nativeElement.style.zIndex = '-1';
     } else {
       document.documentElement.style.overflowY = 'auto';
+      this.headerElement.nativeElement.style.zIndex = '100';
     }
   }
 

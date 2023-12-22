@@ -16,14 +16,14 @@ export class ContactComponent {
   }
 
   @HostListener('window:scroll', ['$event'])
-  public animate(event: any): void {
+  public animate(): void {
     this.cardsFlyIn();
   }
 
   public cardsFlyIn(): void {
-    if (window.scrollY > this.contactSectionElement.nativeElement.scrollHeight && this.deviceService.isDesktop()) {
-      let relativeChange = window.scrollY / this.contactSectionElement.nativeElement.offsetTop;
-      let translate = (1 - relativeChange) * 500;
+    if (this.contactSectionElement.nativeElement.getBoundingClientRect().top < window.innerHeight && this.deviceService.isDesktop()) {
+      let relativeChange = (window.innerHeight - this.contactSectionElement.nativeElement.getBoundingClientRect().top) / this.contactSectionElement.nativeElement.scrollHeight;
+      let translate = Math.max(0, (1 - relativeChange) * 100);
       this.leftContainerElement.nativeElement.style.transform = `translateX(-${translate}px)`;
       this.rightContainerElement.nativeElement.style.transform = `translateX(${translate}px)`;
     }

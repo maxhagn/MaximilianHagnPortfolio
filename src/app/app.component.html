@@ -1,9 +1,9 @@
-<header *ngIf="!currentProject" #header class="fixed w-full top-0 right-0 z-10">
-  <nav #headerInner aria-label="Global" *ngIf="isMenuCollapsed" class="mx-auto flex items-center justify-between px-2 py-2 md:px-4 xl:px-8">
+<header #header class="fixed w-full top-0 right-0 z-10 bg-gray-900 lg:bg-transparent">
+  <nav #headerInner aria-label="Global" class="mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between px-2 py-2 md:px-4 xl:px-8">
     <div #dummy_box class="hidden xl:block basis-1/2 will-change-auto"></div>
-    <div class="flex xl:flex-1">
+    <div class="flex xl:flex-1 basis-1/2">
       <button (click)="scrollToElement(hero)"
-              class="name ms-3 sm:mx-2 my-2 md:px-4 xl:mx-4 hover-text-main-color text-white font-extrabold text-base md:text-xl animate__animated animate__bounceIn">
+              class="name ms-3 sm:mx-2 my-2 md:px-4 xl:mx-4 hover-text-main-color text-white font-extrabold text-base md:text-xl">
         Maximilian
         Hagn
       </button>
@@ -14,46 +14,47 @@
               type="button">
         <span class="sr-only">Open main menu</span>
         <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-          <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path *ngIf="isMenuCollapsed" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path *ngIf="!isMenuCollapsed" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </div>
-    <div class="hidden lg:flex lg:gap-x-12">
-      <ul class="flex flex-row">
+    <div [classList]="isMenuCollapsed ? 'hidden lg:flex lg:gap-x-12' : 'block lg:flex lg:gap-x-12 w-full lg:w-auto ms-3 sm:mx-2 my-2 md:px-4'">
+      <ul class="flex flex-col lg:flex-row">
         <li>
           <button (click)="scrollToElement(hero)"
-                  class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+                  [classList]="activeMenuEntry === 1 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >{{ 'NAVBAR.HOME' | translate }}
           </button>
         </li>
         <li>
           <button (click)="scrollToElement(projects_link)"
-                  class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+                  [classList]="activeMenuEntry === 2 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >{{ 'NAVBAR.PROJECTS' | translate }}
           </button>
         </li>
         <li>
           <button (click)="scrollToElement(skills)"
-                  class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+                  [classList]="activeMenuEntry === 3 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >{{ 'NAVBAR.SKILLS' | translate }}
           </button>
         </li>
         <li>
           <button (click)="scrollToElement(contact)"
-                  class="text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100"
+                  [classList]="activeMenuEntry === 4 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >{{ 'NAVBAR.CONTACT' | translate }}
           </button>
         </li>
         <li>
           <button (click)="changeLang('de')"
                   *ngIf="translate.currentLang == 'en'"
-                  [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
+                  [className]="isLanguageChanged ? 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             Deutsch
           </button>
           <a (click)="changeLang('en')"
              *ngIf="translate.currentLang == 'de'"
-             [className]="isLanguageChanged ? 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-semibold leading-6 me-4 cursor-pointer text-gray-100 animate__animated animate__bounceIn hover-text-main-color focus:text-gray-100'"
+             [className]="isLanguageChanged ? 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             English
           </a>
@@ -61,71 +62,6 @@
       </ul>
     </div>
   </nav>
-  <div *ngIf="!isMenuCollapsed" aria-modal="true" class="lg:hidden" role="dialog">
-    <div
-      class="fixed bg-gray-900 inset-y-0 top-0 right-0 z-10 w-full h-fit overflow-hidden px-3 pt-2 pb-8 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 drop-shadow-2xl">
-      <div class="flex items-center justify-between">
-        <div class="flex lg:flex-1">
-          <button (click)="scrollToElement(hero)" class="name mx-2 my-2 text-white font-extrabold text-base md:text-xl">
-            Maximilian
-            Hagn
-          </button>
-        </div>
-        <button (click)="toggleNav()"
-                class="me-4 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
-                type="button">
-          <span class="sr-only">Open main menu</span>
-          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-            <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </button>
-      </div>
-      <div class="mt-6 flow-root">
-        <div class="-my-6 divide-y divide-gray-500/10">
-          <ul class="flex flex-col">
-            <li>
-              <button (click)="scrollToElement(hero)"
-                      class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >{{ 'NAVBAR.HOME' | translate }}
-              </button>
-            </li>
-            <li>
-              <button (click)="scrollToElement(projects)"
-                      class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >{{ 'NAVBAR.PROJECTS' | translate }}
-              </button>
-            </li>
-            <li>
-              <button (click)="scrollToElement(skills)"
-                      class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >{{ 'NAVBAR.SKILLS' | translate }}
-              </button>
-            </li>
-            <li>
-              <button (click)="scrollToElement(contact)"
-                      class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >{{ 'NAVBAR.CONTACT' | translate }}
-              </button>
-            </li>
-            <li>
-              <button (click)="changeLang('de')"
-                      *ngIf="translate.currentLang == 'en'"
-                      class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >
-                Deutsch
-              </button>
-              <button (click)="changeLang('en')"
-                      *ngIf="translate.currentLang == 'de'"
-                      class="-mx-1 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-50"
-              >
-                English
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
 </header>
 
 <div #hero>
