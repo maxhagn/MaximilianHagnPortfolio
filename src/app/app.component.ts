@@ -112,7 +112,9 @@ export class AppComponent implements OnInit {
   getProjects(): void {
     this.projectService.getProjects().subscribe(
       (projects: ProjectDto[]) => {
-        this.projects = projects;
+        this.projects = projects.sort((a, b) => {
+          return (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0);
+        });
         this.assignGridClasses();
       }
     );
@@ -120,7 +122,7 @@ export class AppComponent implements OnInit {
 
   assignGridClasses() {
     this.projects.forEach((project, index) => {
-      if (index < 10) {
+      if (index < 15) {
         project.gridClass = this.getGridClass(2)
       } else {
         project.gridClass = this.getGridClass(1);
