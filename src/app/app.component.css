@@ -2,30 +2,6 @@
   font-family: "Inter-Regular", sans-serif;
 }
 
-.nav-item:nth-of-type(1) .nav-link {
-  animation-delay: 200ms;
-}
-
-.nav-item:nth-of-type(2) .nav-link {
-  animation-delay: 250ms;
-}
-
-.nav-item:nth-of-type(3) .nav-link {
-  animation-delay: 300ms;
-}
-
-.nav-item:nth-of-type(4) .nav-link {
-  animation-delay: 350ms;
-}
-
-.nav-item:nth-of-type(5) .nav-link {
-  animation-delay: 400ms;
-}
-
-.nav-item:nth-of-type(6) .nav-link {
-  animation-delay: 450ms;
-}
-
 .spinner-container {
   display: block;
   position: fixed;

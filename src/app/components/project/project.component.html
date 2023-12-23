@@ -2,19 +2,17 @@
   <header class="fixed w-full top-0 right-0 z-10 bg-gray-900 lg:bg-transparent">
     <nav aria-label="Global"
          class="mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between px-2 py-2 md:px-4 xl:px-8">
-      <div class="basis-0 will-change-auto"></div>
       <div class="flex xl:flex-1 basis-1/2">
         <span
           class="name ms-3 sm:mx-2 my-2 md:px-4 xl:mx-4 hover-text-main-color text-white font-extrabold text-base md:text-xl">
-          Maximilian
-          Hagn
+          {{ 'VAR.NAME' | translate }}
         </span>
       </div>
       <div class="flex mr-8">
         <button (click)="closeOverlay()"
                 class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
                 type="button">
-          <span class="sr-only">Open main menu</span>
+          <span class="sr-only">{{ 'SR.CLOSE_OVERLAY' | translate }}</span>
           <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
           </svg>
@@ -22,35 +20,40 @@
       </div>
     </nav>
   </header>
-  <div class="mx-auto px-4 py-16 sm:px-6 md:py-24 lg:max-w-7xl lg:px-8">
-    <div class="lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16">
-      <div class="lg:col-span-4 grid grid-rows-w grid-cols-1 gap-4 lg:row-end-1">
-        <div *ngIf="images.length !== 0" class="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100">
-          <img [src]="images[currentImageIndex].url"
-               [alt]="images[currentImageIndex].description"
-               class="object-cover object-center">
-        </div>
-        <div *ngIf="images.length !== 0" class="flex overflow-y-auto pb-4">
-          <div *ngFor="let image of images; index as i"
-               class="block aspect-h-3 flex-shrink-0 aspect-w-4 mx-1 overflow-y-auto rounded-lg bg-gray-100">
-            <img (click)="currentImageIndex = i" [src]="image.url"
-                 [alt]="image.description"
-                 class="object-cover h-28 object-center">
+  <div class="scroll-container px-4 md:pt-4 lg:pt-8 xl:pt-16 lg:px-8">
+    <div class="flex flex-col lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16 mx-auto lg:max-w-7xl">
+      <div
+        class="mx-auto order-3 lg:order-2 lg:row-end-1 w-full max-w-2xl lg:col-span-4 mt-10 lg:mt-0 lg:max-w-none">
+        <div *ngIf="images && images.length !== 0" class="mt-10 border-t border-gray-200 pt-10 lg:mt-0 lg:border-0 lg:pt-0">
+          <h4 class="lg:hidden text-sm lg:text-md font-medium text-gray-100 mt-2">{{ 'PROJECT.GALLERY' | translate }}</h4>
+          <div class="aspect-h-3 aspect-w-4 overflow-hidden rounded-lg bg-gray-100 mt-4 flex justify-center">
+            <img [src]="images[currentImageIndex].url"
+                 [alt]="images[currentImageIndex].description"
+                 class="object-cover object-center max-h-65">
+          </div>
+          <div *ngIf="images.length > 1" class="flex overflow-y-auto pb-4 mt-4">
+            <div *ngFor="let image of images; index as i"
+                 class="block aspect-h-3 flex-shrink-0 aspect-w-4 mx-1 overflow-y-auto rounded-lg bg-gray-100">
+              <img (click)="currentImageIndex = i" [src]="image.url"
+                   [alt]="image.description"
+                   class="object-cover h-28 object-center">
+            </div>
           </div>
         </div>
       </div>
-      <div class="mx-auto mt-4 max-w-2xl md:mt-16 lg:col-span-3 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-none">
+      <div
+        class="mx-auto mt-4 order-1 lg:order-2 max-w-2xl md:mt-16 lg:col-span-3 lg:row-span-2 lg:row-end-2 lg:mt-0 lg:max-w-100">
         <div class="flex flex-col-reverse">
           <div class="mt-4">
             <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{{ project.name }}</h1>
 
-            <h2 id="information-heading" class="sr-only">Product information</h2>
+            <h2 id="information-heading" class="sr-only">{{ 'SR.PROJECT_INFORMATION' | translate }}</h2>
             <p class="mt-2 text-sm text-gray-500">{{ project.startedAt | date: 'yyyy.MM.dd' }}
               - {{ project.completedAt | date: 'yyyy.MM.dd' }}</p>
           </div>
 
           <div>
-            <h3 class="sr-only">Reviews</h3>
+            <h3 class="sr-only">{{ 'SR.DESCRIPTION' | translate }}</h3>
             <div class="flex items-center">
               <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
                    fill="currentColor"
@@ -88,30 +91,30 @@
                       clip-rule="evenodd"/>
               </svg>
             </div>
-            <p class="sr-only">{{ project.relevanceScore }} out of 100 points</p>
+            <p class="sr-only">{{ project.relevanceScore }} {{ 'SR.POINTS' | translate }}</p>
           </div>
         </div>
 
         <p class="mt-6 text-gray-500">{{ getContentByLanguage(Language.ENGLISH, project.shortDescription) }}</p>
 
         <div class="mt-10 border-t border-gray-200 pt-10">
-          <h3 class="text-sm font-medium text-gray-100">Key Facts</h3>
+          <h3 class="text-sm font-medium text-gray-100">{{ 'PROJECT.FACTS' | translate }}</h3>
           <div class="prose prose-sm mt-4 text-gray-500">
             <ul role="list">
               <li *ngIf="project.type">{{ snakeCaseToNormal(project.type) }} {{ snakeCaseToNormal(project.category) }}
                 Project
               </li>
-              <li *ngIf="project.workDays">{{ project.workDays }} Workdays</li>
-              <li *ngIf="project.client">Client: {{ project.client }}</li>
-              <li *ngIf="project.language">Language: {{ snakeCaseToNormal(project.language) }}</li>
-              <li *ngIf="project.volume">Volume: {{ project.volume }}</li>
-              <li *ngIf="project.teamSize">Team Size: {{ project.teamSize }}</li>
+              <li *ngIf="project.workDays">{{ project.workDays }} {{ 'PROJECT.WORKDAYS' | translate }}</li>
+              <li *ngIf="project.client">{{ 'PROJECT.CLIENT' | translate }}: {{ project.client }}</li>
+              <li *ngIf="project.language">{{ 'PROJECT.LANGUAGE' | translate }}: {{ snakeCaseToNormal(project.language) }}</li>
+              <li *ngIf="project.volume">{{ 'PROJECT.VOLUME' | translate }}: {{ project.volume }}</li>
+              <li *ngIf="project.teamSize">{{ 'PROJECT.TEAM_SIZE' | translate }}: {{ project.teamSize }}</li>
             </ul>
           </div>
         </div>
 
         <div class="mt-10 border-t border-gray-200 pt-10">
-          <h3 class="text-sm font-medium text-gray-100">Roles</h3>
+          <h3 class="text-sm font-medium text-gray-100">{{ 'PROJECT.ROLES' | translate }}</h3>
           <div class="prose prose-sm mt-4 text-gray-500">
             <ul role="list">
               <li *ngFor="let role of project.roles">{{ snakeCaseToNormal(role) }}</li>
@@ -120,7 +123,7 @@
         </div>
 
         <div class="mt-10 border-t border-gray-200 pt-10">
-          <h3 class="text-sm font-medium text-gray-100">Skills</h3>
+          <h3 class="text-sm font-medium text-gray-100">{{ 'PROJECT.SKILLS' | translate }}</h3>
           <div class="prose prose-sm mt-4 text-gray-500">
             <ul role="list">
               <li *ngFor="let skill of project.skills">{{ skill.name }}</li>
@@ -128,8 +131,8 @@
           </div>
         </div>
 
-        <div class="mt-10 border-t border-gray-200 pt-10" *ngIf="project.links">
-          <h3 class="text-sm font-medium text-gray-100">Visite</h3>
+        <div class="mt-10 border-t border-gray-200 pt-10" *ngIf="hasVisiteLinks">
+          <h3 class="text-sm font-medium text-gray-100">{{ 'PROJECT.VISITE' | translate }}</h3>
           <ul role="list" class="mt-4 flex items-center space-x-6">
             <li *ngFor="let link of project.links">
               <a
@@ -175,15 +178,20 @@
           </ul>
         </div>
       </div>
-
-      <div class="mx-auto mt-16 w-full max-w-2xl lg:col-span-4 lg:mt-0 lg:max-w-none">
+      <div class="mx-auto order-3 lg:order-2 w-full max-w-2xl lg:col-span-4 mt-0 lg:max-w-none">
         <div id="tab-panel-reviews" class="-mb-10" aria-labelledby="tab-reviews" role="tabpanel" tabindex="0">
-          <h3 class="sr-only">Description</h3>
+          <h3 class="sr-only">{{ 'SR.DESCRIPTION' | translate }}</h3>
           <div class="prose prose-sm max-w-none text-gray-500">
-            <h4 class="text-md font-medium text-gray-100">Goals</h4>
-            <p class="text-md text-gray-500">{{ getContentByLanguage(Language.ENGLISH, project.goal) }}</p>
-            <h4 class="text-md font-medium text-gray-100 mt-2">Additional</h4>
-            <p class="text-md text-gray-500">{{ getContentByLanguage(Language.ENGLISH, project.description) }}</p>
+            <div class="mt-10 border-t border-gray-200 pt-10 lg:mt-0 lg:border-0 lg:pt-0">
+              <h4 class="text-sm lg:text-md font-medium text-gray-100">{{ 'PROJECT.GOALS' | translate }}</h4>
+              <p
+                class="text-md text-gray-500 mt-4 lg:mt-0">{{ getContentByLanguage(Language.ENGLISH, project.goal) }}</p>
+            </div>
+            <div class="mt-10 border-t border-gray-200 pt-10 lg:mt-0 lg:border-0">
+              <h4 class="text-sm lg:text-md font-medium text-gray-100">{{ 'PROJECT.ADDITIONAL' | translate }}</h4>
+              <p
+                class="text-md text-gray-500 mt-4 lg:mt-0 pb-8">{{ getContentByLanguage(Language.ENGLISH, project.description) }}</p>
+            </div>
           </div>
         </div>
       </div>

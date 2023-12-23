@@ -5,7 +5,7 @@ import {TextDto} from "../../models/TextDto";
 import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
 import {HyperlinkDto} from "../../models/HyperlinkDto";
-import {filterToMembersWithDecorator} from "@angular/compiler-cli/src/ngtsc/reflection";
+import {LangChangeEvent, TranslateModule, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-project',
@@ -14,7 +14,8 @@ import {filterToMembersWithDecorator} from "@angular/compiler-cli/src/ngtsc/refl
     DatePipe,
     NgForOf,
     NgIf,
-    NgbTooltip
+    NgbTooltip,
+    TranslateModule
   ],
   templateUrl: './project.component.html',
   styleUrl: './project.component.css'
@@ -24,16 +25,32 @@ export class ProjectComponent implements OnInit {
   @Input() project: ProjectDto;
   @Output() overlayProject: EventEmitter<ProjectDto> = new EventEmitter();
 
+  public currentLanguage: string = "en";
   currentImageIndex: number = 0;
+  hasVisiteLinks: boolean = false;
   images: HyperlinkDto[];
+
+  constructor(private translate: TranslateService) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
+  }
 
   ngOnInit() {
     this.images = this.filterHyperlinks(this.project.links);
+    this.hasVisiteLinks = this.checkVisiteLinks(this.project.links);
   }
 
   filterHyperlinks(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
     return hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Image"));
   }
+
+  checkVisiteLinks(hyperlinks: HyperlinkDto[]): boolean {
+    return hyperlinks.some(hyperlink =>
+      ["API", "GitHub", "Github", "Website"].some(prefix => hyperlink.description.startsWith(prefix))
+    );
+  }
+
 
   closeOverlay() {
     this.overlayProject.emit(null);

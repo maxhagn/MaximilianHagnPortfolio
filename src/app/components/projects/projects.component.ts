@@ -92,6 +92,10 @@ export class ProjectsComponent implements OnInit {
     );
   }
 
+  getThumbnail(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
+    return hyperlinkDto?.find(hyperlink => hyperlink.description === 'Thumbnail' && hyperlink.active === true);
+  }
+
   getTextInLanguage(textDto: TextDto[], language: Language): string {
     return textDto?.find(text => text.language === language)?.content || '';
   }

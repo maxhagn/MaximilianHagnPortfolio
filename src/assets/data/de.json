@@ -1,8 +1,14 @@
 {
+  "VAR": {
+    "NAME": "Maximilian Hagn",
+    "NAME_LONG": "Maximilian Hagn BSc. BSc.",
+    "EMAIL": "maximilian.hagn@gmail.com",
+    "PHONE_NUMBER": "+43 676 9579022"
+  },
   "NAVBAR": {
-    "HOME": "Start",
+    "HOME": "Startseite",
     "PROJECTS": "Projekte",
-    "SKILLS": "Skills",
+    "SKILLS": "Fähigkeiten",
     "CONTACT": "Kontakt"
   },
   "HERO": {
@@ -10,25 +16,48 @@
     "MAX": "Ich heiße Max",
     "CATCHY_TEXT": "Ich bin dort, wo Technologie und Geschäftswelt aufeinandertreffen, und mache aus komplexen Ideen innovative Lösungen."
   },
+  "PROJECT": {
+    "FACTS": "Wichtige Fakten",
+    "ROLES": "Rollen",
+    "SKILLS": "Fähigkeiten",
+    "VISITE": "Besuche",
+    "GOALS": "Ziele",
+    "ADDITIONAL": "Zusätzlich",
+    "GALLERY": "Galerie",
+    "WORKDAYS": "Arbeitstage",
+    "LANGUAGE": "Sprache",
+    "TEAM_SIZE": "Teamgröße",
+    "CLIENT": "Kunde",
+    "VOLUME": "Volumen"
+  },
   "PROJECTS": {
-    "HEADING": "From Concept to Code: A Gallery of My Completed Projects",
-    "SUBHEADING": "From Concept to Code: A Gallery of My Completed Projects",
-    "PROJECT_COUNT": "Total Project Engagements",
-    "WEBSITE_COUNT": "Websites Deployed on Kubernetes",
-    "CLIENT_COUNT": "Client Collaborations",
-    "REPOSITORY_COUNT": "Code Repositories Managed",
-    "WORKDAY_COUNT": "Cumulative Workdays"
+    "HEADING": "Code in Lösungen verwandeln",
+    "SUBHEADING": "Entdecken Sie die Geschichten hinter jedem Projekt, die mein Engagement für Qualität, Innovation und Benutzererfahrung zeigen.",
+    "PROJECT_COUNT": "Gesamtzahl der Projekteinsätze",
+    "WEBSITE_COUNT": "Auf Kubernetes bereitgestellte Websites",
+    "CLIENT_COUNT": "Kundenkollaborationen",
+    "REPOSITORY_COUNT": "Verwaltete Code-Repositories",
+    "WORKDAY_COUNT": "Gesamtarbeitstage"
   },
   "SKILLS": {
-    "HEADING": "Skills",
-    "LANGUAGE_COUNT": "Programming Languages",
-    "SKILL_COUNT": "Total Skills",
-    "TECHNOLOGY_COUNT": "Technologies",
-    "LARGE_TEXT": "Engineering innovation, one solution at a time. My diverse skills in programming and technology turn complex challenges into elegant, efficient software.",
-    "DESCRIPTION": "As a software engineer, my journey through the ever-evolving landscape of technology has equipped me with a broad array of skills. This diverse expertise allows me to approach challenges creatively and deliver cutting-edge solutions. I'm passionate about continuous learning and staying ahead of industry trends, ensuring that my contributions are both innovative and impactful. From concept to code, I thrive in crafting high-quality, user-focused software."
+    "HEADING": "Fähigkeiten",
+    "LANGUAGE_COUNT": "Programmiersprachen",
+    "SKILL_COUNT": "Gesamtfähigkeiten",
+    "TECHNOLOGY_COUNT": "Technologien",
+    "LARGE_TEXT": "Innovation im Engineering, eine Lösung nach der anderen. Meine vielfältigen Fähigkeiten in Programmierung und Technologie verwandeln komplexe Herausforderungen in elegante, effiziente Software.",
+    "DESCRIPTION": "Als Softwareingenieur hat mich meine Reise durch die sich ständig weiterentwickelnde Technologielandschaft mit einem breiten Spektrum an Fähigkeiten ausgestattet. Diese vielfältige Expertise ermöglicht es mir, Herausforderungen kreativ zu begegnen und zukunftsweisende Lösungen zu liefern. Ich bin leidenschaftlich daran interessiert, kontinuierlich zu lernen und mit den Branchentrends Schritt zu halten, um sicherzustellen, dass meine Beiträge sowohl innovativ als auch wirkungsvoll sind. Von der Konzeption bis zum Code gedeihe ich darin, hochwertige, benutzerorientierte Software zu entwickeln."
   },
   "CONTACT": {
-    "HEADING": "Let's Talk Technology",
-    "INTRO_TEXT": "Interested in discussing a project or learning more about my work? I'd love to hear from you. Reach out to start a conversation and explore how we can collaborate on future technology solutions."
+    "HEADING": "Lasst uns über Technologie sprechen",
+    "INTRO_TEXT": "Interessiert an der Diskussion eines Projekts oder möchten Sie mehr über meine Arbeit erfahren? Ich würde gerne von Ihnen hören. Nehmen Sie Kontakt auf, um ein Gespräch zu beginnen und zu erkunden, wie wir bei zukünftigen Technologielösungen zusammenarbeiten können."
+  },
+  "SR": {
+    "DESCRIPTION": "Beschreibung",
+    "CLOSE_OVERLAY": "Overlay schließen",
+    "POINTS": "von 100 Punkten",
+    "PROJECT_INFORMATION": "Projektinformationen",
+    "EMAIL": "E-Mail",
+    "PHONE_NUMBER": "Telefonnummer",
+    "TOGGLE_MAIN_MENU": "Hauptmenü umschalten"
   }
 }

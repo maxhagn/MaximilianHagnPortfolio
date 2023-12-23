@@ -1,4 +1,10 @@
 {
+  "VAR": {
+    "NAME": "Maximilian Hagn",
+    "NAME_LONG": "Maximilian Hagn BSc. BSc.",
+    "EMAIL": "maximilian.hagn@gmail.com",
+    "PHONE_NUMBER": "+43 676 9579022"
+  },
   "NAVBAR": {
     "HOME": "Home",
     "PROJECTS": "Projects",
@@ -9,6 +15,20 @@
     "HELLO": "Hello World",
     "MAX": "I'm Max",
     "CATCHY_TEXT": "I'm where technology meets business, transforming complex ideas into innovative solutions."
+  },
+  "PROJECT": {
+    "FACTS": "Key Facts",
+    "ROLES": "Roles",
+    "SKILLS": "Skills",
+    "VISITE": "Visite",
+    "GOALS": "Goals",
+    "ADDITIONAL": "Additional",
+    "GALLERY": "Gallery",
+    "WORKDAYS": "Workdays",
+    "LANGUAGE": "Language",
+    "TEAM_SIZE": "Team Size",
+    "CLIENT": "Client",
+    "VOLUME": "Volume"
   },
   "PROJECTS": {
     "HEADING": "Crafting Code into Solutions",
@@ -30,5 +50,14 @@
   "CONTACT": {
     "HEADING": "Let's Talk Technology",
     "INTRO_TEXT": "Interested in discussing a project or learning more about my work? I'd love to hear from you. Reach out to start a conversation and explore how we can collaborate on future technology solutions."
+  },
+  "SR": {
+    "DESCRIPTION": "Description",
+    "CLOSE_OVERLAY": "Close Overlay",
+    "POINTS": "out of 100 points",
+    "PROJECT_INFORMATION": "Project Information",
+    "EMAIL": "Email",
+    "PHONE_NUMBER": "Phone Number",
+    "TOGGLE_MAIN_MENU": "Toggle Main Menu"
   }
 }

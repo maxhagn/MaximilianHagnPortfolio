@@ -59,7 +59,7 @@ export class AppComponent implements OnInit {
       window.scrollY < this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 2;
     } else if (window.scrollY >= this.skillsElement.nativeElement.offsetTop &&
-      window.scrollY < this.contactElement.nativeElement.offsetTop) {
+      window.scrollY < this.contactElement.nativeElement.offsetTop -300 ) {
       this.activeMenuEntry = 3;
     } else {
       this.activeMenuEntry = 4;

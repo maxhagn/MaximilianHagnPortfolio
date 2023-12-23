@@ -43,6 +43,7 @@
       role="list">
     <li *ngFor="let project of projects" [ngClass]="project.gridClass" (click)="openOverlay($event, project)"
         class="flex flex-col divide-gray-200 rounded-lg bg-gray-400/5 text-left text-white cursor-pointer hover:bg-gray-800">
+      <div *ngIf="getThumbnail(project.links)" [style.background-image]="'url(' + getThumbnail(project.links).url + ')'" class="w-full h-44 bg-contain bg-no-repeat bg-center mt-4"></div>
       <div class="flex flex-1 flex-col pt-1 ps-4 pe-4 pb-4">
         <h3 [classList]="!project.gridClass.startsWith('col-span-1') ? 'mt-6 text-lg font-bold text-white-on-black' : 'mt-6 text-sm font-thin text-white-on-black line-clamp-2'">{{ project.name }}</h3>
         <dl class="mt-1 flex flex-grow flex-col justify-between">

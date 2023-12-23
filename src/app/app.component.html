@@ -4,15 +4,14 @@
     <div class="flex xl:flex-1 basis-1/2">
       <button (click)="scrollToElement(hero)"
               class="name ms-3 sm:mx-2 my-2 md:px-4 xl:mx-4 hover-text-main-color text-white font-extrabold text-base md:text-xl">
-        Maximilian
-        Hagn
+        {{ 'VAR.NAME' | translate }}
       </button>
     </div>
     <div class="flex mr-8 lg:hidden">
       <button (click)="toggleNav()"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
               type="button">
-        <span class="sr-only">Open main menu</span>
+        <span class="sr-only">{{ 'SR.TOGGLE_MAIN_MENU' | translate }}</span>
         <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
           <path *ngIf="isMenuCollapsed" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
           <path *ngIf="!isMenuCollapsed" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
