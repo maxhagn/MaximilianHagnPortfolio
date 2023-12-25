@@ -15,8 +15,12 @@
   max-width: 30rem;
 }
 
-h1, h2, h3, span {
+h1, h2, span {
   font-family: "Inter-Extra-Bold", serif;
+}
+
+h3 {
+  font-family: "Inter-Regular", serif;
 }
 
 * {

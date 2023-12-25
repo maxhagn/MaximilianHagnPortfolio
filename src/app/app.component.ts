@@ -113,6 +113,13 @@ export class AppComponent implements OnInit {
     this.projectService.getProjects().subscribe(
       (projects: ProjectDto[]) => {
         this.projects = projects.sort((a, b) => {
+          const aHasThumbnail = a.links?.some(link => link.description === 'Thumbnail');
+          const bHasThumbnail = b.links?.some(link => link.description === 'Thumbnail');
+          if (aHasThumbnail && !bHasThumbnail) {
+            return -1;
+          }
+          if (!aHasThumbnail && bHasThumbnail) {
+          }
           return (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0);
         });
         this.assignGridClasses();
@@ -122,7 +129,7 @@ export class AppComponent implements OnInit {
 
   assignGridClasses() {
     this.projects.forEach((project, index) => {
-      if (index < 15) {
+      if (index < 12) {
         project.gridClass = this.getGridClass(2)
       } else {
         project.gridClass = this.getGridClass(1);
