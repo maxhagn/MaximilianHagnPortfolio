@@ -119,6 +119,7 @@ export class AppComponent implements OnInit {
             return -1;
           }
           if (!aHasThumbnail && bHasThumbnail) {
+            return 1;
           }
           return (b.relevanceScore ?? 0) - (a.relevanceScore ?? 0);
         });
