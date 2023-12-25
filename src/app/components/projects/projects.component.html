@@ -1,4 +1,4 @@
-<div class="pb-4 pt-8 lg:pt-8 lg:pb-24 container mx-auto">
+<div class="pb-4 pt-8 lg:pt-8 lg:pb-24 w-full px-8 lg:container mx-auto">
   <div class="text-center mb-8">
     <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">{{ 'PROJECTS.HEADING' | translate }}</h2>
     <p class="mt-4 px-6 text-lg leading-8 text-gray-300">{{ 'PROJECTS.SUBHEADING' | translate }}</p>
@@ -39,16 +39,16 @@
       </dl>
     </div>
   </div>
-  <ul *ngIf="projects" class="grid grid-cols-4 md:grid-cols-8 lg:grid-cols-8 gap-0.5 grid-flow-dense"
+  <ul *ngIf="projects" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-0.5 grid-flow-dense"
       role="list">
     <li *ngFor="let project of projects" [ngClass]="project.gridClass" (click)="openOverlay($event, project)"
         class="flex flex-col divide-gray-200 rounded-lg bg-gray-400/5 text-left text-white cursor-pointer hover:bg-gray-800">
-      <div *ngIf="!project.gridClass.startsWith('col-span-1') && getThumbnail(project.links)" [style.background-image]="'url(' + getThumbnail(project.links).url + ')'" class="w-full h-24 lg:h-44 bg-contain bg-no-repeat bg-center mt-4"></div>
+      <div *ngIf="!project.gridClass.startsWith('col-span-1') && getThumbnail(project.links)" [style.background-image]="'url(' + getThumbnail(project.links).url + ')'" class="w-full h-44 lg:h-56 bg-contain bg-no-repeat bg-center mt-4"></div>
       <div class="flex flex-1 flex-col pt-1 ps-4 pe-4 pb-4">
         <h3 [classList]="!project.gridClass.startsWith('col-span-1') ? 'mt-6 text-lg font-bold text-white-on-black' : 'mt-6 text-sm font-thin text-white-on-black line-clamp-2'">{{ project.name }}</h3>
         <dl class="mt-1 flex flex-grow flex-col justify-between">
           <dt *ngIf="!project.gridClass.startsWith('col-span-1')"
-            class="text-sm text-white-on-black">{{ getTextInLanguage(project.shortDescription, Language.ENGLISH) }}
+            class="text-sm text-white-on-black">{{ getTextInLanguage(project.shortDescription) }}
           </dt>
           <dd class="mt-4 flex lg:hidden justify-end space-x-4">
             <button class="text-gray-400 text-xs hover:text-gray-500">

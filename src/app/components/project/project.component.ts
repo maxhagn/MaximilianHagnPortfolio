@@ -31,6 +31,7 @@ export class ProjectComponent implements OnInit {
   images: HyperlinkDto[];
 
   constructor(private translate: TranslateService) {
+    this.currentLanguage = this.translate.currentLang;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
     });
@@ -64,9 +65,12 @@ export class ProjectComponent implements OnInit {
       .join(' ');
   }
 
-  getContentByLanguage(language: Language, textDtos: TextDto[]): string | null {
-    const textDto = textDtos.find(text => text.language === language);
-    return textDto ? textDto.content : null;
+  getContentByLanguage(textDto: TextDto[]): string {
+    if (this.currentLanguage == "de") {
+      return textDto?.find(text => text.language === Language.GERMAN)?.content || '';
+    } else {
+      return textDto?.find(text => text.language === Language.ENGLISH)?.content || '';
+    }
   }
 
   protected readonly Language = Language;

@@ -1,13 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  HostListener,
-  Input,
-  OnInit,
-  Output,
-  ViewChild
-} from '@angular/core';
+import {Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {ProjectDto} from "../../models/ProjectDto";
 import {ProjectService} from "../../services/project.service";
@@ -96,8 +87,12 @@ export class ProjectsComponent implements OnInit {
     return hyperlinkDto?.find(hyperlink => hyperlink.description === 'Thumbnail' && hyperlink.active === true);
   }
 
-  getTextInLanguage(textDto: TextDto[], language: Language): string {
-    return textDto?.find(text => text.language === language)?.content || '';
+  getTextInLanguage(textDto: TextDto[]): string {
+    if (this.currentLanguage == "de") {
+      return textDto?.find(text => text.language === Language.GERMAN)?.content || '';
+    } else {
+      return textDto?.find(text => text.language === Language.ENGLISH)?.content || '';
+    }
   }
 
   getGitHubRepo(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {

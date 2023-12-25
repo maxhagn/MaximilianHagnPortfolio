@@ -33,6 +33,7 @@ export class SkillsComponent implements OnInit {
 
 
   constructor(private translate: TranslateService, @Inject(DOCUMENT) private document: Document, private skillService: SkillService, private deviconService: DeviconService) {
+    this.currentLanguage = this.translate.currentLang;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
     });
@@ -60,6 +61,19 @@ export class SkillsComponent implements OnInit {
   ngOnInit(): void {
     this.getSkills();
     this.getSkillStats();
+  }
+
+  getSkillIconToolbarText(name: string, count: number): string {
+    if (this.currentLanguage === "de") {
+      return name + ' (' + count + ' mal verwendet)'
+    } else {
+      if (count === 1) {
+        return name + ' (used ' + count + ' time)'
+      } else {
+        return name + ' (used ' + count + ' times)'
+      }
+    }
+
   }
 
   getSkillStats(): void {

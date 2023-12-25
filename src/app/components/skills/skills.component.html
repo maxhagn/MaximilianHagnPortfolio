@@ -34,7 +34,7 @@
         <div class="mx-auto flex-grow flex justify-center items-center h-full lg:mx-0 lg:max-w-none p-4">
           <div class="grid grid-cols-6 grid-flow-dense col-auto row-auto justify-between gap-0.5 text-gray-900">
             <ng-container *ngFor="let skill of skills">
-              <div *ngIf="skill.icon" [ngbTooltip]="skill.name + ' (used ' + skill.count + ' times)'"
+              <div *ngIf="skill.icon" [ngbTooltip]="getSkillIconToolbarText(skill.name, skill.count)"
                    class="flex justify-center items-center divide-y divide-gray-200 rounded-lg bg-gray-400/5 text-left text-white text-lg md:text-4xl lg:text-3xl xl:text-5xl p-4">
                 <i [classList]="skill.icon"></i>
               </div>
