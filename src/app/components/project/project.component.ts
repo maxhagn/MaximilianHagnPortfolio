@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {ProjectDto} from "../../models/ProjectDto";
 import {Language} from "../../models/Language";
 import {TextDto} from "../../models/TextDto";
@@ -23,19 +23,24 @@ import {LangChangeEvent, TranslateModule, TranslateService} from "@ngx-translate
 export class ProjectComponent implements OnInit {
 
   @Input() project: ProjectDto;
+  @Input() header: any;
   @Output() overlayProject: EventEmitter<ProjectDto> = new EventEmitter();
+  @ViewChild('overlay', {read: ElementRef}) overlayElement;
 
   public currentLanguage: string = "en";
   currentImageIndex: number = 0;
   hasVisiteLinks: boolean = false;
-  images: HyperlinkDto[];
-  links: HyperlinkDto[];
+  images: HyperlinkDto[] = null;
+  links: HyperlinkDto[] = null;
 
   constructor(private translate: TranslateService) {
     this.currentLanguage = this.translate.currentLang;
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
     });
+    setTimeout(() => {
+      document.documentElement.style.overflowY = 'hidden';
+    }, 500);
   }
 
   ngOnInit() {
@@ -45,22 +50,42 @@ export class ProjectComponent implements OnInit {
   }
 
   filterImages(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
-    const filteredHyperlinks = hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Image"));
+    if (!hyperlinks) {
+      return null;
+    }
+
+    const images = hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Image"));
     const thumbnails = hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Thumbnail"));
-    filteredHyperlinks.sort((a, b) => a.description.localeCompare(b.description));
-    filteredHyperlinks.unshift(thumbnails[0]);
-    return filteredHyperlinks;
+
+    if (images.length === 0 && thumbnails.length === 0) {
+      return null;
+    }
+
+    images.sort((a, b) => a.description.localeCompare(b.description));
+
+    const thumbnailExists = images.find(hyperlink => hyperlink.url === thumbnails[0].url);
+    if (!thumbnailExists) {
+      images.unshift(thumbnails[0]);
+    }
+    return images;
   }
 
   filterLinks(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
-    const prefixes = ["API", "GitHub", "Github", "Website", "Document", "Book"];
-    return hyperlinks.filter(hyperlink =>
-      prefixes.some(prefix => hyperlink.description.startsWith(prefix))
-    );
+    if (hyperlinks) {
+      const prefixes = ["API", "GitHub", "Github", "Website", "Document", "Book"];
+      return hyperlinks.filter(hyperlink =>
+        prefixes.some(prefix => hyperlink.description.startsWith(prefix))
+      );
+    }
   }
 
   closeOverlay() {
-    this.overlayProject.emit(null);
+    this.overlayElement.nativeElement.classList.add('animate__slideOutRight');
+    document.documentElement.style.overflowY = 'auto';
+    this.header.style.zIndex = '100'
+    setTimeout(() => {
+      this.overlayProject.emit(null);
+    }, 500);
   }
 
   snakeCaseToNormal(string: string): string {

@@ -86,13 +86,8 @@ export class AppComponent implements OnInit {
 
   onOpenOverlay(project: ProjectDto) {
     this.currentProject = project;
-
     if (this.currentProject) {
-      document.documentElement.style.overflowY = 'hidden';
       this.headerElement.nativeElement.style.zIndex = '-1';
-    } else {
-      document.documentElement.style.overflowY = 'auto';
-      this.headerElement.nativeElement.style.zIndex = '100';
     }
   }
 

@@ -8,7 +8,7 @@
   overflow: hidden;
   @apply bg-gray-900;
   @apply bg-blend-overlay;
-
+  animation-duration: 500ms !important;
 }
 
 .name {
@@ -25,4 +25,8 @@
 
 .max-h-65 {
   max-height: 65vh;
+}
+
+.max-w-12 {
+  max-width: 12rem;
 }

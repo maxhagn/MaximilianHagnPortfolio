@@ -79,4 +79,4 @@
   <app-footer></app-footer>
 </div>
 
-<app-project [project]="currentProject" *ngIf="currentProject" (overlayProject)="onOpenOverlay($event)"></app-project>
+<app-project [project]="currentProject" [header]="headerElement.nativeElement" *ngIf="currentProject" (overlayProject)="onOpenOverlay($event)"></app-project>
