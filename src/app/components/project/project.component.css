@@ -8,6 +8,7 @@
   overflow: hidden;
   @apply bg-gray-900;
   @apply bg-blend-overlay;
+
 }
 
 .name {

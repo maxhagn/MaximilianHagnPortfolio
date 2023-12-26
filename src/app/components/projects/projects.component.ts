@@ -59,7 +59,7 @@ export class ProjectsComponent implements OnInit {
       const position = this.projectBoxElement.nativeElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      if (position.top < windowHeight && position.bottom >= 0) {
+      if (position.top < windowHeight && position.bottom >= 0 && this.deviceService.isDesktop()) {
         const relativeNumbers = Math.min(1, (windowHeight - position.top - 100 ) / 600);
         const relativeScale = Math.max(Math.min(1, (windowHeight - position.top - 100 ) / 600), .75);
         this.projectBoxElement.nativeElement.style.opacity = relativeScale;

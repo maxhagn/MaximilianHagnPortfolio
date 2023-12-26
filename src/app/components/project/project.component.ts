@@ -29,6 +29,7 @@ export class ProjectComponent implements OnInit {
   currentImageIndex: number = 0;
   hasVisiteLinks: boolean = false;
   images: HyperlinkDto[];
+  links: HyperlinkDto[];
 
   constructor(private translate: TranslateService) {
     this.currentLanguage = this.translate.currentLang;
@@ -38,20 +39,25 @@ export class ProjectComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.images = this.filterHyperlinks(this.project.links);
-    this.hasVisiteLinks = this.checkVisiteLinks(this.project.links);
+    this.images = this.filterImages(this.project.links);
+    this.links = this.filterLinks(this.project.links);
+    this.hasVisiteLinks = this.links.length > 0;
   }
 
-  filterHyperlinks(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
-    return hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Image"));
+  filterImages(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
+    const filteredHyperlinks = hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Image"));
+    const thumbnails = hyperlinks.filter(hyperlink => hyperlink.description.startsWith("Thumbnail"));
+    filteredHyperlinks.sort((a, b) => a.description.localeCompare(b.description));
+    filteredHyperlinks.unshift(thumbnails[0]);
+    return filteredHyperlinks;
   }
 
-  checkVisiteLinks(hyperlinks: HyperlinkDto[]): boolean {
-    return hyperlinks.some(hyperlink =>
-      ["API", "GitHub", "Github", "Website"].some(prefix => hyperlink.description.startsWith(prefix))
+  filterLinks(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
+    const prefixes = ["API", "GitHub", "Github", "Website", "Document", "Book"];
+    return hyperlinks.filter(hyperlink =>
+      prefixes.some(prefix => hyperlink.description.startsWith(prefix))
     );
   }
-
 
   closeOverlay() {
     this.overlayProject.emit(null);
