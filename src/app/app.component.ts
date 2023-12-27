@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
     this.headerInnerElement.nativeElement.style.maxWidth = maxWithHeaderInner + 'rem'
     this.dummyBoxElement.nativeElement.style.flexBasis = flexBasisDummyBox + '%';
 
-    if (window.innerWidth < 1024 || window.scrollY > this.projectsElement.nativeElement.offsetTop) {
+    if (window.innerWidth < 1024 || window.scrollY > 100 - this.projectsElement.nativeElement.offsetTop) {
       this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
     } else {
       this.headerElement.nativeElement.style.background = 'none'
