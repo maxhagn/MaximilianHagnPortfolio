@@ -1,4 +1,4 @@
-import {Directive, ElementRef, EventEmitter, Input, Output} from '@angular/core';
+import {Directive, ElementRef, EventEmitter, Output} from '@angular/core';
 
 @Directive({
   selector: '[appInViewport]',
@@ -10,7 +10,8 @@ export class InViewportDirective {
   @Output() inViewport = new EventEmitter<boolean>();
   private observer: IntersectionObserver;
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+  }
 
   ngAfterViewInit(): void {
     this.observer = new IntersectionObserver((entries) => {

@@ -1,5 +1,6 @@
 <header #header class="fixed w-full top-0 right-0 z-10 bg-gray-900 lg:bg-transparent">
-  <nav #headerInner aria-label="Global" class="mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between px-2 py-2 md:px-4 xl:px-8">
+  <nav #headerInner aria-label="Global"
+       class="mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between px-2 py-2 md:px-4 xl:px-8">
     <div #dummy_box class="hidden xl:block basis-1/2 will-change-auto"></div>
     <div class="flex xl:flex-1 basis-1/2">
       <button (click)="scrollToElement(hero)"
@@ -7,41 +8,61 @@
         {{ 'VAR.NAME' | translate }}
       </button>
     </div>
-    <div class="flex mr-8 lg:hidden">
+    <div *ngIf="!currentProject" class="flex mr-8 lg:hidden">
       <button (click)="toggleNav()"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
               type="button">
         <span class="sr-only">{{ 'SR.TOGGLE_MAIN_MENU' | translate }}</span>
         <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-          <path *ngIf="isMenuCollapsed" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path *ngIf="isMenuCollapsed" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                stroke-linejoin="round"/>
           <path *ngIf="!isMenuCollapsed" d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </div>
-    <div [classList]="isMenuCollapsed ? 'hidden lg:flex lg:gap-x-12' : 'block lg:flex lg:gap-x-12 w-full lg:w-auto ms-3 sm:mx-2 my-2 md:px-4'">
-      <ul class="flex flex-col lg:flex-row">
+    <div *ngIf="currentProject" class="flex mr-8">
+      <button (click)="closeOverlay()"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
+              type="button">
+        <span class="sr-only">{{ 'SR.CLOSE_OVERLAY' | translate }}</span>
+        <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </div>
+    <div
+      [classList]="isMenuCollapsed ? 'hidden lg:flex lg:gap-x-12' : 'block lg:flex lg:gap-x-12 w-full lg:w-auto ms-3 sm:mx-2 my-2 md:px-4'">
+      <ul [classList]="currentProject ? 'hidden':'flex flex-col lg:flex-row'">
         <li>
           <button (click)="scrollToElement(hero)"
                   [classList]="activeMenuEntry === 1 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
-          >{{ 'NAVBAR.HOME' | translate }}
+          >
+            <span class="sr-only">{{ 'NAVBAR.HOME' | translate }}</span>
+            {{ 'NAVBAR.HOME' | translate }}
           </button>
         </li>
         <li>
           <button (click)="scrollToElement(projects_link)"
                   [classList]="activeMenuEntry === 2 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
-          >{{ 'NAVBAR.PROJECTS' | translate }}
+          >
+            <span class="sr-only">{{ 'NAVBAR.PROJECTS' | translate }}</span>
+            {{ 'NAVBAR.PROJECTS' | translate }}
           </button>
         </li>
         <li>
           <button (click)="scrollToElement(skills)"
                   [classList]="activeMenuEntry === 3 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
-          >{{ 'NAVBAR.SKILLS' | translate }}
+          >
+            <span class="sr-only">{{ 'NAVBAR.SKILLS' | translate }}</span>
+            {{ 'NAVBAR.SKILLS' | translate }}
           </button>
         </li>
         <li>
           <button (click)="scrollToElement(contact)"
                   [classList]="activeMenuEntry === 4 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
-          >{{ 'NAVBAR.CONTACT' | translate }}
+          >
+            <span class="sr-only">{{ 'NAVBAR.CONTACT' | translate }}</span>
+            {{ 'NAVBAR.CONTACT' | translate }}
           </button>
         </li>
         <li>
@@ -49,12 +70,14 @@
                   *ngIf="translate.currentLang == 'en'"
                   [className]="isLanguageChanged ? 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
+            <span class="sr-only">Deutsch</span>
             Deutsch
           </button>
           <a (click)="changeLang('en')"
              *ngIf="translate.currentLang == 'de'"
              [className]="isLanguageChanged ? 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
+            <span class="sr-only">English</span>
             English
           </a>
         </li>
@@ -67,7 +90,7 @@
   <app-hero></app-hero>
 </div>
 <div #projects_link>
-  <app-projects [projects]="projects" (overlayProject)="onOpenOverlay($event)"></app-projects>
+  <app-projects (overlayProject)="onOpenOverlay($event)" [projects]="projects"></app-projects>
 </div>
 <div #skills>
   <app-skills></app-skills>
@@ -79,4 +102,4 @@
   <app-footer></app-footer>
 </div>
 
-<app-project [project]="currentProject" [header]="headerElement.nativeElement" *ngIf="currentProject" (overlayProject)="onOpenOverlay($event)"></app-project>
+<app-project #project *ngIf="currentProject" [project]="currentProject"></app-project>

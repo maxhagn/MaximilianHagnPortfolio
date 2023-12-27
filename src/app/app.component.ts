@@ -3,7 +3,7 @@ import {DOCUMENT} from "@angular/common";
 import {TranslateService} from "@ngx-translate/core";
 import {ProjectDto} from "./models/ProjectDto";
 import {ProjectService} from "./services/project.service";
-import {Language} from "./models/Language";
+import {ProjectComponent} from "./components/project/project.component";
 
 
 @Component({
@@ -20,6 +20,8 @@ export class AppComponent implements OnInit {
   @ViewChild('header', {read: ElementRef}) headerElement;
   @ViewChild('dummy_box', {read: ElementRef}) dummyBoxElement;
   @ViewChild('headerInner', {read: ElementRef}) headerInnerElement;
+  @ViewChild('project', {read: ElementRef}) projectElement;
+  @ViewChild(ProjectComponent) projectComponent: ProjectComponent;
   public activeMenuEntry: number = 1;
   public isLanguageChanged: boolean = false;
   public isLoaded: boolean;
@@ -32,15 +34,15 @@ export class AppComponent implements OnInit {
     {code: 'de', label: 'German'}
   ];
 
-  ngOnInit() {
-    this.getProjects()
-  }
-
   constructor(public translate: TranslateService, @Inject(DOCUMENT) private document: Document, private projectService: ProjectService) {
     this.translate.setDefaultLang('en');
     this.translate.use('en')
     this.isMenuCollapsed = true;
     this.isLoaded = false;
+  }
+
+  ngOnInit() {
+    this.getProjects()
   }
 
   @HostListener('window:resize', ['$event'])
@@ -59,7 +61,7 @@ export class AppComponent implements OnInit {
       window.scrollY < this.skillsElement.nativeElement.offsetTop) {
       this.activeMenuEntry = 2;
     } else if (window.scrollY >= this.skillsElement.nativeElement.offsetTop &&
-      window.scrollY < this.contactElement.nativeElement.offsetTop -300 ) {
+      window.scrollY < this.contactElement.nativeElement.offsetTop - 300) {
       this.activeMenuEntry = 3;
     } else {
       this.activeMenuEntry = 4;
@@ -84,11 +86,17 @@ export class AppComponent implements OnInit {
     }
   }
 
+  closeOverlay() {
+    this.projectComponent.getOverlay().classList.add('animate__slideOutRight');
+    document.documentElement.style.overflowY = 'auto';
+    setTimeout(() => {
+      this.currentProject = null;
+    }, 500);
+  }
+
   onOpenOverlay(project: ProjectDto) {
+    document.documentElement.style.overflowY = 'hidden';
     this.currentProject = project;
-    if (this.currentProject) {
-      this.headerElement.nativeElement.style.zIndex = '-1';
-    }
   }
 
   public changeLang(lang: string): void {

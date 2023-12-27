@@ -2,8 +2,8 @@
   position: fixed;
   display: block;
   width: 100vw;
-  height: 100vh;
-  top: 0;
+  height: calc(100vh - 60px);
+  top: 60px;
   left: 0;
   overflow: hidden;
   @apply bg-gray-900;
@@ -16,7 +16,7 @@
 }
 
 .scroll-container {
-  height: calc( 100vh - 60px );
+  height: calc(100vh - 60px);
   margin-top: 60px;
   overflow-y: auto;
   overflow-x: hidden;

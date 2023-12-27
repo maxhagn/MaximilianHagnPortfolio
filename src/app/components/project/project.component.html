@@ -1,45 +1,48 @@
-<div class="fullscreen-overlay z-20 animate__animated animate__slideInRight will-change-transform" #overlay>
-  <header class="fixed w-full top-0 right-0 z-10 bg-gray-900 lg:bg-transparent">
-    <nav aria-label="Global"
-         class="mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between px-2 py-2 md:px-4 xl:px-8 max-w-7xl">
-      <div class="flex xl:flex-1 basis-1/2">
-        <span
-          class="name ms-3 sm:mx-2 my-2 md:px-4 xl:mx-4 hover-text-main-color text-white font-extrabold text-base md:text-xl">
-          {{ 'VAR.NAME' | translate }}
-        </span>
-      </div>
-      <div class="flex mr-8">
-        <button (click)="closeOverlay()"
-                class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
-                type="button">
-          <span class="sr-only">{{ 'SR.CLOSE_OVERLAY' | translate }}</span>
-          <svg aria-hidden="true" class="h-6 w-6" fill="none" stroke="white" stroke-width="1.5" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
-          </svg>
-        </button>
-      </div>
-    </nav>
-  </header>
+<div #overlay class="fullscreen-overlay z-20 animate__animated animate__slideInRight will-change-transform">
   <div class="scroll-container px-4 pb-24 lg:pb-4 md:pt-4 lg:pt-8 xl:pt-16 lg:px-8">
-    <div class="flex flex-col lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16 mx-auto lg:max-w-7xl">
+    <div
+      class="flex flex-col lg:grid lg:grid-cols-7 lg:grid-rows-1 lg:gap-x-8 lg:gap-y-10 xl:gap-x-16 mx-auto lg:max-w-7xl">
       <div
         class="mx-auto order-3 lg:order-2 lg:row-end-1 w-full pb-8 lg:pb-0 max-w-2xl lg:col-span-4 mt-10 lg:mt-0 lg:max-w-none">
-        <div *ngIf="images && images.length !== 0" class="mt-4 pt-4 lg:mt-0 lg:pt-0">
-          <h4 class="lg:hidden text-sm lg:text-md font-medium text-gray-100 mt-2">{{ 'PROJECT.GALLERY' | translate }}</h4>
+        <div *ngIf="images && images.length !== 0" class="mt-4 pt-4 lg:mt-0 lg:pt-0 relative">
+          <div *ngIf="isLoading" class="absolute w-full h-full text-4xl text-white flex justify-center items-center">
+            <div role="status">
+              <svg aria-hidden="true" class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                   fill="none" viewBox="0 0 100 101" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                  fill="currentColor"/>
+                <path
+                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                  fill="currentFill"/>
+              </svg>
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+          <h4
+            class="lg:hidden text-sm lg:text-md font-medium text-gray-100 mt-2">{{ 'PROJECT.GALLERY' | translate }}</h4>
+          <div
+            class="overflow-hidden items-center text-lg text-white mt-4 flex justify-center py-6 lg:pt-0 lg:pb-2 h-10">
+            <p
+              *ngIf="!isLoading">{{ images[currentImageIndex].description.startsWith("Image") ? images[currentImageIndex].description.substring(9) : images[currentImageIndex].description }}</p>
+          </div>
           <div class="aspect-h-3 aspect-w-4 h-96 overflow-hidden items-center bg-gray-900 mt-4 flex justify-center">
-            <img [src]="images[currentImageIndex].url"
+            <img (load)="isLoading = false"
+                 *ngIf="animationFinished"
                  [alt]="images[currentImageIndex].description.startsWith('Image') ? images[currentImageIndex].description.substring(9) : images[currentImageIndex].description"
+                 [src]="images[currentImageIndex].url"
                  class="object-cover object-center max-w-full max-h-full rounded-lg">
           </div>
-          <div class="overflow-hidden items-center text-white mt-4 flex justify-center py-12">
-          <p>{{ images[currentImageIndex].description.startsWith("Image") ? images[currentImageIndex].description.substring(9) : images[currentImageIndex].description }}</p>
-          </div>
-          <div *ngIf="images.length > 1" class="flex overflow-y-auto pb-4 mt-4">
+          <div *ngIf="images.length > 1" class="flex overflow-y-auto h-36 pb-4 mt-4">
             <div *ngFor="let image of images; index as i"
                  class="block aspect-h-3 flex-shrink-0 aspect-w-4 mx-1 overflow-y-auto rounded-lg bg-gray-900">
-              <img (click)="currentImageIndex = i" [src]="image.url"
-                   [alt]="image.description"
-                   [classList]="i === currentImageIndex ? 'object-cover h-28 max-w-12 object-center':'object-cover h-28 max-w-12 object-center opacity-20'">
+              <img
+                (click)="currentImageIndex = i"
+                (load)="isLoading = false"
+                *ngIf="animationFinished"
+                [alt]="image.description"
+                [classList]="i === currentImageIndex ? 'object-cover h-28 max-w-12 object-center':'object-cover h-28 max-w-12 object-center opacity-20'"
+                [src]="image.url">
             </div>
           </div>
         </div>
@@ -50,7 +53,7 @@
           <div class="mt-4">
             <h1 class="text-2xl font-bold tracking-tight text-white sm:text-3xl">{{ project.name }}</h1>
 
-            <h2 id="information-heading" class="sr-only">{{ 'SR.PROJECT_INFORMATION' | translate }}</h2>
+            <h2 class="sr-only" id="information-heading">{{ 'SR.PROJECT_INFORMATION' | translate }}</h2>
             <p class="mt-2 text-sm text-gray-500">{{ project.startedAt | date: 'yyyy.MM.dd' }}
               - {{ project.completedAt | date: 'yyyy.MM.dd' }}</p>
           </div>
@@ -58,40 +61,40 @@
           <div>
             <h3 class="sr-only">{{ 'SR.DESCRIPTION' | translate }}</h3>
             <div class="flex items-center">
-              <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
+              <svg aria-hidden="true" class="text-yellow-400 h-5 w-5 flex-shrink-0"
                    fill="currentColor"
-                   aria-hidden="true">
-                <path fill-rule="evenodd"
+                   viewBox="0 0 20 20">
+                <path clip-rule="evenodd"
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                      clip-rule="evenodd"/>
+                      fill-rule="evenodd"/>
               </svg>
-              <svg *ngIf="project.relevanceScore > 20" class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
+              <svg *ngIf="project.relevanceScore > 20" aria-hidden="true" class="text-yellow-400 h-5 w-5 flex-shrink-0"
                    fill="currentColor"
-                   aria-hidden="true">
-                <path fill-rule="evenodd"
+                   viewBox="0 0 20 20">
+                <path clip-rule="evenodd"
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                      clip-rule="evenodd"/>
+                      fill-rule="evenodd"/>
               </svg>
-              <svg *ngIf="project.relevanceScore > 30" class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
+              <svg *ngIf="project.relevanceScore > 30" aria-hidden="true" class="text-yellow-400 h-5 w-5 flex-shrink-0"
                    fill="currentColor"
-                   aria-hidden="true">
-                <path fill-rule="evenodd"
+                   viewBox="0 0 20 20">
+                <path clip-rule="evenodd"
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                      clip-rule="evenodd"/>
+                      fill-rule="evenodd"/>
               </svg>
-              <svg *ngIf="project.relevanceScore > 40" class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
+              <svg *ngIf="project.relevanceScore > 40" aria-hidden="true" class="text-yellow-400 h-5 w-5 flex-shrink-0"
                    fill="currentColor"
-                   aria-hidden="true">
-                <path fill-rule="evenodd"
+                   viewBox="0 0 20 20">
+                <path clip-rule="evenodd"
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                      clip-rule="evenodd"/>
+                      fill-rule="evenodd"/>
               </svg>
-              <svg *ngIf="project.relevanceScore > 50" class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20"
+              <svg *ngIf="project.relevanceScore > 50" aria-hidden="true" class="text-yellow-400 h-5 w-5 flex-shrink-0"
                    fill="currentColor"
-                   aria-hidden="true">
-                <path fill-rule="evenodd"
+                   viewBox="0 0 20 20">
+                <path clip-rule="evenodd"
                       d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
-                      clip-rule="evenodd"/>
+                      fill-rule="evenodd"/>
               </svg>
             </div>
             <p class="sr-only">{{ project.relevanceScore }} {{ 'SR.POINTS' | translate }}</p>
@@ -109,7 +112,9 @@
               </li>
               <li *ngIf="project.workDays">{{ project.workDays }} {{ 'PROJECT.WORKDAYS' | translate }}</li>
               <li *ngIf="project.client">{{ 'PROJECT.CLIENT' | translate }}: {{ project.client }}</li>
-              <li *ngIf="project.language">{{ 'PROJECT.LANGUAGE' | translate }}: {{ snakeCaseToNormal(project.language) }}</li>
+              <li *ngIf="project.language">{{ 'PROJECT.LANGUAGE' | translate }}
+                : {{ snakeCaseToNormal(project.language) }}
+              </li>
               <li *ngIf="project.volume">{{ 'PROJECT.VOLUME' | translate }}: {{ project.volume }}</li>
               <li *ngIf="project.teamSize">{{ 'PROJECT.TEAM_SIZE' | translate }}: {{ project.teamSize }}</li>
             </ul>
@@ -127,23 +132,28 @@
 
         <div class="mt-4 lg:mt-10 lg:border-t border-gray-200 pt-4 lg:pt-10">
           <h3 class="text-md lg:text-sm font-medium text-gray-100">{{ 'PROJECT.SKILLS' | translate }}</h3>
-          <div class="prose prose-sm mt-4 text-gray-500">
-            <ul role="list">
-              <li *ngFor="let skill of project.skills">{{ skill.name }}</li>
-            </ul>
+          <div class="prose prose-sm mt-4 text-gray-500 -mb-8">
+            <div *ngIf="skillGroups.length > 0" class="flex flex-col justify-start">
+              <div *ngFor="let group of skillGroups" class="mb-8">
+                <h4 class="text-sm lg:text-xs font-medium text-gray-100">{{ snakeCaseToNormal(group.category) }}</h4>
+                <ul role="list">
+                  <li *ngFor="let skill of group.skills">{{ skill.name }}</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
 
         <div *ngIf="hasVisiteLinks" class="mt-4 lg:mt-10 lg:border-t border-gray-200 pt-4 lg:pt-10">
           <h3 class="text-md lg:text-sm font-medium text-gray-100">{{ 'PROJECT.VISITE' | translate }}</h3>
-          <ul role="list" class="mt-4 flex items-center space-x-6">
+          <ul class="mt-4 flex items-center space-x-6" role="list">
             <li *ngFor="let link of links">
               <a
                 *ngIf="(link.description.startsWith('Github') || link.description.startsWith('GitHub')) && link.active === true"
                 [href]="link.url"
                 [ngbTooltip]="link.description"
-                target="_blank"
-                class="text-gray-200 hover:text-gray-500">
+                class="text-gray-200 hover:text-gray-500"
+                target="_blank">
                 <span class="sr-only">{{ link.description }}</span>
                 <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path clip-rule="evenodd"
@@ -153,30 +163,35 @@
               </a>
               <a *ngIf="link.description.startsWith('Website') && link.active === true" [href]="link.url"
                  [ngbTooltip]="link.description"
-                 target="_blank"
-                 class="text-gray-200 hover:text-gray-500">
+                 class="text-gray-200 hover:text-gray-500"
+                 target="_blank">
                 <span class="sr-only">{{ link.description }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM8.547 4.505a8.25 8.25 0 1 0 11.672 8.214l-.46-.46a2.252 2.252 0 0 1-.422-.586l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.211.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.654-.261a2.25 2.25 0 0 1-1.384-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.279-2.132Z" clip-rule="evenodd" />
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path clip-rule="evenodd"
+                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM8.547 4.505a8.25 8.25 0 1 0 11.672 8.214l-.46-.46a2.252 2.252 0 0 1-.422-.586l-1.08-2.16a.414.414 0 0 0-.663-.107.827.827 0 0 1-.812.21l-1.273-.363a.89.89 0 0 0-.738 1.595l.587.39c.59.395.674 1.23.172 1.732l-.2.2c-.211.212-.33.498-.33.796v.41c0 .409-.11.809-.32 1.158l-1.315 2.191a2.11 2.11 0 0 1-1.81 1.025 1.055 1.055 0 0 1-1.055-1.055v-1.172c0-.92-.56-1.747-1.414-2.089l-.654-.261a2.25 2.25 0 0 1-1.384-2.46l.007-.042a2.25 2.25 0 0 1 .29-.787l.09-.15a2.25 2.25 0 0 1 2.37-1.048l1.178.236a1.125 1.125 0 0 0 1.302-.795l.208-.73a1.125 1.125 0 0 0-.578-1.315l-.665-.332-.091.091a2.25 2.25 0 0 1-1.591.659h-.18c-.249 0-.487.1-.662.274a.931.931 0 0 1-1.458-1.137l1.279-2.132Z"
+                        fill-rule="evenodd"/>
                 </svg>
               </a>
               <a *ngIf="link.description.startsWith('Book') && link.active === true" [href]="link.url"
                  [ngbTooltip]="link.description"
-                 target="_blank"
-                 class="text-gray-200 hover:text-gray-500">
+                 class="text-gray-200 hover:text-gray-500"
+                 target="_blank">
                 <span class="sr-only">{{ link.description }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                  <path d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z" />
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M11.25 4.533A9.707 9.707 0 0 0 6 3a9.735 9.735 0 0 0-3.25.555.75.75 0 0 0-.5.707v14.25a.75.75 0 0 0 1 .707A8.237 8.237 0 0 1 6 18.75c1.995 0 3.823.707 5.25 1.886V4.533ZM12.75 20.636A8.214 8.214 0 0 1 18 18.75c.966 0 1.89.166 2.75.47a.75.75 0 0 0 1-.708V4.262a.75.75 0 0 0-.5-.707A9.735 9.735 0 0 0 18 3a9.707 9.707 0 0 0-5.25 1.533v16.103Z"/>
                 </svg>
               </a>
               <a *ngIf="link.description.startsWith('Document') && link.active === true" [href]="link.url"
                  [ngbTooltip]="link.description"
-                 target="_blank"
-                 class="text-gray-200 hover:text-gray-500">
+                 class="text-gray-200 hover:text-gray-500"
+                 target="_blank">
                 <span class="sr-only">{{ link.description }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                  <path d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z" />
-                  <path d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z" />
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M5.625 1.5c-1.036 0-1.875.84-1.875 1.875v17.25c0 1.035.84 1.875 1.875 1.875h12.75c1.035 0 1.875-.84 1.875-1.875V12.75A3.75 3.75 0 0 0 16.5 9h-1.875a1.875 1.875 0 0 1-1.875-1.875V5.25A3.75 3.75 0 0 0 9 1.5H5.625Z"/>
+                  <path
+                    d="M12.971 1.816A5.23 5.23 0 0 1 14.25 5.25v1.875c0 .207.168.375.375.375H16.5a5.23 5.23 0 0 1 3.434 1.279 9.768 9.768 0 0 0-6.963-6.963Z"/>
                 </svg>
               </a>
             </li>
@@ -184,7 +199,7 @@
         </div>
       </div>
       <div class="mx-auto order-2 lg:order-2 w-full max-w-2xl lg:col-span-4 mt-0 lg:max-w-none">
-        <div id="tab-panel-reviews" class="-mb-10" aria-labelledby="tab-reviews" role="tabpanel" tabindex="0">
+        <div aria-labelledby="tab-reviews" class="-mb-10" id="tab-panel-reviews" role="tabpanel" tabindex="0">
           <h3 class="sr-only">{{ 'SR.DESCRIPTION' | translate }}</h3>
           <div class="prose prose-sm max-w-none text-gray-500">
             <div class="mt-4 pt-4 lg:mt-0 lg:border-0 lg:pt-0">

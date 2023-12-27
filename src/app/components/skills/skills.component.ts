@@ -5,7 +5,6 @@ import {SkillService} from "../../services/skill.service";
 import {SkillStats} from "../../models/SkillStats";
 import {SkillWithCountDto} from "../../models/SkillWithCountDto";
 import {DeviconService} from "../../services/devicon.service";
-import {SkillDto} from "../../models/SkillDto";
 
 declare function initCanvas(): any;
 

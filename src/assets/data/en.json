@@ -58,6 +58,7 @@
     "PROJECT_INFORMATION": "Project Information",
     "EMAIL": "Email",
     "PHONE_NUMBER": "Phone Number",
-    "TOGGLE_MAIN_MENU": "Toggle Main Menu"
+    "TOGGLE_MAIN_MENU": "Toggle Main Menu",
+    "DETAILS": "Show Details"
   }
 }

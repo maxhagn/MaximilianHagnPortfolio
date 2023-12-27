@@ -6,6 +6,8 @@ import {DatePipe, NgForOf, NgIf} from "@angular/common";
 import {NgbTooltip} from "@ng-bootstrap/ng-bootstrap";
 import {HyperlinkDto} from "../../models/HyperlinkDto";
 import {LangChangeEvent, TranslateModule, TranslateService} from "@ngx-translate/core";
+import {SkillCategory} from "../../models/SkillCategory";
+import {SkillDto} from "../../models/SkillDto";
 
 @Component({
   selector: 'app-project',
@@ -26,27 +28,38 @@ export class ProjectComponent implements OnInit {
   @Input() header: any;
   @Output() overlayProject: EventEmitter<ProjectDto> = new EventEmitter();
   @ViewChild('overlay', {read: ElementRef}) overlayElement;
-
+  skillGroups: { category: SkillCategory, skills: SkillDto[] }[] = [];
   public currentLanguage: string = "en";
   currentImageIndex: number = 0;
+  animationFinished: boolean = false;
   hasVisiteLinks: boolean = false;
+  hasImages: boolean = false;
   images: HyperlinkDto[] = null;
   links: HyperlinkDto[] = null;
+  isLoading: boolean = true;
+  protected readonly Language = Language;
+  protected readonly Math = Math;
 
   constructor(private translate: TranslateService) {
     this.currentLanguage = this.translate.currentLang;
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.currentLanguage = event.lang;
-    });
-    setTimeout(() => {
-      document.documentElement.style.overflowY = 'hidden';
-    }, 500);
   }
 
   ngOnInit() {
     this.images = this.filterImages(this.project.links);
     this.links = this.filterLinks(this.project.links);
     this.hasVisiteLinks = this.links.length > 0;
+    this.hasImages = this.images.length > 0;
+    this.skillGroups = this.groupSkills();
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
+    setTimeout(() => {
+      this.animationFinished = true;
+    }, 500);
+  }
+
+  getOverlay() {
+    return this.overlayElement.nativeElement;
   }
 
   filterImages(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
@@ -72,20 +85,22 @@ export class ProjectComponent implements OnInit {
 
   filterLinks(hyperlinks: HyperlinkDto[]): HyperlinkDto[] {
     if (hyperlinks) {
-      const prefixes = ["API", "GitHub", "Github", "Website", "Document", "Book"];
-      return hyperlinks.filter(hyperlink =>
-        prefixes.some(prefix => hyperlink.description.startsWith(prefix))
+      let visiteLinks = hyperlinks.filter(hyperlink =>
+        ["GitHub", "Website", "Document", "Book"].some(prefix => hyperlink.description.startsWith(prefix))
       );
+      return visiteLinks.sort((a, b) => a.description.localeCompare(b.description));
     }
   }
 
-  closeOverlay() {
-    this.overlayElement.nativeElement.classList.add('animate__slideOutRight');
-    document.documentElement.style.overflowY = 'auto';
-    this.header.style.zIndex = '100'
-    setTimeout(() => {
-      this.overlayProject.emit(null);
-    }, 500);
+  groupSkills() {
+    const groupMap = new Map<SkillCategory, SkillDto[]>();
+    for (const skill of this.project.skills) {
+      if (!groupMap.has(skill.skillCategory)) {
+        groupMap.set(skill.skillCategory, []);
+      }
+      groupMap.get(skill.skillCategory).push(skill);
+    }
+    return Array.from(groupMap, ([category, skills]) => ({category, skills}));
   }
 
   snakeCaseToNormal(string: string): string {
@@ -103,7 +118,4 @@ export class ProjectComponent implements OnInit {
       return textDto?.find(text => text.language === Language.ENGLISH)?.content || '';
     }
   }
-
-  protected readonly Language = Language;
-  protected readonly Math = Math;
 }

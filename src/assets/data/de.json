@@ -58,6 +58,7 @@
     "PROJECT_INFORMATION": "Projektinformationen",
     "EMAIL": "E-Mail",
     "PHONE_NUMBER": "Telefonnummer",
-    "TOGGLE_MAIN_MENU": "Hauptmenü umschalten"
+    "TOGGLE_MAIN_MENU": "Hauptmenü umschalten",
+    "DETAILS": "Projektdetails"
   }
 }

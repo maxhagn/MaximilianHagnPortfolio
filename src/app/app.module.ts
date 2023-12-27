@@ -1,4 +1,4 @@
-import {LOCALE_ID, NgModule} from '@angular/core';
+import {isDevMode, LOCALE_ID, NgModule} from '@angular/core';
 import {HashLocationStrategy, LocationStrategy, registerLocaleData} from '@angular/common';
 import localeDe from '@angular/common/locales/de';
 import localeDeExtra from '@angular/common/locales/extra/de';
@@ -18,6 +18,7 @@ import {ContactComponent} from './components/contact/contact.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import {ProjectComponent} from "./components/project/project.component";
 import {InViewportDirective} from "./directives/in-viewport.directive";
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/data/', '.json');
@@ -50,7 +51,13 @@ registerLocaleData(localeDe, localeDeExtra);
       },
       defaultLanguage: 'en',
     }),
-    ProjectComponent
+    ProjectComponent,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},

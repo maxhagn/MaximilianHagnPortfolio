@@ -30,6 +30,14 @@ export class ProjectsComponent implements OnInit {
     clientCount: 0,
     projectCount: 0
   };
+  protected readonly event = event;
+  protected readonly window = window;
+
+  constructor(private translate: TranslateService, private deviceService: DeviceDetectorService, private projectService: ProjectService) {
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.currentLanguage = event.lang;
+    });
+  }
 
   openOverlay(event: any, project: ProjectDto) {
     if (this.blacklist.includes(event.target)) {
@@ -37,12 +45,6 @@ export class ProjectsComponent implements OnInit {
       return;
     }
     this.overlayProject.emit(project);
-  }
-
-  constructor(private translate: TranslateService, private deviceService: DeviceDetectorService, private projectService: ProjectService) {
-    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
-      this.currentLanguage = event.lang;
-    });
   }
 
   ngOnInit(): void {
@@ -55,13 +57,13 @@ export class ProjectsComponent implements OnInit {
   }
 
   public setProjectStatsScroll() {
-    if (this.projectBoxElement  && this.deviceService.isDesktop()) {
+    if (this.projectBoxElement && this.deviceService.isDesktop()) {
       const position = this.projectBoxElement.nativeElement.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
       if (position.top < windowHeight && position.bottom >= 0 && this.deviceService.isDesktop()) {
-        const relativeNumbers = Math.min(1, (windowHeight - position.top - 100 ) / 600);
-        const relativeScale = Math.max(Math.min(1, (windowHeight - position.top - 100 ) / 600), .75);
+        const relativeNumbers = Math.min(1, (windowHeight - position.top - 100) / 600);
+        const relativeScale = Math.max(Math.min(1, (windowHeight - position.top - 100) / 600), .75);
         this.projectBoxElement.nativeElement.style.opacity = relativeScale;
         this.projectBoxElement.nativeElement.style.transform = `scale(${relativeScale})`;
         this.displayProjectStats.totalRepositories = Math.floor(this.projectStats.totalRepositories * relativeNumbers)
@@ -106,7 +108,4 @@ export class ProjectsComponent implements OnInit {
   getDocuments(hyperlinkDto: HyperlinkDto[]): HyperlinkDto {
     return hyperlinkDto?.find(hyperlink => hyperlink.description !== 'Website' && hyperlink.description !== 'GitHub Repository' && !hyperlink.description.startsWith('Image') && hyperlink.active === true);
   }
-
-  protected readonly event = event;
-  protected readonly window = window;
 }
