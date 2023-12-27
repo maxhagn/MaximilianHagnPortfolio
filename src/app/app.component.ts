@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
   @ViewChild(ProjectComponent) projectComponent: ProjectComponent;
   public activeMenuEntry: number = 1;
   public isLanguageChanged: boolean = false;
+  public isOverlayActive: boolean = false;
   public isLoaded: boolean;
   public isMenuCollapsed: boolean;
   public projects: Array<ProjectDto>;
@@ -79,7 +80,7 @@ export class AppComponent implements OnInit {
     this.headerInnerElement.nativeElement.style.maxWidth = maxWithHeaderInner + 'rem'
     this.dummyBoxElement.nativeElement.style.flexBasis = flexBasisDummyBox + '%';
 
-    if (window.innerWidth < 1024 || window.scrollY > 100 - this.projectsElement.nativeElement.offsetTop) {
+    if (window.innerWidth < 1024 || window.scrollY + 200  > this.projectsElement.nativeElement.offsetTop) {
       this.headerElement.nativeElement.style.backgroundColor = 'rgb(17 24 39 / 1)'
     } else {
       this.headerElement.nativeElement.style.background = 'none'
@@ -87,6 +88,7 @@ export class AppComponent implements OnInit {
   }
 
   closeOverlay() {
+    this.isOverlayActive = false;
     this.projectComponent.getOverlay().classList.add('animate__slideOutRight');
     document.documentElement.style.overflowY = 'auto';
     setTimeout(() => {
@@ -95,6 +97,7 @@ export class AppComponent implements OnInit {
   }
 
   onOpenOverlay(project: ProjectDto) {
+    this.isOverlayActive = true;
     document.documentElement.style.overflowY = 'hidden';
     this.currentProject = project;
   }

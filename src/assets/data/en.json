@@ -3,7 +3,8 @@
     "NAME": "Maximilian Hagn",
     "NAME_LONG": "Maximilian Hagn BSc. BSc.",
     "EMAIL": "maximilian.hagn@gmail.com",
-    "PHONE_NUMBER": "+43 676 9579022"
+    "PHONE_NUMBER": "+43 676 9579022",
+    "ADDRESS": "Vienna, Austria"
   },
   "NAVBAR": {
     "HOME": "Home",
@@ -31,7 +32,7 @@
     "VOLUME": "Volume"
   },
   "PROJECTS": {
-    "HEADING": "Crafting Code into Solutions",
+    "HEADING": "Crafting Code into Solutions.",
     "SUBHEADING": "Uncover the stories behind each project, illustrating a commitment to quality, innovation, and user experience.",
     "PROJECT_COUNT": "Total Project Engagements",
     "WEBSITE_COUNT": "Websites Deployed on Kubernetes",
@@ -48,7 +49,7 @@
     "DESCRIPTION": "As a software engineer, my journey through the ever-evolving landscape of technology has equipped me with a broad array of skills. This diverse expertise allows me to approach challenges creatively and deliver cutting-edge solutions. I'm passionate about continuous learning and staying ahead of industry trends, ensuring that my contributions are both innovative and impactful. From concept to code, I thrive in crafting high-quality, user-focused software."
   },
   "CONTACT": {
-    "HEADING": "Let's Talk Technology",
+    "HEADING": "Let's Talk Technology.",
     "INTRO_TEXT": "Interested in discussing a project or learning more about my work? I'd love to hear from you. Reach out to start a conversation and explore how we can collaborate on future technology solutions."
   },
   "SR": {

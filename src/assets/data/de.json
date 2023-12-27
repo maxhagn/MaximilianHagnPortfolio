@@ -3,7 +3,8 @@
     "NAME": "Maximilian Hagn",
     "NAME_LONG": "Maximilian Hagn BSc. BSc.",
     "EMAIL": "maximilian.hagn@gmail.com",
-    "PHONE_NUMBER": "+43 676 9579022"
+    "PHONE_NUMBER": "+43 676 9579022",
+    "ADDRESS": "Wien, Österreich"
   },
   "NAVBAR": {
     "HOME": "Startseite",
@@ -12,9 +13,9 @@
     "CONTACT": "Kontakt"
   },
   "HERO": {
-    "HELLO": "Hallo Welt",
-    "MAX": "Ich heiße Max",
-    "CATCHY_TEXT": "Ich bin dort, wo Technologie und Geschäftswelt aufeinandertreffen, und mache aus komplexen Ideen innovative Lösungen."
+    "HELLO": "Hello World",
+    "MAX": "I'm Max",
+    "CATCHY_TEXT": "I'm where technology meets business, transforming complex ideas into innovative solutions."
   },
   "PROJECT": {
     "FACTS": "Wichtige Fakten",
@@ -31,25 +32,25 @@
     "VOLUME": "Volumen"
   },
   "PROJECTS": {
-    "HEADING": "Code in Lösungen verwandeln",
-    "SUBHEADING": "Entdecken Sie die Geschichten hinter jedem Projekt, die mein Engagement für Qualität, Innovation und Benutzererfahrung zeigen.",
-    "PROJECT_COUNT": "Gesamtzahl der Projekteinsätze",
-    "WEBSITE_COUNT": "Auf Kubernetes bereitgestellte Websites",
+    "HEADING": "Mein Portfolio digitaler Lösungen.",
+    "SUBHEADING": "Jedes Projekt erzählt eine einzigartige Geschichte – geprägt von Hingabe an Qualität, Innovationsgeist und Fokus auf die Benutzererfahrung.",
+    "PROJECT_COUNT": "Projekteinsätze",
+    "WEBSITE_COUNT": "APIs und Webseiten",
     "CLIENT_COUNT": "Kundenkollaborationen",
-    "REPOSITORY_COUNT": "Verwaltete Code-Repositories",
+    "REPOSITORY_COUNT": "Code-Repositories",
     "WORKDAY_COUNT": "Gesamtarbeitstage"
   },
   "SKILLS": {
     "HEADING": "Fähigkeiten",
     "LANGUAGE_COUNT": "Programmiersprachen",
-    "SKILL_COUNT": "Gesamtfähigkeiten",
+    "SKILL_COUNT": "Fähigkeiten",
     "TECHNOLOGY_COUNT": "Technologien",
-    "LARGE_TEXT": "Innovation im Engineering, eine Lösung nach der anderen. Meine vielfältigen Fähigkeiten in Programmierung und Technologie verwandeln komplexe Herausforderungen in elegante, effiziente Software.",
-    "DESCRIPTION": "Als Softwareingenieur hat mich meine Reise durch die sich ständig weiterentwickelnde Technologielandschaft mit einem breiten Spektrum an Fähigkeiten ausgestattet. Diese vielfältige Expertise ermöglicht es mir, Herausforderungen kreativ zu begegnen und zukunftsweisende Lösungen zu liefern. Ich bin leidenschaftlich daran interessiert, kontinuierlich zu lernen und mit den Branchentrends Schritt zu halten, um sicherzustellen, dass meine Beiträge sowohl innovativ als auch wirkungsvoll sind. Von der Konzeption bis zum Code gedeihe ich darin, hochwertige, benutzerorientierte Software zu entwickeln."
+    "LARGE_TEXT": "Innovation und Ingenieurskunst Hand in Hand: Mit meiner umfassenden Expertise im Bereich der Softwareentwicklung mache ich aus schwierigen Aufgaben elegante, leistungsstarke Softwareerlebnisse.",
+    "DESCRIPTION": "Auf meiner Reise als Softwareingenieur durch die sich dynamisch entwickelnde Welt der Technologie habe ich ein umfangreiches Spektrum an Fähigkeiten erworben. Diese Expertise ermöglicht es mir, Herausforderungen mit Kreativität zu begegnen und zukunftsorientierte Lösungen zu entwickeln. Meine Leidenschaft für lebenslanges Lernen und das Verfolgen aktueller Trends sichert innovative und effektive Beiträge. In jedem Schritt, von der Idee bis zum fertigen Code, liegt mein Fokus auf der Entwicklung hochwertiger, benutzerfreundlicher Software."
   },
   "CONTACT": {
-    "HEADING": "Lasst uns über Technologie sprechen",
-    "INTRO_TEXT": "Interessiert an der Diskussion eines Projekts oder möchten Sie mehr über meine Arbeit erfahren? Ich würde gerne von Ihnen hören. Nehmen Sie Kontakt auf, um ein Gespräch zu beginnen und zu erkunden, wie wir bei zukünftigen Technologielösungen zusammenarbeiten können."
+    "HEADING": "Lassen Sie uns gemeinsam die Zukunft gestalten.",
+    "INTRO_TEXT": "Interessieren Sie sich für eine Projektzusammenarbeit oder möchten Sie Einblicke in meine berufliche Tätigkeit gewinnen? Ihre Nachricht würde mich sehr freuen. Lassen Sie uns in Kontakt treten und gemeinsam Wege für zukünftige Technologielösungen erkunden."
   },
   "SR": {
     "DESCRIPTION": "Beschreibung",

@@ -1,4 +1,4 @@
-<header #header class="fixed w-full top-0 right-0 z-10 bg-gray-900 lg:bg-transparent">
+<header #header class="fixed w-full top-0 right-0 z-10 bg-gray-900 lg:bg-transparent min-h-60">
   <nav #headerInner aria-label="Global"
        class="mx-auto flex flex-wrap lg:flex-nowrap items-center justify-between px-2 py-2 md:px-4 xl:px-8">
     <div #dummy_box class="hidden xl:block basis-1/2 will-change-auto"></div>
@@ -8,7 +8,7 @@
         {{ 'VAR.NAME' | translate }}
       </button>
     </div>
-    <div *ngIf="!currentProject" class="flex mr-8 lg:hidden">
+    <div *ngIf="!isOverlayActive" class="flex mr-8 lg:hidden">
       <button (click)="toggleNav()"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
               type="button">
@@ -20,7 +20,7 @@
         </svg>
       </button>
     </div>
-    <div *ngIf="currentProject" class="flex mr-8">
+    <div *ngIf="isOverlayActive" class="flex mr-10 w-fit">
       <button (click)="closeOverlay()"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-21.5 text-gray-700"
               type="button">
@@ -30,12 +30,13 @@
         </svg>
       </button>
     </div>
+    <ng-container *ngIf="!isOverlayActive">
     <div
       [classList]="isMenuCollapsed ? 'hidden lg:flex lg:gap-x-12' : 'block lg:flex lg:gap-x-12 w-full lg:w-auto ms-3 sm:mx-2 my-2 md:px-4'">
-      <ul [classList]="currentProject ? 'hidden':'flex flex-col lg:flex-row'">
+      <ul [classList]="isOverlayActive ? 'hidden':'flex flex-col lg:flex-row'">
         <li>
           <button (click)="scrollToElement(hero)"
-                  [classList]="activeMenuEntry === 1 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
+                  [classList]="activeMenuEntry === 1 ? 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             <span class="sr-only">{{ 'NAVBAR.HOME' | translate }}</span>
             {{ 'NAVBAR.HOME' | translate }}
@@ -43,7 +44,7 @@
         </li>
         <li>
           <button (click)="scrollToElement(projects_link)"
-                  [classList]="activeMenuEntry === 2 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
+                  [classList]="activeMenuEntry === 2 ? 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             <span class="sr-only">{{ 'NAVBAR.PROJECTS' | translate }}</span>
             {{ 'NAVBAR.PROJECTS' | translate }}
@@ -51,7 +52,7 @@
         </li>
         <li>
           <button (click)="scrollToElement(skills)"
-                  [classList]="activeMenuEntry === 3 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
+                  [classList]="activeMenuEntry === 3 ? 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             <span class="sr-only">{{ 'NAVBAR.SKILLS' | translate }}</span>
             {{ 'NAVBAR.SKILLS' | translate }}
@@ -59,7 +60,7 @@
         </li>
         <li>
           <button (click)="scrollToElement(contact)"
-                  [classList]="activeMenuEntry === 4 ? 'text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
+                  [classList]="activeMenuEntry === 4 ? 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer hover-text-main-color text-main-color' : 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             <span class="sr-only">{{ 'NAVBAR.CONTACT' | translate }}</span>
             {{ 'NAVBAR.CONTACT' | translate }}
@@ -68,14 +69,14 @@
         <li>
           <button (click)="changeLang('de')"
                   *ngIf="translate.currentLang == 'en'"
-                  [className]="isLanguageChanged ? 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
+                  [className]="isLanguageChanged ? 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             <span class="sr-only">Deutsch</span>
             Deutsch
           </button>
           <a (click)="changeLang('en')"
              *ngIf="translate.currentLang == 'de'"
-             [className]="isLanguageChanged ? 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
+             [className]="isLanguageChanged ? 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100' : 'mb-2 lg:mb-0 text-md lg:text-sm font-regular leading-6 me-4 cursor-pointer text-gray-100 hover-text-main-color focus:text-gray-100'"
           >
             <span class="sr-only">English</span>
             English
@@ -83,6 +84,7 @@
         </li>
       </ul>
     </div>
+    </ng-container>
   </nav>
 </header>
 
