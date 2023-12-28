@@ -4,7 +4,7 @@
     <div #dummy_box class="hidden xl:block basis-1/2 will-change-auto"></div>
     <div class="flex xl:flex-1 basis-1/2">
       <button (click)="scrollToElement(hero)"
-              class="name ms-3 sm:mx-2 my-2 md:px-4 xl:mx-4 hover-text-main-color text-white font-extrabold text-base md:text-xl">
+              [classList]="isOverlayActive ? 'name my-2 ms-2 lg:ms-1 hover-text-main-color text-white font-extrabold text-base md:text-xl' : 'name my-2 ms-2 lg:ms-2 hover-text-main-color text-white font-extrabold text-base md:text-xl'">
         {{ 'VAR.NAME' | translate }}
       </button>
     </div>
@@ -32,7 +32,7 @@
     </div>
     <ng-container *ngIf="!isOverlayActive">
     <div
-      [classList]="isMenuCollapsed ? 'hidden lg:flex lg:gap-x-12' : 'block lg:flex lg:gap-x-12 w-full lg:w-auto ms-3 sm:mx-2 my-2 md:px-4'">
+      [classList]="isMenuCollapsed ? 'hidden lg:flex lg:gap-x-12' : 'block lg:flex lg:gap-x-12 w-full lg:w-auto my-2 ms-2 lg:ms-2'">
       <ul [classList]="isOverlayActive ? 'hidden':'flex flex-col lg:flex-row'">
         <li>
           <button (click)="scrollToElement(hero)"

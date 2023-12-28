@@ -47,8 +47,8 @@ export class ProjectComponent implements OnInit {
   ngOnInit() {
     this.images = this.filterImages(this.project.links);
     this.links = this.filterLinks(this.project.links);
-    this.hasVisiteLinks = this.links.length > 0;
-    this.hasImages = this.images.length > 0;
+    this.hasVisiteLinks = this.links && this.links.length > 0;
+    this.hasImages = this.images && this.images.length > 0;
     this.skillGroups = this.groupSkills();
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
       this.currentLanguage = event.lang;
@@ -75,6 +75,10 @@ export class ProjectComponent implements OnInit {
     }
 
     images.sort((a, b) => a.description.localeCompare(b.description));
+
+    if (thumbnails.length === 0) {
+      return images;
+    }
 
     const thumbnailExists = images.find(hyperlink => hyperlink.url === thumbnails[0].url);
     if (!thumbnailExists) {
