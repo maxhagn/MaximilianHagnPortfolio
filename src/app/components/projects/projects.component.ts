@@ -41,7 +41,6 @@ export class ProjectsComponent implements OnInit {
 
   openOverlay(event: any, project: ProjectDto) {
     if (this.blacklist.includes(event.target)) {
-      console.log("clicked")
       return;
     }
     this.overlayProject.emit(project);

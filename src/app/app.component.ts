@@ -136,7 +136,7 @@ export class AppComponent implements OnInit {
 
   assignGridClasses() {
     this.projects.forEach((project, index) => {
-      if (index < 12) {
+      if (index < 16) {
         project.gridClass = this.getGridClass(2)
       } else {
         project.gridClass = this.getGridClass(1);

@@ -70,7 +70,6 @@ export class DeviconService {
     if (cssClass) {
       return cssClass;
     }
-    //console.log(skill + " is missing!")
     return "";
   }
 }
